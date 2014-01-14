@@ -120,4 +120,5 @@ Stuff which are in the making:
 
 If you have any suggenstions or malware that you have indexed
 as in the documentations please send it to us to yuvaln210 [at]
-gmail so we can add it for every one's enjoyment. 
+your most popular mail server so we can add it for every 
+one's enjoyment. 
