@@ -15,6 +15,16 @@ a part of their job to have access to live malware, analyse the
 ways they operate and maybe even enable advanced and savvy 
 people to block specific malwares within their own environment.
 
+** Please remember that there are live and dangerous malwares! They come encrypted and locked for a reason! **
+** Do NOT run them unless you are absolutely sure of what you are doing! **
+** They are to be used only for educational purposes (and we mean that!) !!! **
+
+We recommend running them in a VM which has no internet connection
+(or an internal virtual network if you must) and without guest additions
+or any equivelants. Some of them are worms and will automatically try
+to spread out. Running them uncontained meaning the you ** will infect **
+** you or others with vicious and dangerous malwares!!!**
+
 
 GPL 3
 ======
@@ -39,71 +49,54 @@ Documentation and Notes
 ========================
 
 # Background:
-	The idea behind Malware DB it to allow it to be modular and let
-	you enter more malwares of your own. Each malware should have a
-	directory of it's own. 
-	
+The idea behind Malware DB it to allow it to be modular and let
+you enter more malwares of your own. Each malware should have a
+directory of it's own. 
 
 # Root Files:
-	The main files you see on the root folder are:
-		1. index.csv - 	The main index of the malwares you have
-						access to and can be searched in your 
-						local folders.
-		2. malware-db.py - 	The main indexing file. Use it to 
-							search for malware in the index.csv
-							file on the same folder. 
-		3. Rebuild_CSV.sh -	Rebuilds index.csv based on the
-							index.log files in all the recursive
-							directories. 
-							
+The main files you see on the root folder are:
+- index.csv - 	The main index of the malwares you have access to and can be searched in your local folders.
+- malware-db.py - 	The main indexing file. Use it to search for malware in the index.csv file on the same folder. 
+- Rebuild_CSV.sh -	Rebuilds index.csv based on the index.log files in all the recursive directories. 
 
 # Directory Structure:
-	Each directory is composed of 5 files:
-		1. Malware files in an encrypted ZIP archive. 
-		2. SHA256 sum of the 1st file. 
-		3. MD5 sum of the 1st file.
-		4. Password file for the archive. 
-		5. index.log file for the indexer. 
-		
+Each directory is composed of 5 files:
+- Malware files in an encrypted ZIP archive. 
+- SHA256 sum of the 1st file. 
+- MD5 sum of the 1st file.
+- Password file for the archive. 
+- index.log file for the indexer. 
+
 
 # Structure of index.csv
-	The main index.csv is the DB which you will look in to find 
-	malwares indexed on your drive. We use the , charachter as
-	the delimiter to our CSVs. 
-	The structure is al follows:
-	
+The main index.csv is the DB which you will look in to find 
+malwares indexed on your drive. We use the , charachter as
+the delimiter to our CSVs. 
+The structure is al follows:
+
 	uid,location,type,name,version,author,language,date
-	
-		UID 	-	Determined base on the indexing process.
-					Does not really have any purpose yet. 
-		Location - 	The location on the drive of the malware 
-					you have searched for. This and the UID
-					field are automatically built on run 
-					by Rebuild_CSV.sh.
-		Type	-	Sorts the different types of malware there are
-					So far we sort by:	Virus
-										Trojans
-										Botnets
-										Ransomeware
-										Spyware
-		Name	-	Just the name of the malware.
-		Version	-	Nothing to say here as well.
-		Author	-	... I'm not that into documentation...
-		Language -	VB/C/ASM/C++/Java or binaries (bin)
-		Date	-	See 'Author' section. 
-		
+
+- UID 	-	Determined base on the indexing process. Does not really have any purpose yet. 
+- Location 	The location on the drive of the malware you have searched for. This and the UID field are automatically built on run by Rebuild_CSV.sh.
+- Type	-	Sorts the different types of malware there are. So far we sort by:	Virus, Trojans, Botnets, Ransomeware, 1Spyware
+- Name	-	Just the name of the malware.
+- Version	-	Nothing to say here as well.
+- Author	-	... I'm not that into documentation...
+- Language -	VB/C/ASM/C++/Java or binaries (bin)
+- Date	-	See 'Author' section. 
+
 
 # Structure of index.log:
-	index.log is about the only file which we cannot built 
-	automatically and you will need to write it down for your
-	self. 
-	The structure is to be:
-	
+index.log is about the only file which we cannot built 
+automatically and you will need to write it down for your
+self. 
+The structure is to be:
+
 	type,name,version,author,language,date,
-	
-	Don't worry about the UID and Location section which are 
-	not there, they will be built by Rebuild_CSV.sh while it
-	collects data on the malwares. 
+
+Don't worry about the UID and Location section which are 
+not there, they will be built by Rebuild_CSV.sh while it
+collects data on the malwares. 
 
 
 Bugs and Reports
@@ -112,13 +105,12 @@ The repository holding all files is currently
 	https://github.com/ytisf/theZoo
 
 Stuff which are in the making:
-	1. More precise searching and indexing including 
-	   platform and more.
-	2. We have about 400 more malwares to map and add
-	3. Git update of platform and new malware. 
-	4. Fix display of search.
+- [ ] More precise searching and indexing including platform and more.
+- [ ] We have about 400 more malwares to map and add
+- [ ] Git update of platform and new malware. 
+- [ ] Fix display of search.
 
-If you have any suggenstions or malware that you have indexed
+If you have any suggestions or malware that you have indexed
 as in the documentations please send it to us to yuvaln210 [at]
 your most popular mail server so we can add it for every 
 one's enjoyment. 
