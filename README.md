@@ -1,24 +1,23 @@
------------------------------------------------------------------
-							About
------------------------------------------------------------------
+About
+======
 Malware DB is a project created to make the possibility of malware
 analysis open and available to the public. Since we have found out
 that almost all versions of malware are very hard to come by in a 
 way which will allow analysis we have decided to gather all of them
 for you in an available and safe way. 
 
------------------------------------------------------------------
-						Disclaimer
------------------------------------------------------------------
+
+Disclaimer
+==========
 Malware DB's purpose is to allow the study of malware and enable
 people who are interested in malware analysis or maybe even as
 a part of their job to have access to live malware, analyse the 
 ways they operate and maybe even enable advanced and savvy 
 people to block specific malwares within their own environment.
 
------------------------------------------------------------------
-							GPL 3
------------------------------------------------------------------
+
+GPL 3
+======
 Malware DB - the most awesome free malware database on the air
 Copyright (C) 2014, Yuval Nativ, Lahad Ludar, 5fingers
 
@@ -35,19 +34,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
------------------------------------------------------------------
-					Documentation and Notes
------------------------------------------------------------------
 
-Background:
------------
+Documentation and Notes
+========================
+
+# Background:
 	The idea behind Malware DB it to allow it to be modular and let
 	you enter more malwares of your own. Each malware should have a
 	directory of it's own. 
 	
 
-Root Files:
-	-----------
+# Root Files:
 	The main files you see on the root folder are:
 		1. index.csv - 	The main index of the malwares you have
 						access to and can be searched in your 
@@ -60,8 +57,7 @@ Root Files:
 							directories. 
 							
 
-Directory Structure:
---------------------
+# Directory Structure:
 	Each directory is composed of 5 files:
 		1. Malware files in an encrypted ZIP archive. 
 		2. SHA256 sum of the 1st file. 
@@ -70,8 +66,7 @@ Directory Structure:
 		5. index.log file for the indexer. 
 		
 
-Structure of index.csv:
------------------------
+# Structure of index.csv
 	The main index.csv is the DB which you will look in to find 
 	malwares indexed on your drive. We use the , charachter as
 	the delimiter to our CSVs. 
@@ -98,8 +93,7 @@ Structure of index.csv:
 		Date	-	See 'Author' section. 
 		
 
-Structure of index.log:
------------------------
+# Structure of index.log:
 	index.log is about the only file which we cannot built 
 	automatically and you will need to write it down for your
 	self. 
@@ -111,9 +105,9 @@ Structure of index.log:
 	not there, they will be built by Rebuild_CSV.sh while it
 	collects data on the malwares. 
 
------------------------------------------------------------------
-					Bugs and Reports
------------------------------------------------------------------
+
+Bugs and Reports
+================
 The repository holding all files is currently 
 	https://github.com/ytisf/theZoo
 
