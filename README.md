@@ -82,7 +82,7 @@ The repository holding all files is currently
 	https://github.com/ytisf/theZoo
 
 Stuff which are in the making:
-- [V] Fix EULA for proper disclaimer.
+- [X] Fix EULA for proper disclaimer.
 - [ ] More precise searching and indexing including platform and more.
 - [ ] We have about 400 more malwares to map and add
 - [ ] Git update of platform and new malware. 
