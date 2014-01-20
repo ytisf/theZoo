@@ -84,11 +84,13 @@ The repository holding all files is currently
 	https://github.com/ytisf/theZoo
 
 Stuff which are in the making:
+Stuff which are in the making:
 - [X] Fix EULA for proper disclaimer.
 - [X] More precise searching and indexing including platform and more.
 - [ ] We have about 400 more malwares to map and add
 - [ ] Git update of platform and new malware. 
+- [X] Separate DB version from application version. 
 - [ ] Fix display of search.
-- [x] Enable support for platform and architecture in indexing.
+- [X] Enable support for platform and architecture in indexing.
 
 If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuvaln210 [at] your most popular mail server so we can add it for every one's enjoyment. 
