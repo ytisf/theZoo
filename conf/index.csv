@@ -1,28 +1,27 @@
-1,Source/Original/Dokan - Dec 2008/index.log,__,Dokan,unknown,unknown,c,12/2008,
-2,Source/Original/NBot - July 2008/index.log,botnet,NBot,unknown,unknown,cpp,07/2008,
-3,Source/Original/ShadowBot v3 - March 2007/index.log,botnet,ShadowBot,3,unknown,cpp,03/2007,
-4,Source/Original/rBot 0.3.3 - May 2004/index.log,botnet,rBot,0.3.3,unknown,cpp,05/2004,
-5,Source/Original/ZeuS 2.0.8.9 - Feb 2013/index.log,botnet,ZeuS,2.0.8.9,unknown,c,02/2013,
-6,Source/Original/X0R-USB - Virus Version - Jan 2009/index.log,virus,X0R-USB-Virus,unknown,unknown,c,01/2009,
-7,Source/Original/LoexBot1.3 - Sep 2008/index.log,botnet,LoexBot,1.3,unknown,cpp,09/2008,
-8,Source/Original/ZunkerBot 1.4.5 - Sep 2007/index.log,botnet,ZunkerBot,1.4.5,unknown,php,09/2007,
-9,Source/Original/DopeBot v0.22 UnCrippled- Feb 2007/index.log,botnet,DopeBot-UnCrippled,0.22,unknown,cpp,02/2007,
-10,Source/Original/vbBot - Jan 2007/index.log,botnet,vbBot,unknown,unknown,vb,01/2007,
-11,Source/Original/xTBot 0.0.2 - 2 Feb 2002/index.log,botnet,xTBot,0.0.2,unknown,cpp,02/2002,
-12,Source/Original/VBS.Win32.Vabian - Unknown/index.log,VBS-Worm,VBS.Win32.Vabian,unknown,unknown,vb,unknown,
-13,Source/Original/DopeBot v0.22 Crippled- Feb 2007/index.log,botnet,DopeBot-Crippled,0.22,unknown,cpp,02/2007,
-14,Source/Original/Win32.MiniPig - Nov 2006/index.log,Worm,Win32.MiniPig,unknown,unknown,c,11/2006,
-15,Source/Original/HellBot v3.0 - 10 June 2005/index.log,botnet,Hellbot,3.0,unknown,cpp,06/2005,
-16,Source/Original/Win32.ogw0rm - Nov 2008/index.log,Worm,Win32.ogwOrm,unknown,unknown,cpp,11/2008,
-17,Source/Original/DopeBot.B - Dec 2004/index.log,botnet,DopeBot.B,unknown,unknown,cpp,12/2004,
-18,Source/Original/LiquidBot - May 2005/index.log,botnet,LiquidBot,unknown,unknown,cpp,05/2005,
-19,Source/Original/SpazBot 2.12 - June 2007/index.log,botnet,SpazBot,2.12,unknown,vb,06/2007,
-20,Source/Original/DBot v3.1 - March 2007/index.log,botnet,DBot,3.1,unknown,c,03/2007,
-21,Source/Original/CyberBot v2.2 - October 2006/index.log,botnet,CyberBot,2.2,unknown,cpp,10/2006,
-22,Source/Original/DopeBot.A - Dec 2004/index.log,botnet,DopeBot.A,unknown,unknown,cpp,12/2004,
-23,Source/Original/MyDoom.A - Jan 2004/index.log,__,MyDoom.A,unknown,unknown,c,01/2004,
-24,Source/Original/ShadowBot - Sep 2008/index.log,botnet,ShadowBot,unknown,unknown,cpp,09/2008,
-25,Binaries/CryptoLocker Ransomware 20th Nov 2013/index.log,3,ransomeware,CryptoLocker,Unknown,Unknown,bin,20/12/2013,
-26,Binaries/CryptoLocker Ransomware 10th Sep 2013/index.log,2,ransomeware,CryptoLocker,Unknown,Unknown,bin,10/12/2013,
-27,Binaries/IllusionBot - May 2007/index.log,4,botnet,Illusion Bot,Unknown,Unknown,bin,00/05/2007,
-28,Binaries/AndroRat - 6 Dec 2013/index.log,1,botnet,AndroRat,Unknown,Unknown,java,06/12/2013,
+1,Source/Original/Dokan - Dec 2008/index.log,__,Dokan,unknown,unknown,c,12/2008,x86,win32
+2,Source/Original/NBot - July 2008/index.log,botnet,NBot,unknown,unknown,cpp,07/2008,x86,win32
+3,Source/Original/ShadowBot v3 - March 2007/index.log,botnet,ShadowBot,3,unknown,cpp,03/2007,x86,win32
+4,Source/Original/rBot 0.3.3 - May 2004/index.log,botnet,rBot,0.3.3,unknown,cpp,05/2004,x86,win32
+5,Source/Original/ZeuS 2.0.8.9 - Feb 2013/index.log,botnet,ZeuS,2.0.8.9,unknown,c,02/2013,x86,win32
+6,Source/Original/X0R-USB - Virus Version - Jan 2009/index.log,virus,X0R-USB-Virus,unknown,unknown,c,01/2009,x86,win32
+7,Source/Original/LoexBot1.3 - Sep 2008/index.log,botnet,LoexBot,1.3,unknown,cpp,09/2008,x86,win32
+8,Source/Original/ZunkerBot 1.4.5 - Sep 2007/index.log,botnet,ZunkerBot,1.4.5,unknown,php,09/2007,x86,win32
+9,Source/Original/DopeBot v0.22 UnCrippled- Feb 2007/index.log,botnet,DopeBot-UnCrippled,0.22,unknown,cpp,02/2007,x86,win32
+10,Source/Original/vbBot - Jan 2007/index.log,botnet,vbBot,unknown,unknown,vb,01/2007,x86,win32
+11,Source/Original/xTBot 0.0.2 - 2 Feb 2002/index.log,botnet,xTBot,0.0.2,unknown,cpp,02/2002,x86,win32
+12,Source/Original/VBS.Win32.Vabian - Unknown/index.log,VBS-Worm,VBS.Win32.Vabian,unknown,unknown,vb,unknown,x86,win32
+13,Source/Original/DopeBot v0.22 Crippled- Feb 2007/index.log,botnet,DopeBot-Crippled,0.22,unknown,cpp,02/2007,x86,win32
+14,Source/Original/Win32.MiniPig - Nov 2006/index.log,Worm,Win32.MiniPig,unknown,unknown,c,11/2006,x86,win32
+15,Source/Original/HellBot v3.0 - 10 June 2005/index.log,botnet,Hellbot,3.0,unknown,cpp,06/2005,x86,win32
+16,Source/Original/Win32.ogw0rm - Nov 2008/index.log,Worm,Win32.ogwOrm,unknown,unknown,cpp,11/2008,x86,win32
+17,Source/Original/DopeBot.B - Dec 2004/index.log,botnet,DopeBot.B,unknown,unknown,cpp,12/2004,x86,win32
+18,Source/Original/LiquidBot - May 2005/index.log,botnet,LiquidBot,unknown,unknown,cpp,05/2005,x86,win32
+19,Source/Original/SpazBot 2.12 - June 2007/index.log,botnet,SpazBot,2.12,unknown,vb,06/2007,x86,win32
+20,Source/Original/DBot v3.1 - March 2007/index.log,botnet,DBot,3.1,unknown,c,03/2007,x86,win32
+21,Source/Original/CyberBot v2.2 - October 2006/index.log,botnet,CyberBot,2.2,unknown,cpp,10/2006,x86,win32
+22,Source/Original/DopeBot.A - Dec 2004/index.log,botnet,DopeBot.A,unknown,unknown,cpp,12/2004,x86,win32
+23,Source/Original/MyDoom.A - Jan 2004/index.log,__,MyDoom.A,unknown,unknown,c,01/2004,x86,win32
+24,Source/Original/ShadowBot - Sep 2008/index.log,botnet,ShadowBot,unknown,unknown,cpp,09/2008,x86,win32
+25,Binaries/CryptoLocker Ransomware 20th Nov 2013/index.log,ransomeware,CryptoLocker,Unknown,Unknown,bin,20/12/2013,x86,win32
+26,Binaries/CryptoLocker Ransomware 10th Sep 2013/index.log,ransomeware,CryptoLocker,Unknown,Unknown,bin,10/12/2013,x86,win32
+27,Binaries/IllusionBot - May 2007/index.log,botnet,Illusion Bot,Unknown,Unknown,bin,00/05/2007,x86,win32
