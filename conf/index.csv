@@ -25,3 +25,7 @@
 25,Binaries/CryptoLocker Ransomware 20th Nov 2013/index.log,ransomeware,CryptoLocker,Unknown,Unknown,bin,20/12/2013,x86,win32
 26,Binaries/CryptoLocker Ransomware 10th Sep 2013/index.log,ransomeware,CryptoLocker,Unknown,Unknown,bin,10/12/2013,x86,win32
 27,Binaries/IllusionBot - May 2007/index.log,botnet,Illusion Bot,Unknown,Unknown,bin,00/05/2007,x86,win32
+28,Source/Original/nBot 0.32 - May 2008/index.log,botnet,nBot,0.32,Unknown,c,00/05/2008,x86,win32
+29,Binaries/Trojan.Dropper.Gen/index.log,trojan,Dropper,Unknown,Unknown,bin,00/01/2014,x86,win32
+30,Binaries/Trojan.NSIS.Win32/index.log,trojan,NSIS,Unknown,Unknown,bin,00/01/2014,x86,win32
+31,Binaries/Trojan.Win32.Bechiro.BCD/index.log,trojan,Bechiro,BCD,Unknown,bin,00/01/2014,x86,win32

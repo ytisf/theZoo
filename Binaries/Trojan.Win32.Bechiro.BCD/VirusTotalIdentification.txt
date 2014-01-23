@@ -1,0 +1,13 @@
+Antivirus  Result  Update  
+Antiy-AVL  Downloader/Win32.Morstar  20140114  
+Comodo  Application.Win32.Bechiro.BCD  20140114  
+ESET-NOD32  a variant of Win32/FirseriaInstaller.C  20140114  
+Ikarus  not-a-virus:Downloader.Win32.Morstar  20140114  
+Kaspersky  not-a-virus:Downloader.Win32.Morstar.o  20140114  
+Kingsoft  Win32.Troj.Generic.a.(kcloud)  20130829  
+Malwarebytes  PUP.Optional.BundleInstaller.A  20140114  
+Panda  Adware/MultiToolbar  20140114  
+Rising  PE:PUF.FirseriaInstaller@CV!1.9C54  20140114  
+Sophos  Solimba Installer  20140114  
+VBA32  Downloader.Morstar  20140114  
+VIPRE  DownloadMR (fs)  20140114  
