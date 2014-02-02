@@ -55,7 +55,7 @@ Each directory is composed of 5 files:
 The main index.csv is the DB which you will look in to find malwares indexed on your drive. We use the , charachter as the delimiter to our CSVs. 
 The structure is al follows:
 
-	uid,location,type,name,version,author,language,date,platform,architecture
+	uid,location,type,name,version,author,language,date
 
 - UID 	-	Determined base on the indexing process. Does not really have any purpose yet. 
 - Location 	The location on the drive of the malware you have searched for. This and the UID field are automatically built on run by Rebuild_CSV.sh.
@@ -65,8 +65,6 @@ The structure is al follows:
 - Author	-	... I'm not that into documentation...
 - Language -	VB/C/ASM/C++/Java or binaries (bin)
 - Date	-	See 'Author' section. 
-- Platform	-	Platform can be win32,win64,android,ios.
-- Architecture	-	Can be x86,x64,arm and so on. 
 
 
 ## Structure of index.log:
@@ -84,13 +82,11 @@ The repository holding all files is currently
 	https://github.com/ytisf/theZoo
 
 Stuff which are in the making:
-Stuff which are in the making:
 - [X] Fix EULA for proper disclaimer.
 - [X] More precise searching and indexing including platform and more.
 - [ ] We have about 400 more malwares to map and add
-- [ ] Git update of platform and new malware. 
-- [X] Separate DB version from application version. 
-- [ ] Fix display of search.
+- [X] Git update of platform and new malware.
+- [X] Fix display of search.
 - [X] Enable support for platform and architecture in indexing.
 
 If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuvaln210 [at] your most popular mail server so we can add it for every one's enjoyment. 
