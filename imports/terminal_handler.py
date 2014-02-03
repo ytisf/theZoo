@@ -82,16 +82,19 @@ class Controller:
                 self.MainMenu()
 
             if re.match('^set', cmd):
-                cmd = re.split('\s+', cmd)
-                print cmd[1] + ' => ' + cmd[2]
-                if cmd[1] == 'arch':
-                    self.arch = cmd[2]
-                if cmd[1] == 'plat':
-                    self.plat = cmd[2]
-                if cmd[1] == 'lang':
-                    self.lang = cmd[2]
-                if cmd[1] == 'type':
-                    self.type = cmd[2]
+                try:
+                    cmd = re.split('\s+', cmd)
+                    print cmd[1] + ' => ' + cmd[2]
+                    if cmd[1] == 'arch':
+                        self.arch = cmd[2]
+                    if cmd[1] == 'plat':
+                        self.plat = cmd[2]
+                    if cmd[1] == 'lang':
+                        self.lang = cmd[2]
+                    if cmd[1] == 'type':
+                        self.type = cmd[2]
+                except:
+                    print 'Need to use the set method with two arguments.'
                 cmd = ''
                 self.MainMenu()
 
@@ -125,9 +128,12 @@ class Controller:
                     self.MainMenu()
 
             if re.match('^use', cmd):
-                cmd = re.split('\s+', cmd)
-                self.currentmodule = cmd[1]
-                cmd = ''
+                try:
+                    cmd = re.split('\s+', cmd)
+                    self.currentmodule = cmd[1]
+                    cmd = ''
+                except:
+                    print 'The use method needs an argument.'
                 self.MainMenu()
 
             if cmd == 'back':
