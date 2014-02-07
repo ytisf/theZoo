@@ -37,10 +37,18 @@ Documentation and Notes
 The idea behind Malware DB it to allow it to be modular and let you enter more malwares of your own. Each malware should have a directory of it's own. 
 
 ## Root Files:
-The main files you see on the root folder are:
-- index.csv - 	The main index of the malwares you have access to and can be searched in your local folders.
-- malware-db.py - 	The main indexing file. Use it to search for malware in the index.csv file on the same folder. 
-- Rebuild_CSV.sh -	Rebuilds index.csv based on the index.log files in all the recursive directories. 
+Since version 0.42 theZoo have been going dramatic changes. It now runs in both CLI and ARGVS mode. You can all the program with the same command line agreements as before.
+The current default state of theZoo at runtime is the CLI which is inspired by MSF. The following files and directories are responsible for the application's behaviour.
+
+### /conf
+The conf folder hold files relevant to the particular running of the program but are not part of the application. You can find the EULA file in the conf, the current database version, the CSV indexed file and more.
+### /imports
+Contains .py and .pyc import files used by the rest of the application
+### /malwares
+The actual malwares - be careful!
+### /mdbv0.2
+Since mdbv0.2 is stable for the command line arguments (where as of 0.42 we are not yet completely sure) and since the size is relativly small we have left out the beta version for those who are interested in it or got used to it. In next version we will confirm arguments as should be.
+
 
 ## Directory Structure:
 Each directory is composed of 5 files:
@@ -57,23 +65,20 @@ The structure is al follows:
 
 	uid,location,type,name,version,author,language,date
 
-- UID 	-	Determined base on the indexing process. Does not really have any purpose yet. 
-- Location 	The location on the drive of the malware you have searched for. This and the UID field are automatically built on run by Rebuild_CSV.sh.
+- UID 	-	Determined base on the indexing process.
+- Location 	The location on the drive of the malware you have searched for.
 - Type	-	Sorts the different types of malware there are. So far we sort by:	Virus, Trojans, Botnets, Ransomeware, 1Spyware
 - Name	-	Just the name of the malware.
 - Version	-	Nothing to say here as well.
 - Author	-	... I'm not that into documentation...
-- Language -	VB/C/ASM/C++/Java or binaries (bin)
-- Date	-	See 'Author' section. 
+- Programming Language - The state of the malware as for source, bin or which type of source. c/cpp/bin...
+- Date	-	See 'Author' section.
+- Architecture -    The arch the platform was build for. Can be x86, x64, arm7....
+- Platform -    Win32, Win64, *nix32, *nix64, iOS, android and so on.
 
+An example line will look as follow:
 
-## Structure of index.log:
-index.log is about the only file which we cannot built automatically and you will need to write it down for your self. 
-The structure is to be:
-
-	type,name,version,author,language,date,
-
-Don't worry about the UID and Location section which are not there, they will be built by Rebuild_CSV.sh while it collects data on the malwares. 
+    4,Source/Original/rBot0.3.3_May2004/rBot0.3.3_May2004,botnet,rBot,0.3.3,unknown,cpp,00/05/2004,x86,win32
 
 
 Bugs and Reports
@@ -81,12 +86,24 @@ Bugs and Reports
 The repository holding all files is currently 
 	https://github.com/ytisf/theZoo
 
+##Change Log for v0.42:
+- [x] Fix EULA for proper disclaimer.
+- [x] More precise searching and indexing including platform and more.
+- [x] Added 10 new malwares.
+- [x] Git update of platform and new malware.
+- [x] Fix display of search.
+- [x] Enable support for platform and architecture in indexing.
+- [x] Separate between database and application.
+- [x] UI improvements.
+
+##Predicted Change Log for v1.0
+- [ ] Fix auto-complete for malware frameworks.
+- [ ] Better UI features.
+- [ ] Verify argv to be working properly.
+- [ ] Virus-Total upload and indexing module.
+- [ ] Automatic reporting system for malwares which are not indexed in the framework.
+
 Stuff which are in the making:
-- [X] Fix EULA for proper disclaimer.
-- [X] More precise searching and indexing including platform and more.
-- [ ] We have about 400 more malwares to map and add
-- [X] Git update of platform and new malware.
-- [X] Fix display of search.
-- [X] Enable support for platform and architecture in indexing.
+
 
 If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuvaln210 [at] your most popular mail server so we can add it for every one's enjoyment. 
