@@ -34,12 +34,13 @@
 35,Binaries/ZeusBankingVersion_26Nov2013/ZeusBankingVersion_26Nov2013,botnet,Zeus - zBot,Nov2013,Unknown,bin,23/11/2013,x86,win32
 36,Source/Original/NullBot_Dec2006/NullBot_Dec2006,botnet,NullBot,Dec2006,Unknown,cpp,00/12/2006,x86,win32
 37,Binaries/Artemis,trojan,Artemis,Unknown,Unknown,bin,00/00/0000,x86,win32
-38,Binaries/Somoto,trojan,Somoto,unknown,unknown,bin,00/00/0000,x86,win32
+38,Binaries/Somoto,apt,Somoto,unknown,unknown,bin,00/00/0000,x86,win32
 39,Binaries/Variant.Kazy,trojan,Variant.Kazy,unknown,unknown,bin,00/00/0000,x86,win32
 40,Binaries/Win32/Brontok.W,Worm,Brontok.FE ,unknown,unknown,bin,00/00/0000,x86,win32
 41,Binaries/Trojan.Loadmoney.1,trojan,LMclicker.1,unknown,unknown,bin,00/00/0000,x86,win32
 42,Binaries/Win32Dircrypt.Trojan.Ransom.ABZ,ransomeware,Trojan.Ransom,unknown,unknown,bin,00/00/0000,x86,win32
 43,Binaries/TrojanWin32.Duqu.Stuxnet,botnet,Trojan.Win32.Duqu.Aoq .,unknown,unknown,bin,00/00/0000,x86,win32
-45,Binaries/Win32.Botnet.Stuxnet.B,botnet,Stuxnet Duqu,Realtek Signed B,Unknown,bin,00/00/2007,x86,win32
-44,Binaries/Win32.Botnet.Stuxnet.A,botnet,Stuxnet Duqu,C-Media Electronics Incorporation Signature - A,Unknown,bin,00/00/2009,x86,win32
-46,Binaries/Skywiper-A.Flame,trojan,Skywiper AKA Flame,A,Unknown,bin,00/00/2012,x86,win32
+45,Binaries/Win32.Botnet.Stuxnet.B,apt,Stuxnet Duqu,Realtek Signed B,Unknown,bin,00/00/2007,x86,win32
+44,Binaries/Win32.Botnet.Stuxnet.A,apt,Stuxnet Duqu,C-Media Electronics Incorporation Signature - A,Unknown,bin,00/00/2009,x86,win32
+46,Binaries/Skywiper-A.Flame,apt,Skywiper AKA Flame,A,Unknown,bin,00/00/2012,x86,win32
+47,Binaries/Careto_Feb2014,apt,Careto aka The Mask,A,Unknown,bin,15/02/2014,x86,win32
