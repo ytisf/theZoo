@@ -1,48 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="theZoo : A repository of LIVE malwares for your own joy and pleasure" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>theZoo aka Malware DB by ytisf</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>theZoo</title>
   </head>
-
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ytisf/theZoo">View on GitHub</a>
+      <header>
+        <h1>theZoo aka Malware DB</h1>
+        <p>A repository of LIVE malwares for your own joy and pleasure</p>
+      </header>
 
-          <h1 id="project_title">theZoo</h1>
-          <h2 id="project_tagline">A repository of LIVE malwares for your own joy and pleasure</h2>
+      <div id="banner">
+        <span id="logo"></span>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ytisf/theZoo/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ytisf/theZoo/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <a href="https://github.com/ytisf/theZoo" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/ytisf/theZoo/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/ytisf/theZoo/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
         <h1>
-<a name="welcome-to-malware-dbs-page" class="anchor" href="#welcome-to-malware-dbs-page"><span class="octicon octicon-link"></span></a>Welcome to Malware-DB's page</h1>
+<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h1>
 
-<h2>
-<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
-
-<p>Malware DB is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a  way which will allow analysis we have decided to gather all of them for you in an available and safe way. </p>
+<p>theZoo (or Malware DB) is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a  way which will allow analysis we have decided to gather all of them for you in an available and safe way. </p>
 
 <p><img src="http://hackingdefined.org/publications/MalDB-Logo-Thumb.png" alt=""></p>
 
-<h2>
-<a name="disclaimer" class="anchor" href="#disclaimer"><span class="octicon octicon-link"></span></a>Disclaimer</h2>
+<h1>
+<a name="disclaimer" class="anchor" href="#disclaimer"><span class="octicon octicon-link"></span></a>Disclaimer</h1>
 
 <p>Malware DB's purpose is to allow the study of malware and enable people who are interested in malware analysis or maybe even as a part of their job to have access to live malware, analyse the  ways they operate and maybe even enable advanced and savvy  people to block specific malwares within their own environment.</p>
 
@@ -50,8 +55,8 @@
 
 <p>We recommend running them in a VM which has no internet connection (or an internal virtual network if you must) and without guest additions or any equivalents. Some of them are worms and will automatically try to spread out. Running them unconstrained meaning the you <strong>will infect yourself or others with vicious and dangerous malwares!!!</strong></p>
 
-<h2>
-<a name="gpl-3" class="anchor" href="#gpl-3"><span class="octicon octicon-link"></span></a>GPL 3</h2>
+<h1>
+<a name="gpl-3" class="anchor" href="#gpl-3"><span class="octicon octicon-link"></span></a>GPL 3</h1>
 
 <p>Malware DB - the most awesome free malware database on the air 
 Copyright (C) 2014, Yuval Nativ, Lahad Ludar, 5fingers</p>
@@ -69,25 +74,42 @@ GNU General Public License for more details.</p>
 <p>You should have received a copy of the GNU General Public License
 along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
 
-<h2>
-<a name="documentation-and-notes" class="anchor" href="#documentation-and-notes"><span class="octicon octicon-link"></span></a>Documentation and Notes</h2>
+<h1>
+<a name="documentation-and-notes" class="anchor" href="#documentation-and-notes"><span class="octicon octicon-link"></span></a>Documentation and Notes</h1>
 
-<h3>
-<a name="background" class="anchor" href="#background"><span class="octicon octicon-link"></span></a>Background:</h3>
+<h2>
+<a name="background" class="anchor" href="#background"><span class="octicon octicon-link"></span></a>Background:</h2>
 
 <p>The idea behind Malware DB it to allow it to be modular and let you enter more malwares of your own. Each malware should have a directory of it's own. </p>
 
+<h2>
+<a name="root-files" class="anchor" href="#root-files"><span class="octicon octicon-link"></span></a>Root Files:</h2>
+
+<p>Since version 0.42 theZoo have been going dramatic changes. It now runs in both CLI and ARGVS mode. You can all the program with the same command line agreements as before.
+The current default state of theZoo at runtime is the CLI which is inspired by MSF. The following files and directories are responsible for the application's behaviour.</p>
+
 <h3>
-<a name="root-files" class="anchor" href="#root-files"><span class="octicon octicon-link"></span></a>Root Files:</h3>
+<a name="conf" class="anchor" href="#conf"><span class="octicon octicon-link"></span></a>/conf</h3>
 
-<p>The main files you see on the root folder are:</p>
+<p>The conf folder hold files relevant to the particular running of the program but are not part of the application. You can find the EULA file in the conf, the current database version, the CSV indexed file and more.</p>
 
-<ul>
-<li>index.csv -   The main index of the malwares you have access to and can be searched in your local folders.</li>
-<li>malware-db.py -   The main indexing file. Use it to search for malware in the index.csv file on the same folder. </li>
-<li>Rebuild_CSV.sh -  Rebuilds index.csv based on the index.log files in all the recursive directories. </li>
-</ul><h3>
-<a name="directory-structure" class="anchor" href="#directory-structure"><span class="octicon octicon-link"></span></a>Directory Structure:</h3>
+<h3>
+<a name="imports" class="anchor" href="#imports"><span class="octicon octicon-link"></span></a>/imports</h3>
+
+<p>Contains .py and .pyc import files used by the rest of the application</p>
+
+<h3>
+<a name="malwares" class="anchor" href="#malwares"><span class="octicon octicon-link"></span></a>/malwares</h3>
+
+<p>The actual malwares - be careful!</p>
+
+<h3>
+<a name="mdbv02" class="anchor" href="#mdbv02"><span class="octicon octicon-link"></span></a>/mdbv0.2</h3>
+
+<p>Since mdbv0.2 is stable for the command line arguments (where as of 0.42 we are not yet completely sure) and since the size is relativly small we have left out the beta version for those who are interested in it or got used to it. In next version we will confirm arguments as should be.</p>
+
+<h2>
+<a name="directory-structure" class="anchor" href="#directory-structure"><span class="octicon octicon-link"></span></a>Directory Structure:</h2>
 
 <p>Each directory is composed of 5 files:</p>
 
@@ -97,8 +119,8 @@ along with this program.  If not, see <a href="http://www.gnu.org/licenses/">htt
 <li>MD5 sum of the 1st file.</li>
 <li>Password file for the archive. </li>
 <li>index.log file for the indexer. </li>
-</ul><h3>
-<a name="structure-of-indexcsv" class="anchor" href="#structure-of-indexcsv"><span class="octicon octicon-link"></span></a>Structure of index.csv</h3>
+</ul><h2>
+<a name="structure-of-indexcsv" class="anchor" href="#structure-of-indexcsv"><span class="octicon octicon-link"></span></a>Structure of index.csv</h2>
 
 <p>The main index.csv is the DB which you will look in to find malwares indexed on your drive. We use the , charachter as the delimiter to our CSVs. 
 The structure is al follows:</p>
@@ -107,53 +129,58 @@ The structure is al follows:</p>
 </code></pre>
 
 <ul>
-<li>UID   -   Determined base on the indexing process. Does not really have any purpose yet. </li>
-<li>Location  The location on the drive of the malware you have searched for. This and the UID field are automatically built on run by Rebuild_CSV.sh.</li>
+<li>UID   -   Determined base on the indexing process.</li>
+<li>Location  The location on the drive of the malware you have searched for.</li>
 <li>Type  -   Sorts the different types of malware there are. So far we sort by:  Virus, Trojans, Botnets, Ransomeware, 1Spyware</li>
 <li>Name  -   Just the name of the malware.</li>
 <li>Version   -   Nothing to say here as well.</li>
 <li>Author    -   ... I'm not that into documentation...</li>
-<li>Language -    VB/C/ASM/C++/Java or binaries (bin)</li>
-<li>Date  -   See 'Author' section. </li>
-</ul><h3>
-<a name="structure-of-indexlog" class="anchor" href="#structure-of-indexlog"><span class="octicon octicon-link"></span></a>Structure of index.log:</h3>
+<li>Programming Language - The state of the malware as for source, bin or which type of source. c/cpp/bin...</li>
+<li>Date  -   See 'Author' section.</li>
+<li>Architecture -    The arch the platform was build for. Can be x86, x64, arm7....</li>
+<li>Platform -    Win32, Win64, *nix32, *nix64, iOS, android and so on.</li>
+</ul><p>An example line will look as follow:</p>
 
-<p>index.log is about the only file which we cannot built automatically and you will need to write it down for your self. 
-The structure is to be:</p>
-
-<pre><code>type,name,version,author,language,date,
+<pre><code>4,Source/Original/rBot0.3.3_May2004/rBot0.3.3_May2004,botnet,rBot,0.3.3,unknown,cpp,00/05/2004,x86,win32
 </code></pre>
 
-<p>Don't worry about the UID and Location section which are not there, they will be built by Rebuild_CSV.sh while it collects data on the malwares. </p>
-
-<h2>
-<a name="bugs-and-reports" class="anchor" href="#bugs-and-reports"><span class="octicon octicon-link"></span></a>Bugs and Reports</h2>
+<h1>
+<a name="bugs-and-reports" class="anchor" href="#bugs-and-reports"><span class="octicon octicon-link"></span></a>Bugs and Reports</h1>
 
 <p>The repository holding all files is currently 
     <a href="https://github.com/ytisf/theZoo">https://github.com/ytisf/theZoo</a></p>
 
-<p>Stuff which are in the making:</p>
+<h2>
+<a name="change-log-for-v042" class="anchor" href="#change-log-for-v042"><span class="octicon octicon-link"></span></a>Change Log for v0.42:</h2>
 
 <ul>
-<li>[X] Fix EULA for proper disclaimer.</li>
-<li>[ ] More precise searching and indexing including platform and more.</li>
-<li>[ ] We have about 400 more malwares to map and add</li>
-<li>[ ] Git update of platform and new malware. </li>
-<li>[ ] Fix display of search.</li>
-<li>[ ] Enable support for platform and architecture in indexing.</li>
-</ul><p>If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuvaln210 [at] your most popular mail server so we can add it for every one's enjoyment. </p>
-      </section>
-    </div>
+<li>[x] Fix EULA for proper disclaimer.</li>
+<li>[x] More precise searching and indexing including platform and more.</li>
+<li>[x] Added 10 new malwares.</li>
+<li>[x] Git update of platform and new malware.</li>
+<li>[x] Fix display of search.</li>
+<li>[x] Enable support for platform and architecture in indexing.</li>
+<li>[x] Separate between database and application.</li>
+<li>[x] UI improvements.</li>
+</ul><h2>
+<a name="predicted-change-log-for-v10" class="anchor" href="#predicted-change-log-for-v10"><span class="octicon octicon-link"></span></a>Predicted Change Log for v1.0</h2>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">theZoo maintained by <a href="https://github.com/ytisf">ytisf</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+<ul>
+<li>[ ] Fix auto-complete for malware frameworks.</li>
+<li>[ ] Better UI features.</li>
+<li>[ ] Verify argv to be working properly.</li>
+<li>[ ] Virus-Total upload and indexing module.</li>
+<li>[ ] Automatic reporting system for malwares which are not indexed in the framework.</li>
+</ul><p>Stuff which are in the making:</p>
+
+<p>If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuvaln210 [at] your most popular mail server so we can add it for every one's enjoyment. </p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/ytisf">ytisf</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
       </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
