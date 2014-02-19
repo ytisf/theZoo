@@ -37,6 +37,6 @@ class banners:
         print globals.vars.useage
 
     def print_available_payloads(self, array):
-        answer = array[globals.vars.column_for_uid] + "\t" + array[globals.vars.column_for_name]+ "\t" + array[globals.vars.column_for_version] + "\t\t"
-        answer += array[globals.vars.column_for_location] + "\t\t" + array[globals.vars.colomn_for_time]
+        answer = str(array[globals.vars.column_for_uid]) + "\t" + str(array[globals.vars.column_for_name]) + "\t" + str(array[globals.vars.column_for_version]) + "\t\t"
+        answer += str(array[globals.vars.column_for_location]) + "\t\t" + str(array[globals.vars.colomn_for_time])
         print answer

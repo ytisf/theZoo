@@ -20,8 +20,9 @@ import sys
 class init:
     def init(self):
         # Global Variables
-        version = "0.4.2 Arthur"
-        appname = "Malware DB"
+        version = "0.5.0 Citadel"
+        appname = "theZoo"
+        codename = "Citadel"
         authors = "Yuval Nativ, Lahad Ludar, 5fingers"
         licensev = "GPL v3.0"
         fulllicense = appname + " Copyright (C) 2014 " + authors + "\n"
@@ -83,12 +84,16 @@ class vars:
     main_csv_file = conf_folder + '/index.csv'
     giturl = 'https://raw.github.com/ytisf/theZoo/master/'
 
+    with file(maldb_ver_file) as f:
+        db_ver = f.read()
+
     maldb_banner = "    	    __  ___      __                               ____  ____\n"
     maldb_banner += "      	   /  |/  /___ _/ /      ______ _________        / __ \/ __ )\n"
     maldb_banner += "    	  / /|_/ / __ `/ / | /| / / __ `/ ___/ _ \______/ / / / __ |\n"
     maldb_banner += "    	 / /  / / /_/ / /| |/ |/ / /_/ / /  /  __/_____/ /_/ / /_/ /\n"
-    maldb_banner += "    	/_/  /_/\__,_/_/ |__/|__/\__,_/_/   \___/     /_____/_____/\n"
+    maldb_banner += "    	/_/  /_/\__,_/_/ |__/|__/\__,_/_/   \___/     /_____/_____/\n\n"
     maldb_banner += "                                version: " + version + "\n"
+    maldb_banner += "                                db_version: " + db_ver + "\n"
     maldb_banner += "                                built by: " + authors + "\n\n"
 
     addrs = ['reverce_tcp/', 'crazy_mal/', 'mal/', 'show malwares']

@@ -27,7 +27,7 @@ class Controller:
 
         self.modules = self.GetPayloads()
 
-        print 'im at init'
+        #print 'im at init'
         self.plat = ''
         self.arch = ''
         self.lang = ''
