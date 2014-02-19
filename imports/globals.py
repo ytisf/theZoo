@@ -57,7 +57,7 @@ class bcolors:
     WHITE = '\033[0m'
 
 class vars:
-    version = "0.4.2 Arthur"
+    version = "0.5.0 Citadel"
     appname = "Malware DB"
     authors = "Yuval Nativ, Lahad Ludar, 5fingers"
     licensev = "GPL v3.0"
