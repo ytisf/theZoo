@@ -44,3 +44,6 @@
 44,Binaries/Win32.Botnet.Stuxnet.A,apt,Stuxnet Duqu,C-Media Electronics Incorporation Signature - A,Unknown,bin,00/00/2009,x86,win32
 46,Binaries/Skywiper-A.Flame,apt,Skywiper AKA Flame,A,Unknown,bin,00/00/2012,x86,win32
 47,Binaries/Careto_Feb2014,apt,Careto aka The Mask,A,Unknown,bin,15/02/2014,x86,win32
+48,Binaries/ZeusGamever_Feb2014,botnet,Zeus,Gamever,Unknown,bin,19/02/2014,x86,win32
+49,Binaries/Android.Spy.49_iBanking_Feb2014,botnet,Android Spy 29,Banking Version,Unknown,apk,19/02/2014,arm,android
+50,Binaries/Win32.Cridex,worm,Cridex,B,Unknown,bin,00/02/2014,x86,win32
