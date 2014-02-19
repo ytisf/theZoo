@@ -86,6 +86,12 @@ Bugs and Reports
 The repository holding all files is currently 
 	https://github.com/ytisf/theZoo
 
+##Change Log for v0.50:
+- [x] Better and easier UI. 
+- [x] Aligned printing of malwares. 
+- [x] Command line arguments are now working. 
+- [x] Added 10 more malwares (cool ones) to the DB.
+
 ##Change Log for v0.42:
 - [x] Fix EULA for proper disclaimer.
 - [x] More precise searching and indexing including platform and more.
@@ -99,7 +105,7 @@ The repository holding all files is currently
 ##Predicted Change Log for v1.0
 - [ ] Fix auto-complete for malware frameworks.
 - [ ] Better UI features.
-- [ ] Verify argv to be working properly.
+- [X] Verify argv to be working properly. (fixes in v0.5)
 - [ ] Virus-Total upload and indexing module.
 - [ ] Automatic reporting system for malwares which are not indexed in the framework.
 
