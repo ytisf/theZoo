@@ -23,7 +23,7 @@ class Controller:
         self.searchmeth = [ ("arch","which architecture etc; x86, x64, arm7 so on..."),
                             ("plat","platform: win32, win64, mac, android so on..."),
                             ("lang","c, cpp, vbs, bin so on..."),
-                            ("","")]
+                            ("vip", "1 or 0")]
 
         self.modules = self.GetPayloads()
 
@@ -32,7 +32,7 @@ class Controller:
         self.arch = ''
         self.lang = ''
         self.type = ''
-
+        self.vip = ''
 
     def GetPayloads(self):
         m = []
@@ -77,6 +77,8 @@ class Controller:
                     ar = manySearch.sort(ar, globals.vars.column_for_pl, self.lang)
                 if len(self.type) > 0:
                     ar = manySearch.sort(ar, globals.vars.column_for_type, self.type)
+                if len(self.vip) > 0:
+                    ar = manySearch.sort(ar, globals.vars.column_for_vip, self.vip)
                 printController = manysearches.MuchSearch()
                 printController.PrintPayloads(ar)
                 self.MainMenu()

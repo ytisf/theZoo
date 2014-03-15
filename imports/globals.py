@@ -41,6 +41,8 @@ class init:
         column_for_uid = 0
         column_for_arch = 8
         column_for_plat = 9
+        column_for_vip = 10
+
         conf_folder = 'conf'
         eula_file = conf_folder + '/eula_run.conf'
         maldb_ver_file = conf_folder + '/db.ver'
@@ -77,6 +79,7 @@ class vars:
     column_for_uid = 0
     column_for_arch = 8
     column_for_plat = 9
+    column_for_vip = 10
 
     conf_folder = 'conf'
     eula_file = conf_folder + '/eula_run.conf'

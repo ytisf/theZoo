@@ -18,10 +18,11 @@ class MuchSearch(object):
         print "\nPayloads Found:"
         array = m
         i = 0
-        print "ID\tType\t\tLang\tArch\tPlat\tName"
-        print '---\t-----\t\t-----\t----\t-----\t----------------'
+        print "ID\tVIP\tType\t\tLang\tArch\tPlat\tName"
+        print '---\t---\t-----\t\t-----\t----\t-----\t----------------'
         for element in array:
             answer = array[i][globals.vars.column_for_uid]
+            answer = array[i][globals.vars.column_for_vip]
             answer += '\t%s' % ('{0: <12}'.format(array[i][globals.vars.column_for_type]))
             answer += '\t%s' % ('{0: <12}'.format(array[i][globals.vars.column_for_pl]))
             answer += array[i][globals.vars.column_for_arch] + '\t'
