@@ -47,8 +47,13 @@
 48,Binaries/ZeusGamever_Feb2014,botnet,Zeus,Gamever,Unknown,bin,19/02/2014,x86,win32,1
 49,Binaries/Android.Spy.49_iBanking_Feb2014,botnet,Android Spy 29,Banking Version,Unknown,apk,19/02/2014,arm,android,0
 50,Binaries/Win32.Cridex,worm,Cridex,B,Unknown,bin,00/02/2014,x86,win32,0
-51,Binaries/Win32.Alina.3.4.B,apt,Alina,3.4B,Unknown,bin,15.3.2014,x86,win32,1
-52,Binaries/Win32.Boaxxe.BB,botnet,Boaxxe,BB,Unknown,bin,15.3.2014,x86,win32,0
-53,Binaries/Win32.Infostealer.Dexter,botnet,Dexter,Unknown,Unknown,bin,15.3.2014,x86,win32,0
-54,Binaries/Win32.Caphaw.Shylock,botnet,Shylock,Unknown,Unknown,bin,15.3.2014,x86,win32,1
-55,Binaries/Win32.Turla,apt,Torola\Urubus rootkit,Unknown,Russia,bin,15.3.2014,x86,win32,1
+51,Binaries/Win32.Alina.3.4.B,apt,Alina,3.4B,Unknown,bin,15/03/2014,x86,win32,1
+52,Binaries/Win32.Boaxxe.BB,botnet,Boaxxe,BB,Unknown,bin,15/03/2014,x86,win32,0
+53,Binaries/Win32.Infostealer.Dexter,botnet,Dexter,Unknown,Unknown,bin,15/03/2014,x86,win32,0
+54,Binaries/Win32.Caphaw.Shylock,botnet,Shylock,Unknown,Unknown,bin,15/03/2014,x86,win32,1
+55,Binaries/Win32.Turla,apt,Torola\Urubus rootkit,Unknown,Russia,bin,15/03/2014,x86,win32,1
+56,Binaries/Win32.Zurgop,botnet,Zurgop/Dofoil/Bredo,Unknown,Unknown,bin,23/06/2014,x86,win32,0
+57,Binaries/Win32.ZeusVM,botnet,Zeus VM,VM,Unknown,bin,23/06/2014,x86,win32,0
+58,Binaries/Win32.Fareit,botnet,Fareit,Unknown,bin,23/06/2014,x86,win32,0
+59,Binaries/BlackEnergy2.1,rootkit,Black Energy,2.1,Unknown,bin,23/06/2014,x64,win64,1
+60,Binaries/SpyEye,botnet,SpyEye,Unknown,Unknown,bin,23/06/2014,x86,win32,0
