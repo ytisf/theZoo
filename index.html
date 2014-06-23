@@ -4,40 +4,31 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>theZoo aka Malware DB by ytisf</title>
+
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-
-      <header>
-        <h1>theZoo aka Malware DB</h1>
-        <p>A repository of LIVE malwares for your own joy and pleasure</p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/ytisf/theZoo" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/ytisf/theZoo/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/ytisf/theZoo/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
-
     <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
+      <header>
+        <h1 class="header">theZoo aka Malware DB</h1>
+        <p class="header">A repository of LIVE malwares for your own joy and pleasure</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/ytisf/theZoo/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/ytisf/theZoo/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/ytisf/theZoo">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/ytisf">ytisf</a></p>
+
+
+      </header>
       <section>
         <h1>
 <a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h1>
@@ -170,24 +161,26 @@ The structure is al follows:</p>
 <li>[x] Separate between database and application.</li>
 <li>[x] UI improvements.</li>
 </ul><h2>
+<a name="change-log-for-v043" class="anchor" href="#change-log-for-v043"><span class="octicon octicon-link"></span></a>Change Log for v0.43:</h2>
+
+<ul>
+<li>[X] Verify argv to be working properly. (fixes in v0.5)</li>
+<li>[X] Virus-Total upload and indexing module. - Not possible due to restrictions of VT.</li>
+<li>[X] Automatic reporting system for malwares which are not indexed in the framework.</li>
+</ul><h2>
 <a name="predicted-change-log-for-v10" class="anchor" href="#predicted-change-log-for-v10"><span class="octicon octicon-link"></span></a>Predicted Change Log for v1.0</h2>
 
 <ul>
 <li>[ ] Fix auto-complete for malware frameworks.</li>
 <li>[ ] Better UI features.</li>
-<li>[X] Verify argv to be working properly. (fixes in v0.5)</li>
-<li>[ ] Virus-Total upload and indexing module.</li>
-<li>[ ] Automatic reporting system for malwares which are not indexed in the framework.</li>
-</ul><p>Stuff which are in the making:</p>
-
-<p>If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuvaln210 [at] your most popular mail server so we can add it for every one's enjoyment. </p>
+<li>[ ] Consider changing DB to XML or SQLite3.</li>
+</ul><p>If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuval[]morirt [dot]com  so we can add it for every one's enjoyment.</p>
       </section>
       <footer>
-        <p>Project maintained by <a href="https://github.com/ytisf">ytisf</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+		
   </body>
 </html>
