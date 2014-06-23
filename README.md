@@ -102,14 +102,15 @@ The repository holding all files is currently
 - [x] Separate between database and application.
 - [x] UI improvements.
 
+## Change Log for v0.43:
+- [X] Verify argv to be working properly. (fixes in v0.5)
+- [X] Virus-Total upload and indexing module. - Not possible due to restrictions of VT.
+- [X] Automatic reporting system for malwares which are not indexed in the framework.
+
 ##Predicted Change Log for v1.0
 - [ ] Fix auto-complete for malware frameworks.
 - [ ] Better UI features.
-- [X] Verify argv to be working properly. (fixes in v0.5)
-- [ ] Virus-Total upload and indexing module.
-- [ ] Automatic reporting system for malwares which are not indexed in the framework.
-
-Stuff which are in the making:
+- [ ] Consider changing DB to XML or SQLite3.
 
 
-If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuvaln210 [at] your most popular mail server so we can add it for every one's enjoyment. 
+If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuval[]morirt [dot]com  so we can add it for every one's enjoyment.

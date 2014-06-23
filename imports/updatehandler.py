@@ -39,11 +39,12 @@ class Updater:
             return 0
 
         curr_maldb_ver = f
-        response = urllib2.urlopen(globals.vars.giturl+ globals.vars.maldb_ver_file)
+        response = urllib2.urlopen(globals.vars.giturl + globals.vars.maldb_ver_file)
         new_maldb_ver = response.read()
         if new_maldb_ver == curr_maldb_ver:
             print globals.bcolors.GREEN + '[+]' + globals.bcolors.WHITE + " No need for an update.\n" + globals.bcolors.GREEN + '[+]' + globals.bcolors.WHITE + " You are at " + new_maldb_ver + " which is the latest version."
             sys.exit(1)
+
         # Write the new DB version into the file
         f = open(globals.vars.maldb_ver_file, 'w')
         f.write(new_maldb_ver)

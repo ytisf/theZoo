@@ -15,7 +15,17 @@
 
     #You should have received a copy of the GNU General Public License
     #along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+import sys
+import csv
+import os
+from optparse import OptionParser
+from imports.updatehandler import Updater
 from imports import muchmuchstrings
+from imports.eula_handler import EULA
+from imports.globals import vars
+from imports.terminal_handler import Controller
 
 __version__ = "0.5.0 Citadel"
 __codename__ = "Citadel"
@@ -24,16 +34,6 @@ __authors__ = ["Yuval Nativ","Lahad Ludar","5Fingers"]
 __licensev__ = "GPL v3.0"
 __maintainer = "Yuval Nativ"
 __status__ = "Beta"
-
-import sys
-import getopt
-import csv
-import os
-from optparse import OptionParser
-from imports.updatehandler import Updater
-from imports.eula_handler import EULA
-from imports.globals import vars
-from imports.terminal_handler import Controller
 
 
 def main():
