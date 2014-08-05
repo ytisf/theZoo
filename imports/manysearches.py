@@ -11,10 +11,16 @@ class MuchSearch(object):
         for each in array:
             if array[i][column] == value:
                 m.append(each)
-            i = i + 1
+            i += 1
         return m
 
     def PrintPayloads(self, m):
+        '''
+        :todo: Need to get this function much smaller.
+        apparently i was way too sleepy to write code...
+        :param m: Array to print out
+        :return:nothing
+        '''
         print "\nPayloads Found:"
         array = m
         i = 0
@@ -29,4 +35,4 @@ class MuchSearch(object):
             answer += array[i][globals.vars.column_for_plat] + '\t'
             answer += '\t%s' % ('{0: <12}'.format(array[i][globals.vars.column_for_name]))
             print answer
-            i=i+1
+            i += 1

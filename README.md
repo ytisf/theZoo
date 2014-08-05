@@ -107,6 +107,11 @@ The repository holding all files is currently
 - [X] Virus-Total upload and indexing module. - Not possible due to restrictions of VT.
 - [X] Automatic reporting system for malwares which are not indexed in the framework.
 
+## Change Log for v0.50:
+- [X] Malware analysis pack has been removed to reduce clone size.
+- [X] More documentation has been added.
+- [X] Removed debugging function which were dead in the code.
+
 ##Predicted Change Log for v1.0
 - [ ] Fix auto-complete for malware frameworks.
 - [ ] Better UI features.

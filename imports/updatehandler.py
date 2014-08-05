@@ -23,6 +23,9 @@ from imports import globals
 class Updater:
 
     def get_maldb_ver(self):
+        '''
+        Get current malwareDB version and see if we need an update
+        '''
         try:
             with file(globals.vars.maldb_ver_file) as f:
                 return f.read()
@@ -31,6 +34,10 @@ class Updater:
             return 0
 
     def update_db(self):
+        '''
+        Just update the database from GitHub
+        :return:
+        '''
         try:
             with file(globals.vars.maldb_ver_file) as f:
                 f = f.read()
