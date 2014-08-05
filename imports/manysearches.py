@@ -14,7 +14,7 @@ class MuchSearch(object):
             i += 1
         return m
 
-    def PrintPayloads(self, m):
+    def print_payloads(self, m):
         '''
         :todo: Need to get this function much smaller.
         apparently i was way too sleepy to write code...
