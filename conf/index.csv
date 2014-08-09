@@ -57,3 +57,5 @@
 58,Binaries/Win32.Fareit,botnet,Fareit,Unknown,bin,23/06/2014,x86,win32,0
 59,Binaries/BlackEnergy2.1,rootkit,Black Energy,2.1,Unknown,bin,23/06/2014,x64,win64,1
 60,Binaries/SpyEye,botnet,SpyEye,Unknown,Unknown,bin,23/06/2014,x86,win32,0
+61.Binaries/Powerliks,botnet,Powerliks,Unknown,Unknown,bin,09/08/2014,x86,win32,1
+62,Binaries/ZeroLocker,ransomware,Zerolocker,A,Unknown,bin,09/08/2014,x86,win32,0
