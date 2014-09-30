@@ -1,0 +1,375 @@
+
+
+
+
+
+
+body {
+	color: #708070;
+	background: #151518;
+	font-family: Tahoma;
+	font-size: 11px;
+	padding: 5px;
+	margin: 0;
+
+
+	scrollbar-face-color: #060909;
+	scrollbar-track-color: #222222;
+	scrollbar-arrow-color: #4B7B8B;
+
+	scrollbar-shadow-color: #121212;
+	scrollbar-3dlight-color: #202020;
+	scrollbar-highlight-color: #060909;
+	scrollbar-darkshadow-color: #202020;
+}
+
+
+div {
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+
+form {
+	padding: 0;
+	margin: 0;
+}
+
+
+
+
+
+textarea,
+select,
+input {
+	width: 100%;
+	color: #709090;
+	background: #252528;
+	border: 1px solid #404050;
+	font-family: Tahoma;
+	font-size: 11px;
+	margin: 0px;
+}
+
+
+
+
+
+/****************************************\
+|**                MAIN                **|
+\****************************************/
+
+.wrap {
+	width: 1250px;
+	background: #171C1D;
+	border: 2px solid #404050;
+	margin: 0 0 3px 0;
+	font-family: Tahoma;
+	font-size: 11px;
+}
+
+
+.menu {
+	text-align: center;
+	padding: 5px 0 10px 0;
+}
+.menu a:link,
+.menu a:active,
+.menu a:visited {
+	color: #708090;
+	background: #252528;
+	border: 1px solid #404050;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 2px 10px;
+	margin: 1px;
+	cursor: default;
+}
+.menu a:hover {
+	color: #E05000;
+	background: #090909;
+	border: 1px solid #E05000;
+}
+
+
+.block {
+	width: 100%;
+	color: #708090;
+	background: #151518;
+	border: 1px solid #404050;
+	margin: 0 0 2px 0;
+	font-family: Tahoma;
+	font-size: 11px;
+}
+
+
+
+
+
+/****************************************\
+|**                TABS                **|
+\****************************************/
+
+.tab_act {
+	font-weight: bold;
+	border: 0px solid #404050;
+	border-width: 2px 1px 0 0;
+	font-family: Tahoma;
+	font-size: 11px;
+}
+.tab_psv {
+	font-weight: bold;
+	border: 0px solid #404050;
+	border-width: 1px 1px 2px 0;
+	font-family: Tahoma;
+	font-size: 11px;
+}
+
+.tab_act a:link,
+.tab_act a:active,
+.tab_act a:visited {
+	padding: 0 20px;
+	color: #709070;
+	background: #171C1D;
+	text-decoration: none;
+	cursor: default;
+}
+
+.tab_psv a:link,
+.tab_psv a:active,
+.tab_psv a:visited {
+	padding: 0px 20px;
+	color: #708090;
+	background: #252528;
+	text-decoration: none;
+	cursor: default;
+}
+.tab_psv a:hover {
+	background:#171C1D;
+	color:#E05000;
+}
+
+.no_tab {
+	width: 100%;
+	border-bottom: 2px solid #404050;
+	font-size: 1px;
+}
+
+.tabcont {
+	width: 100%;
+	padding: 2px 2px 0 2px;
+	font-weight: bold;
+	font-family: Tahoma;
+	font-size: 11px;
+}
+
+
+
+
+
+/****************************************\
+|**              SUMMARY               **|
+\****************************************/
+
+/* Status #################### */
+
+.title {
+	text-align: right;
+	font-weight: bold;
+	background: #252528;
+	color: #808070;
+	height: 18px;
+	padding-right: 5px;
+}
+
+
+.value {
+	text-align: left;
+	background: #1A2020;
+	color: #708070;
+	padding-left: 5px;
+}
+
+
+
+
+
+/****************************************\
+|**              BOTNETS               **|
+\****************************************/
+
+.bothdr {
+	text-align: center;
+	font-weight: bold;
+	background: #252528;
+	color: #808070;
+	height: 18px;
+}
+
+.botstr {
+	text-align: center;
+	background: #1A2020;
+	color: #708070;
+}
+
+.botleft {
+	text-align: left;
+	padding: 0 2px 0 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************\
+|**               SEARCH               **|
+\****************************************/
+
+/* Search form #################### */
+
+.srchopt {
+	text-align: right;
+	font-weight: bold;
+	background: #252528;
+	color: #709090;
+	padding: 0 3px;
+	height: 17px;
+}
+
+.srchbox {
+	text-align: center;
+	font-weight: bold;
+	background: #252528;
+	color: #709080;
+}
+
+.srchnum {
+	text-align: center;
+	width: 30px;
+}
+
+.srchbtn {
+	font-weight: bold;
+}
+.srchbtn[disabled] {
+	background: #E05000;
+}
+
+
+
+/* Result #################### */
+
+.button {
+	font-weight: bold;
+	margin: 0 2px 2px 0;
+	padding: 1px 10px;
+	width: auto;
+}
+.button[disabled] {
+	background: #E05000;
+}
+
+
+.highlight {
+	font-weight: bold;
+	color: #C04000;
+}
+.srchlight {
+	font-weight: bold;
+	background: #FFFFFF;
+}
+.hdrslight {
+	font-weight: bold;
+	color: #999999;
+}
+.varslight {
+	font-weight: bold;
+	color: #000000;
+}
+
+
+
+
+.briefrow0,
+.briefrow1 {
+	font-size: 11px;
+	cursor: default;
+}
+.briefrow0 {
+	background: #1A2020;
+	color: #808090;
+}
+.briefrow1 {
+	background: #1A1D1A;
+	color: #808090;
+}
+
+.logrow0,
+.logrow1 {
+	font-size: 11px;
+}
+.logrow0 {
+	background: #2A3030;
+	color: #808090;
+}
+.logrow1 {
+	background: #2A2D2A;
+	color: #808090;
+}
+.loghlt {
+	background: #E05000;
+}
+
+
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.briefcell {
+	width: 604px;
+	cursor: pointer;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

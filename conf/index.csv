@@ -1,17 +1,17 @@
 1,Source/Original/Dokan_Dec2008/Dokan_Dec2008,botnet,Dokan,unknown,unknown,c,00/12/2008,x86,win32,0
-3,Source/Original/ShadowBotv3_March2007/ShadowBotv3_March2007,botnet,ShadowBot,3,unknown,cpp,03/2007,x86,win32,0
+3,Source/Original/ShadowBotv3_March2007/ShadowBotv3_March2007,botnet,ShadowBot,3,unknown,cpp,Mar-07,x86,win32,0
 4,Source/Original/rBot0.3.3_May2004/rBot0.3.3_May2004,botnet,rBot,0.3.3,unknown,cpp,00/05/2004,x86,win32,0
-5,Source/Original/ZeuS2.0.8.9_Feb2013/ZeuS2.0.8.9_Feb2013,botnet,ZeuS,2.0.8.9,unknown,c,02/2013,x86,win32,1
+5,Source/Original/ZeuS2.0.8.9_Feb2013/ZeuS2.0.8.9_Feb2013,botnet,ZeuS,2.0.8.9,unknown,c,Feb-13,x86,win32,1
 6,Source/Original/X0R-USB_Jan2009/X0R-USB_Jan2009,virus,X0R-USB-Virus,unknown,unknown,c,00/01/2009,x86,win32,0
 7,Source/Original/LoexBot1.3_Sep2008/LoexBot1.3_Sep2008,botnet,LoexBot,1.3,unknown,cpp,00/09/2008,x86,win32,0
-8,Source/Original/ZunkerBot1.4.5_Sep2007/ZunkerBot1.4.5_Sep2007,botnet,ZunkerBot,1.4.5,unknown,php,09/2007,x86,win32,0
+8,Source/Original/ZunkerBot1.4.5_Sep2007/ZunkerBot1.4.5_Sep2007,botnet,ZunkerBot,1.4.5,unknown,php,Sep-07,x86,win32,0
 9,Source/Original/DopeBotv0.22_UnCrippled_Feb2007/DopeBotv0.22_UnCrippled_Feb2007,botnet,DopeBot-UnCrippled,0.22,unknown,cpp,00/02/2007,x86,win32,0
-10,Source/Original/vbBot_Jan2007/vbBot_Jan2007,botnet,vbBot,unknown,unknown,vb,01/2007,x86,win32,0
-11,Source/Original/xTBot0.0.2_2Feb2002/xTBot0.0.2_2Feb2002,botnet,xTBot,0.0.2,unknown,cpp,02/2002,x86,win32,0
+10,Source/Original/vbBot_Jan2007/vbBot_Jan2007,botnet,vbBot,unknown,unknown,vb,Jan-07,x86,win32,0
+11,Source/Original/xTBot0.0.2_2Feb2002/xTBot0.0.2_2Feb2002,botnet,xTBot,0.0.2,unknown,cpp,Feb-02,x86,win32,0
 12,Source/Original/VBS.Win32.Vabian/VBS.Win32.Vabian,VBS-Worm,VBS.Win32.Vabian,botnet,unknown,vb,unknown,x86,win32,0
 13,Source/Original/DopeBotv0.22_CrippledFeb2007/DopeBotv0.22_CrippledFeb2007,botnet,DopeBot-Crippled,0.22,unknown,cpp,00/02/2007,x86,win32,0
 14,Source/Original/Win32.MiniPig_Nov2006/Win32.MiniPig_Nov2006,Worm,Win32.MiniPig,virus,unknown,c,00/11/2006,x86,win32,0
-15,Source/Original/HellBotv3.0_10June2005/HellBotv3.0_10June2005,botnet,Hellbot,3.0,unknown,cpp,00/06/2005,x86,win32,0
+15,Source/Original/HellBotv3.0_10June2005/HellBotv3.0_10June2005,botnet,Hellbot,3,unknown,cpp,00/06/2005,x86,win32,0
 16,Source/Original/Win32.ogw0rm_Nov2008/Win32.ogw0rm_Nov2008,Worm,Win32.ogwOrm,unknown,unknown,cpp,00/11/2008,x86,win32,0
 17,Source/Original/DopeBot.B_Dec2004/DopeBot.B_Dec2004,botnet,DopeBot.B,unknown,unknown,cpp,00/12/2004,x86,win32,0
 18,Source/Original/LiquidBot_May2005/LiquidBot_May2005,botnet,LiquidBot,unknown,unknown,cpp,00/05/2005,x86,win32,0
@@ -28,11 +28,11 @@
 29,Binaries/Trojan.Dropper.Gen/Trojan.Dropper.Gen,trojan,Dropper,Unknown,Unknown,bin,00/01/2014,x86,win32,0
 30,Binaries/Trojan.NSIS.Win32/Trojan.NSIS.Win32,trojan,NSIS,Unknown,Unknown,bin,00/01/2014,x86,win32,0
 31,Binaries/Trojan.Win32.Bechiro.BCD/Trojan.Win32.Bechiro.BCD,trojan,Bechiro,BCD,Unknown,bin,00/01/2014,x86,win32,0
-32,Binaries/AndroRat_6Dec2013/AndroRat_6Dec2013,botnet,AndroRat,Dec2013,Unknown,java,06/12/2013,x86,win32,0
-33,Binaries/CryptoLocker_22Jan2014/CryptoLocker_22Jan2014,ransomeware,CryptoLocker,Jan2014,Unknown,bin,22/01/2014,x86,win32,1
+32,Binaries/AndroRat_6Dec2013/AndroRat_6Dec2013,botnet,AndroRat,Dec-13,Unknown,java,06/12/2013,x86,win32,0
+33,Binaries/CryptoLocker_22Jan2014/CryptoLocker_22Jan2014,ransomeware,CryptoLocker,Jan-14,Unknown,bin,22/01/2014,x86,win32,1
 34,Binaries/njRAT-v0.6.4/njRAT-v0.6.4,botnet,njRAT,0.6.4,Unknown,bin,00/09/2013,x86,win32,0
-35,Binaries/ZeusBankingVersion_26Nov2013/ZeusBankingVersion_26Nov2013,botnet,Zeus - zBot,Nov2013,Unknown,bin,23/11/2013,x86,win32,1
-36,Source/Original/NullBot_Dec2006/NullBot_Dec2006,botnet,NullBot,Dec2006,Unknown,cpp,00/12/2006,x86,win32,0
+35,Binaries/ZeusBankingVersion_26Nov2013/ZeusBankingVersion_26Nov2013,botnet,Zeus - zBot,Nov-13,Unknown,bin,23/11/2013,x86,win32,1
+36,Source/Original/NullBot_Dec2006/NullBot_Dec2006,botnet,NullBot,Dec-06,Unknown,cpp,00/12/2006,x86,win32,0
 37,Binaries/Artemis,trojan,Artemis,Unknown,Unknown,bin,00/00/0000,x86,win32,0
 38,Binaries/Somoto,apt,Somoto,unknown,unknown,bin,00/00/0000,x86,win32,0
 39,Binaries/Variant.Kazy,trojan,Variant.Kazy,unknown,unknown,bin,00/00/0000,x86,win32,0
@@ -59,3 +59,4 @@
 60,Binaries/SpyEye,botnet,SpyEye,Unknown,Unknown,bin,23/06/2014,x86,win32,0
 61,Binaries/Powerliks,botnet,Powerliks,Unknown,Unknown,bin,09/08/2014,x86,win32,1
 62,Binaries/ZeroLocker,ransomware,Zerolocker,A,Unknown,bin,09/08/2014,x86,win32,0
+63,Sources/Original/TinyBanker_Jan2012,botnet,Tiny Banker,A,Russia,asm,00/01/2012,x86,win32,0

@@ -1,0 +1,2 @@
+
+; ZwQuerySystemInformation
