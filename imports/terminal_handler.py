@@ -83,7 +83,7 @@ class Controller:
 				if len(self.vip) > 0:
 					ar = manySearch.sort(ar, globals.vars.column_for_vip, self.vip)
 				printController = manysearches.MuchSearch()
-				printController.PrintPayloads(ar)
+				printController.print_payloads(ar)
 				self.MainMenu()
 
 			if re.match('^set', cmd):

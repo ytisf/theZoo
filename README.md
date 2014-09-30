@@ -1,10 +1,10 @@
 About
 ======
-Malware DB is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a  way which will allow analysis we have decided to gather all of them for you in an available and safe way. 
+theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a  way which will allow analysis we have decided to gather all of them for you in an available and safe way. 
 
 Disclaimer
 ==========
-Malware DB's purpose is to allow the study of malware and enable people who are interested in malware analysis or maybe even as a part of their job to have access to live malware, analyse the  ways they operate and maybe even enable advanced and savvy  people to block specific malwares within their own environment.
+theZoo's purpose is to allow the study of malware and enable people who are interested in malware analysis or maybe even as a part of their job to have access to live malware, analyse the  ways they operate and maybe even enable advanced and savvy  people to block specific malwares within their own environment.
 
 **Please remember that there are live and dangerous malwares! They come encrypted and locked for a reason!  Do NOT run them unless you are absolutely sure of what you are doing! They are to be used only for educational purposes (and we mean that!) !!!**
 
@@ -13,7 +13,7 @@ We recommend running them in a VM which has no internet connection (or an intern
 
 GPL 3
 ======
-Malware DB - the most awesome free malware database on the air 
+theZoo - the most awesome free malware database on the air 
 Copyright (C) 2014, Yuval Nativ, Lahad Ludar, 5fingers
 
 This program is free software: you can redistribute it and/or modify
@@ -34,7 +34,7 @@ Documentation and Notes
 ========================
 
 ## Background:
-The idea behind Malware DB it to allow it to be modular and let you enter more malwares of your own. Each malware should have a directory of it's own. 
+The idea behind theZoo it to allow it to be modular and let you enter more malwares of your own. Each malware should have a directory of it's own. 
 
 ## Root Files:
 Since version 0.42 theZoo have been going dramatic changes. It now runs in both CLI and ARGVS mode. You can all the program with the same command line agreements as before.
@@ -106,6 +106,11 @@ The repository holding all files is currently
 - [X] Verify argv to be working properly. (fixes in v0.5)
 - [X] Virus-Total upload and indexing module. - Not possible due to restrictions of VT.
 - [X] Automatic reporting system for malwares which are not indexed in the framework.
+
+## Change Log for v0.50:
+- [X] Malware analysis pack has been removed to reduce clone size.
+- [X] More documentation has been added.
+- [X] Removed debugging function which were dead in the code.
 
 ##Predicted Change Log for v1.0
 - [ ] Fix auto-complete for malware frameworks.

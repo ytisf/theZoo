@@ -30,7 +30,7 @@ from imports.terminal_handler import Controller
 __version__ = "0.5.0 Citadel"
 __codename__ = "Citadel"
 __appname__ = "theZoo"
-__authors__ = ["Yuval Nativ","Lahad Ludar","5Fingers"]
+__authors__ = ["Yuval Nativ", "Lahad Ludar", "5Fingers"]
 __licensev__ = "GPL v3.0"
 __maintainer = "Yuval Nativ"
 __status__ = "Beta"
@@ -44,26 +44,9 @@ def main():
     bannerHandler = muchmuchstrings.banners()
     terminalHandler = Controller()
 
-
-    def checkresults(array):
-        if len(array) == 0:
-            print "No results found\n\n"
-            sys.exit(1)
-
-    def checkargs():
-        print "Type: " + type_of_mal
-        print "Lang: " + pl
-        print "Search: " + search
-
     def filter_array(array, colum, value):
         ret_array = [row for row in array if value in row[colum]]
         return ret_array
-
-    def print_results(array):
-        # print_results will suprisingly print the results...
-        answer = array[vars.column_for_uid] + "\t" + array[vars.column_for_name]+ "\t" + array[vars.column_for_version] + "\t\t"
-        answer += array[vars.column_for_location] + "\t\t" + array[vars.colomn_for_time]
-        print answer
 
     def getArgvs():
         parser = OptionParser()
@@ -82,13 +65,7 @@ def main():
     # Here actually starts Main()
 
     # Zeroing everything
-    type_of_mal = ""
-    pl = ""
-    search = ""
-    new = ""
-    update = 0
-    m = [];
-    f = ""
+    m = []
 
     arguments = getArgvs()
 
@@ -115,11 +92,11 @@ def main():
         bannerHandler.print_license()
         sys.exit(1)
 
-    if ((len(arguments.type_of_mal) > 0) or (len(arguments.arch_of_mal) > 0) or (len(arguments.lang_of_mal) > 0) or (len(arguments.plat_of_mal) > 0)):
+    if (len(arguments.type_of_mal) > 0) or (len(arguments.arch_of_mal) > 0) or (len(arguments.lang_of_mal) > 0) or (len(arguments.plat_of_mal) > 0):
 
         # Take index.csv and convert into array m
-        csvReader = csv.reader(open(vars.main_csv_file, 'rb'), delimiter=',')
-        for row in csvReader:
+        csvreader = csv.reader(open(vars.main_csv_file, 'rb'), delimiter=',')
+        for row in csvreader:
             m.append(row)
 
         # Filter by type
@@ -150,7 +127,7 @@ def main():
             answer += '\t%s' % ('{0: <12}'.format(m[i][vars.column_for_version]))
             answer += '\t%s' % ('{0: <12}'.format(m[i][vars.column_for_pl]))
             print answer
-            i=i+1
+            i += 1
 
         sys.exit(1)
 
