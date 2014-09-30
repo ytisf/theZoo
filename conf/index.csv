@@ -54,7 +54,7 @@
 55,Binaries/Win32.Turla,apt,Torola\Urubus rootkit,Unknown,Russia,bin,15/03/2014,x86,win32,1
 56,Binaries/Win32.Zurgop,botnet,Zurgop/Dofoil/Bredo,Unknown,Unknown,bin,23/06/2014,x86,win32,0
 57,Binaries/Win32.ZeusVM,botnet,Zeus VM,VM,Unknown,bin,23/06/2014,x86,win32,0
-58,Binaries/Win32.Fareit,botnet,Fareit,Unknown,bin,23/06/2014,x86,win32,0
+58,Binaries/Win32.Fareit,botnet,Fareit,Unknown,Unknown,bin,23/06/2014,x86,win32,0
 59,Binaries/BlackEnergy2.1,rootkit,Black Energy,2.1,Unknown,bin,23/06/2014,x64,win64,1
 60,Binaries/SpyEye,botnet,SpyEye,Unknown,Unknown,bin,23/06/2014,x86,win32,0
 61.Binaries/Powerliks,botnet,Powerliks,Unknown,Unknown,bin,09/08/2014,x86,win32,1
