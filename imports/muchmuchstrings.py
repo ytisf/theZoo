@@ -34,7 +34,7 @@ class banners:
         print "Is licensed under:\t" + globals.vars.licensev
         print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         print globals.vars.fulllicense
-        print globals.vars.useage
+        print globals.vars.usage
 
     def print_available_payloads(self, array):
         answer = str(array[globals.vars.column_for_uid]) + "\t" + str(array[globals.vars.column_for_name]) + "\t" + str(array[globals.vars.column_for_version]) + "\t\t"

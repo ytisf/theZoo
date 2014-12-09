@@ -29,8 +29,8 @@ class init:
         fulllicense += "This program comes with ABSOLUTELY NO WARRANTY; for details type '" + sys.argv[0] +" -w'.\n"
         fulllicense += "This is free software, and you are welcome to redistribute it."
 
-        useage = '\nUsage: ' + sys.argv[0] +  ' -s search_query -t trojan -p vb\n\n'
-        useage += 'The search engine can search by regular search or using specified arguments:\n\nOPTIONS:\n   -h  --help\t\tShow this message\n   -t  --type\t\tMalware type, can be virus/trojan/botnet/spyware/ransomeware.\n   -p  --language\tProgramming language, can be c/cpp/vb/asm/bin/java.\n   -u  --update\t\tUpdate malware index. Rebuilds main CSV file. \n   -s  --search\t\tSearch query for name or anything. \n   -v  --version\tPrint the version information.\n   -w\t\t\tPrint GNU license.\n'
+        usage = '\nUsage: ' + sys.argv[0] +  ' -s search_query -t trojan -p vb\n\n'
+        usage += 'The search engine can search by regular search or using specified arguments:\n\nOPTIONS:\n   -h  --help\t\tShow this message\n   -t  --type\t\tMalware type, can be virus/trojan/botnet/spyware/ransomeware.\n   -p  --language\tProgramming language, can be c/cpp/vb/asm/bin/java.\n   -u  --update\t\tUpdate malware index. Rebuilds main CSV file. \n   -s  --search\t\tSearch query for name or anything. \n   -v  --version\tPrint the version information.\n   -w\t\t\tPrint GNU license.\n'
 
         column_for_pl = 6
         column_for_type = 2
@@ -67,8 +67,8 @@ class vars:
     fulllicense += "This program comes with ABSOLUTELY NO WARRANTY; for details type '" + sys.argv[0] +" -w'.\n"
     fulllicense += "This is free software, and you are welcome to redistribute it."
 
-    useage = '\nUsage: ' + sys.argv[0] +  ' -s search_query -t trojan -p vb\n\n'
-    useage += 'The search engine can search by regular search or using specified arguments:\n\nOPTIONS:\n   -h  --help\t\tShow this message\n   -t  --type\t\tMalware type, can be virus/trojan/botnet/spyware/ransomeware.\n   -p  --language\tProgramming language, can be c/cpp/vb/asm/bin/java.\n   -u  --update\t\tUpdate malware index. Rebuilds main CSV file. \n   -s  --search\t\tSearch query for name or anything. \n   -v  --version\tPrint the version information.\n   -w\t\t\tPrint GNU license.\n'
+    usage = '\nUsage: ' + sys.argv[0] +  ' -s search_query -t trojan -p vb\n\n'
+    usage += 'The search engine can search by regular search or using specified arguments:\n\nOPTIONS:\n   -h  --help\t\tShow this message\n   -t  --type\t\tMalware type, can be virus/trojan/botnet/spyware/ransomeware.\n   -p  --language\tProgramming language, can be c/cpp/vb/asm/bin/java.\n   -u  --update\t\tUpdate malware index. Rebuilds main CSV file. \n   -s  --search\t\tSearch query for name or anything. \n   -v  --version\tPrint the version information.\n   -w\t\t\tPrint GNU license.\n'
 
     column_for_pl = 6
     column_for_type = 2

@@ -1,12 +1,12 @@
 About
 ======
-theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a  way which will allow analysis we have decided to gather all of them for you in an available and safe way. 
+theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a way which will allow analysis we have decided to gather all of them for you in an available and safe way. 
 
 Disclaimer
 ==========
 theZoo's purpose is to allow the study of malware and enable people who are interested in malware analysis or maybe even as a part of their job to have access to live malware, analyse the  ways they operate and maybe even enable advanced and savvy  people to block specific malwares within their own environment.
 
-**Please remember that there are live and dangerous malwares! They come encrypted and locked for a reason!  Do NOT run them unless you are absolutely sure of what you are doing! They are to be used only for educational purposes (and we mean that!) !!!**
+**Please remember that these are live and dangerous malware! They come encrypted and locked for a reason!  Do NOT run them unless you are absolutely sure of what you are doing! They are to be used only for educational purposes (and we mean that!) !!!**
 
 We recommend running them in a VM which has no internet connection (or an internal virtual network if you must) and without guest additions or any equivalents. Some of them are worms and will automatically try to spread out. Running them unconstrained meaning the you **will infect yourself or others with vicious and dangerous malwares!!!**
 
@@ -34,14 +34,14 @@ Documentation and Notes
 ========================
 
 ## Background:
-The idea behind theZoo it to allow it to be modular and let you enter more malwares of your own. Each malware should have a directory of it's own. 
+The idea behind theZoo is to allow it to be modular and let you add malware of your own. Each malware should have a directory of it's own. 
 
 ## Root Files:
-Since version 0.42 theZoo have been going dramatic changes. It now runs in both CLI and ARGVS mode. You can all the program with the same command line agreements as before.
-The current default state of theZoo at runtime is the CLI which is inspired by MSF. The following files and directories are responsible for the application's behaviour.
+Since version 0.42 theZoo have been going dramatic changes. It now runs in both CLI and ARGVS mode. You can call the program with the same command line arguments as before.
+The current default state of theZoo runtime is the CLI which is inspired by MSF. The following files and directories are responsible for the application's behaviour.
 
 ### /conf
-The conf folder hold files relevant to the particular running of the program but are not part of the application. You can find the EULA file in the conf, the current database version, the CSV indexed file and more.
+The conf folder holds files relevant to the particular running of the program but are not part of the application. You can find the EULA file in the conf, the current database version, the CSV index file and more.
 ### /imports
 Contains .py and .pyc import files used by the rest of the application
 ### /malwares
@@ -65,9 +65,9 @@ The structure is al follows:
 
 	uid,location,type,name,version,author,language,date
 
-- UID 	-	Determined base on the indexing process.
+- UID 	-	Determined based on the indexing process.
 - Location 	The location on the drive of the malware you have searched for.
-- Type	-	Sorts the different types of malware there are. So far we sort by:	Virus, Trojans, Botnets, Ransomeware, 1Spyware
+- Type	-	Sorts the different types of malware there are. So far we sort by:	Virus, Trojans, Botnets, Ransomeware, Spyware
 - Name	-	Just the name of the malware.
 - Version	-	Nothing to say here as well.
 - Author	-	... I'm not that into documentation...
