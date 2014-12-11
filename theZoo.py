@@ -30,9 +30,9 @@ from imports.terminal_handler import Controller
 __version__ = "0.5.0 Citadel"
 __codename__ = "Citadel"
 __appname__ = "theZoo"
-__authors__ = ["Yuval Nativ", "Lahad Ludar", "5Fingers"]
+__authors__ = ["Yuval Nativ", "Shahak Shalev", "Lahad Ludar", "5Fingers"]
 __licensev__ = "GPL v3.0"
-__maintainer = "Yuval Nativ"
+__maintainer = "Yuval Nativ & Shahak Shalev"
 __status__ = "Beta"
 
 
