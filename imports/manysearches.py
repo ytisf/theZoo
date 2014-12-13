@@ -1,38 +1,63 @@
 from imports import globals
+from imports import db_handler
+from sys import exit
 
 
 class MuchSearch(object):
+
     def __init__(self):
-        self.array = []
+        self.db = db_handler.DBHandler()
+        self.names = [x.lower() for x in self.db.get_mal_names()]
 
-    def sort(self, array, column, value):
-        i=0
-        m=[]
-        for each in array:
-            if array[i][column] == value:
-                m.append(each)
-            i += 1
-        return m
+    #:todo: make this more efficient
+    def sort(self, args):
+        self.hits = {}
+        self.query = None
+        self.param = None
+        self.prequery = "SELECT ID, TYPE, LANGUAGE, ARCHITECTURE, PLATFORM, NAME FROM MALWARES WHERE "
+        self.ar = []
+        args = [x.lower() for x in args]
 
-    def print_payloads(self, m):
-        '''
-        :todo: Need to get this function much smaller.
-        apparently i was way too sleepy to write code...
-        :param m: Array to print out
-        :return:nothing
-        '''
-        print "\nPayloads Found:"
-        array = m
-        i = 0
-        print "ID\tVIP\tType\t\tLang\tArch\tPlat\tName"
-        print '---\t---\t-----\t\t-----\t----\t-----\t----------------'
-        for element in array:
-            answer = array[i][globals.vars.column_for_uid]
-            answer = array[i][globals.vars.column_for_vip]
-            answer += '\t%s' % ('{0: <12}'.format(array[i][globals.vars.column_for_type]))
-            answer += '\t%s' % ('{0: <12}'.format(array[i][globals.vars.column_for_pl]))
-            answer += array[i][globals.vars.column_for_arch] + '\t'
-            answer += array[i][globals.vars.column_for_plat] + '\t'
-            answer += '\t%s' % ('{0: <12}'.format(array[i][globals.vars.column_for_name]))
-            print answer
-            i += 1
+        for arg in args:
+            for optname, values in globals.vars.opts:
+                for value in values:
+                    if arg in value:
+                        self.hits.update({optname: value})
+        # Malware name checking has its own iterations to avoid false matches
+        if not self.hits:
+            for arg in args:
+                for name in self.names:
+                    if arg in name:
+                        self.query = "NAME LIKE ?"
+                        self.param = name
+
+        if len(self.hits) > 0:
+            self.query = self.build_query(self.hits)
+            self.ar = self.db.query(self.prequery + self.query)
+            self.print_payloads(self.ar)
+        elif self.param is not None:
+            self.ar = self.db.query(self.prequery + self.query, [self.param])
+            self.print_payloads(self.ar)
+        else:
+            print "Error: filter did not match any malware :("
+            exit()
+
+        return self.hits
+
+    # Build the dynamic query
+    def build_query(self, dic):
+        qlist = []
+        for key, val in dic.items():
+            if isinstance(val, (list, tuple)):
+                tmp = str(key) + ' in (' + ','.join(map(lambda x: '\'' + str(x) + '\'', val)) + ') '
+            else:
+                tmp = str(key) + '=' + '\'' + str(val) + '\''
+            qlist.append(' ' + tmp + ' ')
+        return "and".join(qlist)
+
+    def print_payloads(self, m, fields=["ID", "Type", "Language", "Architecture", "Platform", "Name"]):
+        print '\n' + ''.join("{0}\t".format(x) for x in fields)
+        print "-" * 12 * len(fields)
+        for col in m:
+            print ''.join("{0:<11}".format(x) for x in col)
+        print "\n"

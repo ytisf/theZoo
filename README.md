@@ -42,7 +42,7 @@ Since version 0.42 theZoo have been going dramatic changes. It now runs in both 
 The current default state of theZoo runtime is the CLI which is inspired by MSF. The following files and directories are responsible for the application's behaviour.
 
 ### /conf
-The conf folder holds files relevant to the particular running of the program but are not part of the application. You can find the EULA file in the conf, the current database version, the CSV index file and more.
+The conf folder holds files relevant to the particular running of the program but are not part of the application. You can find the EULA file in the conf and more.
 ### /imports
 Contains .py and .pyc import files used by the rest of the application
 ### /malwares
@@ -52,17 +52,17 @@ Since mdbv0.2 is stable for the command line arguments (where as of 0.42 we are 
 
 
 ## Directory Structure:
-Each directory is composed of 5 files:
+Each directory is composed of 4 files:
 - Malware files in an encrypted ZIP archive. 
 - SHA256 sum of the 1st file. 
 - MD5 sum of the 1st file.
 - Password file for the archive. 
-- index.log file for the indexer. 
 
 
-## Structure of index.csv
-The main index.csv is the DB which you will look in to find malwares indexed on your drive. We use the , charachter as the delimiter to our CSVs. 
-The structure is al follows:
+
+## Structure of maldb.db
+maldb.db is the DB which theZoo is acting upon to find malwares indexed on your drive.
+The structure is as follows:
 
 	uid,location,type,name,version,author,language,date
 
@@ -87,13 +87,19 @@ Bugs and Reports
 The repository holding all files is currently 
 	https://github.com/ytisf/theZoo
 
-##Change Log for v0.50:
+## Change Log for v0.60:
+- [x] Moved DB to SQLite3.
+- [x] Searching overhaul to a freestyle fashion.
+- [x] Fixed "get" command.
+- [x] More & more malwares.
+
+## Change Log for v0.50:
 - [x] Better and easier UI. 
 - [x] Aligned printing of malwares. 
 - [x] Command line arguments are now working. 
 - [x] Added 10 more malwares (cool ones) to the DB.
 
-##Change Log for v0.42:
+## Change Log for v0.42:
 - [x] Fix EULA for proper disclaimer.
 - [x] More precise searching and indexing including platform and more.
 - [x] Added 10 new malwares.
@@ -113,7 +119,7 @@ The repository holding all files is currently
 - [X] More documentation has been added.
 - [X] Removed debugging function which were dead in the code.
 
-##Predicted Change Log for v1.0
+## Predicted Change Log for v1.0
 - [ ] Fix auto-complete for malware frameworks.
 - [ ] Better UI features.
 - [ ] Consider changing DB to XML or SQLite3.

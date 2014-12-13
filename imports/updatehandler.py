@@ -1,23 +1,24 @@
 #!/usr/bin/env python
 
-    #Malware DB - the most awesome free malware database on the air
-    #Copyright (C) 2014, Yuval Nativ, Lahad Ludar, 5Fingers
+    # Malware DB - the most awesome free malware database on the air
+    # Copyright (C) 2014, Yuval Nativ, Lahad Ludar, 5Fingers
 
-    #This program is free software: you can redistribute it and/or modify
-    #it under the terms of the GNU General Public License as published by
-    #the Free Software Foundation, either version 3 of the License, or
+    # This program is free software: you can redistribute it and/or modify
+    # it under the terms of the GNU General Public License as published by
+    # the Free Software Foundation, either version 3 of the License, or
     #(at your option) any later version.
 
-    #This program is distributed in the hope that it will be useful,
-    #but WITHOUT ANY WARRANTY; without even the implied warranty of
-    #MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    #GNU General Public License for more details.
+    # This program is distributed in the hope that it will be useful,
+    # but WITHOUT ANY WARRANTY; without even the implied warranty of
+    # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    # GNU General Public License for more details.
 
-    #You should have received a copy of the GNU General Public License
-    #along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    # You should have received a copy of the GNU General Public License
+    # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import sys
 import urllib2
 from imports import globals
+from imports import db_handler
 
 
 class Updater:
@@ -30,7 +31,8 @@ class Updater:
             with file(globals.vars.maldb_ver_file) as f:
                 return f.read()
         except IOError:
-            print("No malware DB version file found.\nPlease try to git clone the repository again.\n")
+            print(
+                "No malware DB version file found.\nPlease try to git clone the repository again.\n")
             return 0
 
     def update_db(self):
@@ -42,11 +44,13 @@ class Updater:
             with file(globals.vars.maldb_ver_file) as f:
                 f = f.read()
         except IOError:
-            print("No malware DB version file found.\nPlease try to git clone the repository again.\n")
+            print(
+                "No malware DB version file found.\nPlease try to git clone the repository again.\n")
             return 0
 
         curr_maldb_ver = f
-        response = urllib2.urlopen(globals.vars.giturl + globals.vars.maldb_ver_file)
+        response = urllib2.urlopen(
+            globals.vars.giturl + globals.vars.maldb_ver_file)
         new_maldb_ver = response.read()
         if new_maldb_ver == curr_maldb_ver:
             print globals.bcolors.GREEN + '[+]' + globals.bcolors.WHITE + " No need for an update.\n" + globals.bcolors.GREEN + '[+]' + globals.bcolors.WHITE + " You are at " + new_maldb_ver + " which is the latest version."
@@ -72,20 +76,24 @@ class Updater:
                 break
             file_size_dl += len(buffer)
             f.write(buffer)
-            status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
-            status = status + chr(8)*(len(status)+1)
+            status = r"%10d  [%3.2f%%]" % (
+                file_size_dl, file_size_dl * 100. / file_size)
+            status = status + chr(8) * (len(status) + 1)
         print status,
         f.close()
 
-    def get_malware(self, id, allmal):
-        #get mal location
-        loc = allmal[id][globals.vars.column_for_location]
-        #concat with location
-        ziploc = globals.vars.giturl + '/' + loc + '.zip'
-        passloc = globals.vars.giturl + '/' + loc + '.pass'
-        #get from git
+    def get_malware(self, id):
+        # get mal location
+        db = db_handler.DBHandler()
+        loc = db.query("SELECT LOCATION FROM MALWARES WHERE ID=?", id)[0][0]
+        name = loc.rsplit('/')[-1]
+        # concat with location
+        ziploc = globals.vars.giturl + 'malwares/' + loc + '/' + name + '.zip'
+        passloc = globals.vars.giturl + 'malwares/' + loc + '/' + name + '.pass'
+        print ziploc + '\n' + passloc
+        # get from git
         u = urllib2.urlopen(ziploc)
-        f = open(id+'zip', 'wb')
+        f = open(name + '.zip', 'wb')
         meta = u.info()
         file_size = int(meta.getheaders("Content-Length")[0])
         print "Downloading: %s Bytes: %s" % (loc, file_size)
@@ -97,14 +105,15 @@ class Updater:
                 break
             file_size_dl += len(buffer)
             f.write(buffer)
-            status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
-            status = status + chr(8)*(len(status)+1)
+            status = r"%10d  [%3.2f%%]" % (
+                file_size_dl, file_size_dl * 100. / file_size)
+            status = status + chr(8) * (len(status) + 1)
         print status,
         f.close()
 
-        #get pass from git
+        # get pass from git
         u = urllib2.urlopen(passloc)
-        f = open(id+'pass', 'wb')
+        f = open(name + '.pass', 'wb')
         meta = u.info()
         file_size = int(meta.getheaders("Content-Length")[0])
         print "Downloading: %s Bytes: %s" % (loc, file_size)
@@ -116,8 +125,9 @@ class Updater:
                 break
             file_size_dl += len(buffer)
             f.write(buffer)
-            status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
-            status = status + chr(8)*(len(status)+1)
+            status = r"%10d  [%3.2f%%]" % (
+                file_size_dl, file_size_dl * 100. / file_size)
+            status = status + chr(8) * (len(status) + 1)
         print status,
         f.close()
-        #alert ready
+        # alert ready
