@@ -16,7 +16,7 @@
     # You should have received a copy of the GNU General Public License
     # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import sys
-
+import os
 
 class init:
 
@@ -55,12 +55,20 @@ class init:
 
 
 class bcolors:
-    PURPLE = '\033[95m'
-    BLUE = '\033[94m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RED = '\033[91m'
-    WHITE = '\033[0m'
+		PURPLE = ''
+		BLUE = ''
+		GREEN = ''
+		YELLOW = ''
+		RED = ''
+		WHITE = ''
+		if os.name is not 'nt':
+			PURPLE = '\033[95m'
+			BLUE = '\033[94m'
+			GREEN = '\033[92m'
+			YELLOW = '\033[93m'
+			RED = '\033[91m'
+			WHITE = '\033[0m'
+		
 
 
 class vars:
@@ -99,22 +107,26 @@ class vars:
     eula_file = conf_folder + '/eula_run.conf'
     maldb_ver_file = conf_folder + '/db.ver'
     db_path = conf_folder + "/maldb.db"
-    giturl = 'https://raw.github.com/ytisf/theZoo/master/'
+    giturl_dl = 'https://github.com/ytisf/theZoo/raw/master/malwares/'
+    giturl = 'https://github.com/ytisf/theZoo'
 
     with file(maldb_ver_file) as f:
         db_ver = f.read()
+	maldb_banner = "\n"
+	maldb_banner += "        sMMs              oMMy      \n"
+	maldb_banner += "        :ooooo/        /ooooo:      \n"
+	maldb_banner += "        ```+MMd````````hMMo```      \n"
+	maldb_banner += "        oNNNMMMNNNNNNNNMMMNNNs      \n"
+	maldb_banner += "     /oodMMdooyMMMMMMMMyoodMMdoo/   \ttheZoo " + version + " beta\n"
+	maldb_banner += "  `..dMMMMMy. :MMMMMMMM/  sMMMMMm..`\t DB ver. " + db_ver + "\n"
+	maldb_banner += "  dmmMMMMMMNmmNMMMMMMMMNmmNMMMMMMmmm\n"
+	maldb_banner += "  NMMyoodMMMMMMMMMMMMMMMMMMMMdoosMMM\t" + giturl + "\n"
+	maldb_banner += "  NMM-  sMMMNNNNNNNNNNNNNNNMMy  .MMM\n"
+	maldb_banner += "  NMM-  sMMy``````````````sMMy  .MMM\n"
+	maldb_banner += "  ooo.  :ooooooo+    +ooooooo/  `ooo\n"
+	maldb_banner += "           /MMMMN    mMMMM+         \n"
+	maldb_banner += "                                 Authors: " + authors + "\n"
 
-    maldb_banner = "           __  ___      __                               ____  ____\n"
-    maldb_banner += "          /  |/  /___ _/ /      ______ _________        / __ \/ __ )\n"
-    maldb_banner += "         / /|_/ / __ `/ / | /| / / __ `/ ___/ _ \______/ / / / __ |\n"
-    maldb_banner += "        / /  / / /_/ / /| |/ |/ / /_/ / /  /  __/_____/ /_/ / /_/ /\n"
-    maldb_banner += "       /_/  /_/\__,_/_/ |__/|__/\__,_/_/   \___/     /_____/_____/\n\n"
-    maldb_banner += "                                version: " + \
-        version + "\n"
-    maldb_banner += "                                db_version: " + \
-        db_ver + "\n"
-    maldb_banner += "                                built by: " + \
-        authors + "\n\n"
 
     addrs = ['reverce_tcp/', 'crazy_mal/', 'mal/', 'show malwares']
     addrs = ['list', 'search', 'get', 'exit']

@@ -15,6 +15,7 @@
 
     # You should have received a copy of the GNU General Public License
     # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 import sys
 import urllib2
 from imports import globals
@@ -50,7 +51,7 @@ class Updater:
 
         curr_maldb_ver = f
         response = urllib2.urlopen(
-            globals.vars.giturl + globals.vars.maldb_ver_file)
+            globals.vars.giturl_dl_dl + globals.vars.maldb_ver_file)
         new_maldb_ver = response.read()
         if new_maldb_ver == curr_maldb_ver:
             print globals.bcolors.GREEN + '[+]' + globals.bcolors.WHITE + " No need for an update.\n" + globals.bcolors.GREEN + '[+]' + globals.bcolors.WHITE + " You are at " + new_maldb_ver + " which is the latest version."
@@ -62,7 +63,7 @@ class Updater:
         f.close()
 
         # Get the new CSV and update it
-        csvurl = globals.vars.giturl + globals.vars.main_csv_file
+        csvurl = globals.vars.giturl_dl_dl + globals.vars.main_csv_file
         u = urllib2.urlopen(csvurl)
         f = open(globals.vars.main_csv_file, 'wb')
         meta = u.info()
@@ -88,9 +89,8 @@ class Updater:
         loc = db.query("SELECT LOCATION FROM MALWARES WHERE ID=?", id)[0][0]
         name = loc.rsplit('/')[-1]
         # concat with location
-        ziploc = globals.vars.giturl + 'malwares/' + loc + '/' + name + '.zip'
-        passloc = globals.vars.giturl + 'malwares/' + loc + '/' + name + '.pass'
-        print ziploc + '\n' + passloc
+        ziploc = globals.vars.giturl_dl + loc + '/' + name + '.zip'
+        passloc = globals.vars.giturl_dl + loc + '/' + name + '.pass'
         # get from git
         u = urllib2.urlopen(ziploc)
         f = open(name + '.zip', 'wb')
@@ -108,9 +108,10 @@ class Updater:
             status = r"%10d  [%3.2f%%]" % (
                 file_size_dl, file_size_dl * 100. / file_size)
             status = status + chr(8) * (len(status) + 1)
-        print status,
+            sys.stdout.write('\r' + status)
+        print "\n"
         f.close()
-
+		 
         # get pass from git
         u = urllib2.urlopen(passloc)
         f = open(name + '.pass', 'wb')
@@ -128,6 +129,6 @@ class Updater:
             status = r"%10d  [%3.2f%%]" % (
                 file_size_dl, file_size_dl * 100. / file_size)
             status = status + chr(8) * (len(status) + 1)
-        print status,
+            sys.stdout.write('\r' + status)
+        print "\n"
         f.close()
-        # alert ready

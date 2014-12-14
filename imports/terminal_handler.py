@@ -62,13 +62,11 @@ class Controller:
             if re.match('^search', cmd):
                 manySearch = manysearches.MuchSearch()
                 num_args = len(cmd.rsplit(' '))
-                if num_args > 1:
+                try:
                     args = cmd.rsplit(' ')[1:]
-                    num_args = len(args)
-                    if num_args > 0:
-                        manySearch.sort(args)
-                else:
-                    print "Uh oh, Invalid search query"
+                    manySearch.sort(args)
+                except:
+                    print 'Uh oh, Invalid query.'
                 self.MainMenu()
 
             if cmd == 'exit':
@@ -121,11 +119,9 @@ class Controller:
                 updateHandler = Updater()
                 try:
                     updateHandler.get_malware(self.currentmodule)
-                    self.MainMenu()
                 except:
-                    print globals.bcolors.RED + '[-]' + globals.bcolors.WHITE + 'Error getting malware.'
-                    self.MainMenu()
-
+                    print globals.bcolors.RED + '[-] ' + globals.bcolors.WHITE + 'Error getting malware.'
+                self.MainMenu()
             # If used the 'use' command
             if re.match('^use', cmd):
                 try:

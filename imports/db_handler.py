@@ -26,7 +26,10 @@ class DBHandler:
 
     def query(self, query, param=''):
         try:
-            return self.cur.execute(query, param).fetchall()
+            if param is not '':
+                return self.cur.execute(query, param if type(param) is list else [param]).fetchall()
+            else:
+                return self.cur.execute(query).fetchall()
         except lite.Error as e:
             print "An error occurred:", e.args[0]
             sys.exit()
