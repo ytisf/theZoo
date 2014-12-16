@@ -20,7 +20,7 @@
 import sys
 import os
 from optparse import OptionParser
-from imports.updatehandler import Updater
+from imports.update_handler import Updater
 from imports import manysearches
 from imports import muchmuchstrings
 from imports.eula_handler import EULA

@@ -1,10 +1,9 @@
-import csv
 import sys
 import re
 
 import globals
 from imports import manysearches
-from imports.updatehandler import Updater
+from imports.update_handler import Updater
 from imports import db_handler
 
 
@@ -61,7 +60,6 @@ class Controller:
             # Checks if normal or freestyle search
             if re.match('^search', cmd):
                 manySearch = manysearches.MuchSearch()
-                num_args = len(cmd.rsplit(' '))
                 try:
                     args = cmd.rsplit(' ')[1:]
                     manySearch.sort(args)
@@ -73,8 +71,9 @@ class Controller:
                 sys.exit(1)
 
             if cmd == 'update-db':
-                updateHandler = Updater()
-                updateHandler.get_maldb_ver()
+                update_handler = Updater()
+                db_ver = update_handler.get_maldb_ver()
+                update_handler.update_db(db_ver)
                 self.MainMenu()
 
             if cmd == 'report-mal':
@@ -116,11 +115,11 @@ class Controller:
                 self.MainMenu()
 
             if cmd == 'get':
-                updateHandler = Updater()
-                #try:
-                updateHandler.get_malware(self.currentmodule)
-                #except:
-                print globals.bcolors.RED + '[-] ' + globals.bcolors.WHITE + 'Error getting malware.'
+                update_handler = Updater()
+                try:
+                    update_handler.get_malware(self.currentmodule)
+                except:
+                    print globals.bcolors.RED + '[-] ' + globals.bcolors.WHITE + 'Error getting malware.'
                 self.MainMenu()
             # If used the 'use' command
             if re.match('^use', cmd):

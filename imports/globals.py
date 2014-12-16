@@ -42,7 +42,6 @@ class init:
         eula_file = conf_folder + '/eula_run.conf'
         maldb_ver_file = conf_folder + '/db.ver'
         giturl = 'https://github.com/ytisf/theZoo/blob/master'
-        addrs = ['reverce_tcp/', 'crazy_mal/', 'mal/', 'show malwares']
 
 
 class bcolors:
@@ -69,7 +68,7 @@ class vars:
 
     ############ DEBUGGING ###############
     #### SET TO ZERO BEFORE COMMIT #######
-    
+
         # DEBUG_LEVEL 0 = NO DEBUGGING
         # DEBUG_LEVEL 1 = DEBUG DOWNLOADS
         # DEBUG_LEVEL 2 = DEBUG SQL QUERIES
@@ -106,14 +105,14 @@ class vars:
     eula_file = conf_folder + '/eula_run.conf'
     maldb_ver_file = conf_folder + '/db.ver'
     db_path = conf_folder + "/maldb.db"
-    giturl_dl = 'https://github.com/ytisf/theZoo/raw/master/malwares/'
+    giturl_dl = 'https://github.com/ytisf/theZoo/raw/master/'
     giturl = 'https://github.com/ytisf/theZoo'
 
     with file(maldb_ver_file) as f:
         db_ver = f.read()
 
     # ASCII Art is a must...
-    screen = random.randrange(1, 3)
+    screen = random.randrange(1, 4)
 
     if screen is 1:
         maldb_banner = "\n"
@@ -152,5 +151,12 @@ class vars:
         maldb_banner += "           `-.  |      __.-'\n"
         maldb_banner += "              `-|__.--'\n"
 
-    addrs = ['reverce_tcp/', 'crazy_mal/', 'mal/', 'show malwares']
-    addrs = ['list', 'search', 'get', 'exit']
+    elif screen is 3:
+        maldb_banner = "           __  ___      __                               ____  ____\n"
+        maldb_banner += "          /  |/  /___ _/ /      ______ _________        / __ \/ __ )\n"
+        maldb_banner += "         / /|_/ / __ `/ / | /| / / __ `/ ___/ _ \______/ / / / __ |\n"
+        maldb_banner += "        / /  / / /_/ / /| |/ |/ / /_/ / /  /  __/_____/ /_/ / /_/ /\n"
+        maldb_banner += "       /_/  /_/\__,_/_/ |__/|__/\__,_/_/   \___/     /_____/_____/\n\n"
+        maldb_banner += "                                version: " + version + "\n"
+        maldb_banner += "                                db_version: " + db_ver + "\n"
+        maldb_banner += "                                built by: " + authors + "\n\n"
