@@ -25,6 +25,8 @@ class DBHandler:
         return [val[0] for val in self.cur.execute("SELECT NAME FROM Malwares").fetchall()]
 
     def query(self, query, param=''):
+        if globals.vars.DEBUG_LEVEL is 2:
+            print locals()
         try:
             if param is not '':
                 return self.cur.execute(query, param if type(param) is list else [param]).fetchall()

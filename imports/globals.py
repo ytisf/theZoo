@@ -17,6 +17,8 @@
     # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import sys
 import os
+import random
+
 
 class init:
 
@@ -36,17 +38,6 @@ class init:
             ' -s search_query -t trojan -p vb\n\n'
         usage += 'The search engine can search by regular search or using specified arguments:\n\nOPTIONS:\n   -h  --help\t\tShow this message\n   -t  --type\t\tMalware type, can be virus/trojan/botnet/spyware/ransomeware.\n   -p  --language\tProgramming language, can be c/cpp/vb/asm/bin/java.\n   -u  --update\t\tUpdate malware index. Rebuilds main CSV file. \n   -s  --search\t\tSearch query for name or anything. \n   -v  --version\tPrint the version information.\n   -w\t\t\tPrint GNU license.\n'
 
-        column_for_pl = 6
-        column_for_type = 2
-        column_for_location = 1
-        colomn_for_time = 7
-        column_for_version = 4
-        column_for_name = 3
-        column_for_uid = 0
-        column_for_arch = 8
-        column_for_plat = 9
-        column_for_vip = 10
-
         conf_folder = 'conf'
         eula_file = conf_folder + '/eula_run.conf'
         maldb_ver_file = conf_folder + '/db.ver'
@@ -55,27 +46,35 @@ class init:
 
 
 class bcolors:
-		PURPLE = ''
-		BLUE = ''
-		GREEN = ''
-		YELLOW = ''
-		RED = ''
-		WHITE = ''
-		if os.name is not 'nt':
-			PURPLE = '\033[95m'
-			BLUE = '\033[94m'
-			GREEN = '\033[92m'
-			YELLOW = '\033[93m'
-			RED = '\033[91m'
-			WHITE = '\033[0m'
-		
+    PURPLE = ''
+    BLUE = ''
+    GREEN = ''
+    YELLOW = ''
+    RED = ''
+    WHITE = ''
+    if os.name is not 'nt':
+        PURPLE = '\033[95m'
+        BLUE = '\033[94m'
+        GREEN = '\033[92m'
+        YELLOW = '\033[93m'
+        RED = '\033[91m'
+        WHITE = '\033[0m'
 
 
 class vars:
-    version = "0.6.0 Moat"
+    version = "0.6.0 'Moat'"
     appname = "Malware DB"
     authors = "Yuval Nativ, Lahad Ludar, 5fingers"
     licensev = "GPL v3.0"
+
+    ############ DEBUGGING ###############
+    #### SET TO ZERO BEFORE COMMIT #######
+    
+        # DEBUG_LEVEL 0 = NO DEBUGGING
+        # DEBUG_LEVEL 1 = DEBUG DOWNLOADS
+        # DEBUG_LEVEL 2 = DEBUG SQL QUERIES
+    DEBUG_LEVEL = 0
+
     fulllicense = appname + " Copyright (C) 2014 " + authors + "\n"
     fulllicense += "This program comes with ABSOLUTELY NO WARRANTY; for details type '" + \
         sys.argv[0] + " -w'.\n"
@@ -112,21 +111,46 @@ class vars:
 
     with file(maldb_ver_file) as f:
         db_ver = f.read()
-	maldb_banner = "\n"
-	maldb_banner += "        sMMs              oMMy      \n"
-	maldb_banner += "        :ooooo/        /ooooo:      \n"
-	maldb_banner += "        ```+MMd````````hMMo```      \n"
-	maldb_banner += "        oNNNMMMNNNNNNNNMMMNNNs      \n"
-	maldb_banner += "     /oodMMdooyMMMMMMMMyoodMMdoo/   \ttheZoo " + version + " beta\n"
-	maldb_banner += "  `..dMMMMMy. :MMMMMMMM/  sMMMMMm..`\t DB ver. " + db_ver + "\n"
-	maldb_banner += "  dmmMMMMMMNmmNMMMMMMMMNmmNMMMMMMmmm\n"
-	maldb_banner += "  NMMyoodMMMMMMMMMMMMMMMMMMMMdoosMMM\t" + giturl + "\n"
-	maldb_banner += "  NMM-  sMMMNNNNNNNNNNNNNNNMMy  .MMM\n"
-	maldb_banner += "  NMM-  sMMy``````````````sMMy  .MMM\n"
-	maldb_banner += "  ooo.  :ooooooo+    +ooooooo/  `ooo\n"
-	maldb_banner += "           /MMMMN    mMMMM+         \n"
-	maldb_banner += "                                 Authors: " + authors + "\n"
 
+    # ASCII Art is a must...
+    screen = random.randrange(1, 3)
+
+    if screen is 1:
+        maldb_banner = "\n"
+        maldb_banner += "        sMMs              oMMy      \n"
+        maldb_banner += "        :ooooo/        /ooooo:      \n"
+        maldb_banner += "        ```+MMd````````hMMo```      \n"
+        maldb_banner += "        oNNNMMMNNNNNNNNMMMNNNs      \n"
+        maldb_banner += "     /oodMMdooyMMMMMMMMyoodMMdoo/   \ttheZoo " + version + "\n"
+        maldb_banner += "  `..dMMMMMy. :MMMMMMMM/  sMMMMMm..`\t DB ver. " + db_ver + "\n"
+        maldb_banner += "  dmmMMMMMMNmmNMMMMMMMMNmmNMMMMMMmmm\n"
+        maldb_banner += "  NMMyoodMMMMMMMMMMMMMMMMMMMMdoosMMM\t" + giturl + "\n"
+        maldb_banner += "  NMM-  sMMMNNNNNNNNNNNNNNNMMy  .MMM\n"
+        maldb_banner += "  NMM-  sMMy``````````````sMMy  .MMM\n"
+        maldb_banner += "  ooo.  :ooooooo+    +ooooooo/  `ooo\n"
+        maldb_banner += "           /MMMMN    mMMMM+         \n"
+        maldb_banner += "                                 Authors: " + authors + "\n"
+
+    elif screen is 2:
+        maldb_banner = "           ____.----. \n"
+        maldb_banner += " ____.----'          \ \n"
+        maldb_banner += "  \                    \ \ttheZoo " + version + "\n"
+        maldb_banner += "    \          ____.----'`--.__ \t" + giturl + "\n"
+        maldb_banner += "     \___.----'          |     `--.____\n"
+        maldb_banner += "    /`-._                |       __.-' \ \n"
+        maldb_banner += "   /     `-._            ___.---'       \ \n"
+        maldb_banner += "  /          `-.____.---'                \ \n"
+        maldb_banner += " '_         /   |   \            __.--'--'\n"
+        maldb_banner += "   `-._    /    |    \     __.--'     |\n"
+        maldb_banner += "     | `-./     |     \_.-'           |\n"
+        maldb_banner += "     |          |                     |\n"
+        maldb_banner += "     |          |      Free Malwares  |\n"
+        maldb_banner += "     |          |          & Hugs     |\n"
+        maldb_banner += "_____|          |                     |______\n"
+        maldb_banner += "     `-.        |  /\              _.-'\n"
+        maldb_banner += "        `-.     |  || UP    __..--'\n"
+        maldb_banner += "           `-.  |      __.-'\n"
+        maldb_banner += "              `-|__.--'\n"
 
     addrs = ['reverce_tcp/', 'crazy_mal/', 'mal/', 'show malwares']
     addrs = ['list', 'search', 'get', 'exit']

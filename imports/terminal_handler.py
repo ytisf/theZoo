@@ -117,10 +117,10 @@ class Controller:
 
             if cmd == 'get':
                 updateHandler = Updater()
-                try:
-                    updateHandler.get_malware(self.currentmodule)
-                except:
-                    print globals.bcolors.RED + '[-] ' + globals.bcolors.WHITE + 'Error getting malware.'
+                #try:
+                updateHandler.get_malware(self.currentmodule)
+                #except:
+                print globals.bcolors.RED + '[-] ' + globals.bcolors.WHITE + 'Error getting malware.'
                 self.MainMenu()
             # If used the 'use' command
             if re.match('^use', cmd):

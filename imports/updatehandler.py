@@ -87,16 +87,23 @@ class Updater:
         # get mal location
         db = db_handler.DBHandler()
         loc = db.query("SELECT LOCATION FROM MALWARES WHERE ID=?", id)[0][0]
-        name = loc.rsplit('/')[-1]
-        # concat with location
-        ziploc = globals.vars.giturl_dl + loc + '/' + name + '.zip'
-        passloc = globals.vars.giturl_dl + loc + '/' + name + '.pass'
+        print loc
+        self.download_from_repo(loc, '.zip')
+        self.download_from_repo(loc, '.pass')
+        self.download_from_repo(loc, '.md5')
+        self.download_from_repo(loc, '.sha256')
         # get from git
-        u = urllib2.urlopen(ziploc)
-        f = open(name + '.zip', 'wb')
+
+    def download_from_repo(self, mal_location, suffix):
+        if globals.vars.DEBUG_LEVEL is 1:
+            print locals()
+        file_name = mal_location.rsplit('/')[-1] + suffix
+        url = globals.vars.giturl_dl + mal_location + '/' + file_name
+        u = urllib2.urlopen(url)
+        f = open(file_name, 'wb')
         meta = u.info()
         file_size = int(meta.getheaders("Content-Length")[0])
-        print "Downloading: %s Bytes: %s" % (loc, file_size)
+        print "Downloading: %s Bytes: %s" % (file_name, file_size)
         file_size_dl = 0
         block_sz = 8192
         while True:
@@ -109,26 +116,4 @@ class Updater:
                 file_size_dl, file_size_dl * 100. / file_size)
             status = status + chr(8) * (len(status) + 1)
             sys.stdout.write('\r' + status)
-        print "\n"
-        f.close()
-		 
-        # get pass from git
-        u = urllib2.urlopen(passloc)
-        f = open(name + '.pass', 'wb')
-        meta = u.info()
-        file_size = int(meta.getheaders("Content-Length")[0])
-        print "Downloading: %s Bytes: %s" % (loc, file_size)
-        file_size_dl = 0
-        block_sz = 8192
-        while True:
-            buffer = u.read(block_sz)
-            if not buffer:
-                break
-            file_size_dl += len(buffer)
-            f.write(buffer)
-            status = r"%10d  [%3.2f%%]" % (
-                file_size_dl, file_size_dl * 100. / file_size)
-            status = status + chr(8) * (len(status) + 1)
-            sys.stdout.write('\r' + status)
-        print "\n"
         f.close()
