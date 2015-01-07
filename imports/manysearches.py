@@ -1,7 +1,7 @@
 from imports import globals
 from imports import db_handler
 from sys import exit
-
+from imports.prettytable import PrettyTable
 
 class MuchSearch(object):
 
@@ -56,8 +56,12 @@ class MuchSearch(object):
         return "and".join(qlist)
 
     def print_payloads(self, m, fields=["ID", "Type", "Language", "Architecture", "Platform", "Name"]):
-        print '\n' + ''.join("{0}\t".format(x) for x in fields)
-        print "-" * 12 * len(fields)
-        for col in m:
-            print ''.join("{0:<11}".format(x) for x in col)
+
+        table = PrettyTable(fields)
+        table.align["ID"] = "l"
+        table.align["Name"] = "l"
+        for malware in m:
+            table.add_row(malware)
+        print table
         print "\n"
+
