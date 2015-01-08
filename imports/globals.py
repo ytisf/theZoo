@@ -44,6 +44,23 @@ class init:
         giturl = 'https://github.com/ytisf/theZoo/blob/master'
 
 
+##########################################################
+class Completer:
+    def __init__(self, commands):
+        self.commands = commands
+        self.prefix = None
+
+    def complete(self, prefix, index):
+        if prefix != self.prefix:
+            self.matchingCommand = [w for w in self.commands if w.startswith(prefix)
+                ]
+            self.prefix = prefix
+        try:
+            return self.matchingCommand[index]
+        except IndexError:
+            return None
+################################################################
+
 class bcolors:
     PURPLE = ''
     BLUE = ''
