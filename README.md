@@ -120,9 +120,9 @@ The repository holding all files is currently
 - [X] Removed debugging function which were dead in the code.
 
 ## Predicted Change Log for v1.0
-- [ ] Fix auto-complete for malware frameworks.
+- [X] Fix auto-complete for malware frameworks. (thanks to 5fingers)
 - [ ] Better UI features.
-- [ ] Consider changing DB to XML or SQLite3.
+- [X] Consider changing DB to XML or SQLite3. (Sheksa - done :))
 
 
 If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuval[]morirt [dot]com  so we can add it for every one's enjoyment.
