@@ -1,11 +1,13 @@
 import sys
 import re
+import rlcompleter
+import readline
+
 
 import globals
 from imports import manysearches
 from imports.update_handler import Updater
 from imports import db_handler
-
 
 class Controller:
 
@@ -22,6 +24,8 @@ class Controller:
                          ("help", "Displays this help..."),
                          ("exit", "Exits...")]
 
+	self.commandsWithoutDiscription = ['search', 'list all', 'use', 'get', 'report-mal', 'update-db', 'help', 'exit']
+
         self.searchmeth = [("arch", "which architecture etc; x86, x64, arm7 so on..."),
                            ("plat",
                             "platform: win32, win64, mac, android so on..."),
@@ -29,9 +33,14 @@ class Controller:
                            ("vip", "1 or 0")]
 
         self.modules = self.GetPayloads()
+	completer = Completer(self.commandsWithoutDiscription)
+
+	readline.parse_and_bind("tab: complete")
+	readline.set_completer(completer.complete)
 
     def GetPayloads(self):
         return self.db.get_full_details()
+
 
     def MainMenu(self):
         # This will give you the nice prompt you like so much
