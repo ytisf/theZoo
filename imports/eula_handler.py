@@ -41,7 +41,7 @@ class EULA:
         print globals.bcolors.RED
         print '_____________________________________________________________________________'
         print '|                 ATTENTION!!! ATTENTION!!! ATTENTION!!!                    |'
-        print '|                       ' + globals.vars.appname + ' v' + globals.vars.version + '                               |'
+        print '|                       ' + globals.vars.appname + ' v' + globals.vars.version + '                            |'
         print '|___________________________________________________________________________|'
         print '|This program contains live and dangerous malware files                     |'
         print '|This program is intended to be used only for malware analysis and research |'

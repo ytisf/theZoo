@@ -1,9 +1,11 @@
 import sys
 import re
 import rlcompleter
-import readline
-
-
+try:
+    import readline
+except ImportError:
+    from imports import winreadline as readline
+	
 import globals
 from imports import manysearches
 from imports.update_handler import Updater
@@ -24,7 +26,7 @@ class Controller:
                          ("help", "Displays this help..."),
                          ("exit", "Exits...")]
 
-	self.commandsWithoutDiscription = ['search', 'list all', 'use', 'get', 'report-mal', 'update-db', 'help', 'exit']
+        self.commandsWithoutDescription = {'search':'', 'list all':'', 'use':'', 'get':'', 'report-mal':'', 'update-db':'', 'help':'', 'exit':''}
 
         self.searchmeth = [("arch", "which architecture etc; x86, x64, arm7 so on..."),
                            ("plat",
@@ -33,10 +35,10 @@ class Controller:
                            ("vip", "1 or 0")]
 
         self.modules = self.GetPayloads()
-	completer = Completer(self.commandsWithoutDiscription)
+        completer = globals.Completer(self.commandsWithoutDescription)
 
-	readline.parse_and_bind("tab: complete")
-	readline.set_completer(completer.complete)
+        readline.parse_and_bind("tab: complete")
+        readline.set_completer(completer.complete)
 
     def GetPayloads(self):
         return self.db.get_full_details()
@@ -44,27 +46,31 @@ class Controller:
 
     def MainMenu(self):
         # This will give you the nice prompt you like so much
-        if len(self.currentmodule) > 0:
-            g = int(self.currentmodule) - 1
-            just_print = self.modules[
-                int(g)][int(globals.vars.column_for_name)]
-            cmd = raw_input(
-                globals.bcolors.GREEN + 'mdb ' + globals.bcolors.RED + str(
-                    just_print) + globals.bcolors.GREEN + '#> ' + globals.bcolors.WHITE).strip()
-        else:
-            cmd = raw_input(
-                globals.bcolors.GREEN + 'mdb ' + globals.bcolors.GREEN + '#> ' + globals.bcolors.WHITE).strip()
+        while (True): # Dont hate
+            if len(self.currentmodule) > 0:
+                g = int(self.currentmodule) - 1
+                just_print = self.modules[
+                    int(g)][int(globals.vars.column_for_name)]
+                cmd = raw_input(
+                    globals.bcolors.GREEN + 'mdb ' + globals.bcolors.RED + str(
+                        just_print) + globals.bcolors.GREEN + '#> ' + globals.bcolors.WHITE).strip()
+            else:
+                cmd = raw_input(
+                    globals.bcolors.GREEN + 'mdb ' + globals.bcolors.GREEN + '#> ' + globals.bcolors.WHITE).strip()
+            self.actOnCommand(cmd)
+
+    def actOnCommand(self, cmd):
         try:
             while cmd == "":
                 # print 'no cmd'
-                self.MainMenu()
+                return
 
             if cmd == 'help':
                 print " Available commands:\n"
                 for (cmd, desc) in self.commands:
                     print "\t%s\t%s" % ('{0: <12}'.format(cmd), desc)
                 print ''
-                self.MainMenu()
+                return
 
             # Checks if normal or freestyle search
             if re.match('^search', cmd):
@@ -74,7 +80,7 @@ class Controller:
                     manySearch.sort(args)
                 except:
                     print 'Uh oh, Invalid query.'
-                self.MainMenu()
+                return
 
             if cmd == 'exit':
                 sys.exit(1)
@@ -83,7 +89,7 @@ class Controller:
                 update_handler = Updater()
                 db_ver = update_handler.get_maldb_ver()
                 update_handler.update_db(db_ver)
-                self.MainMenu()
+                return
 
             if cmd == 'report-mal':
                 rprt_name = raw_input("Name of malware: ")
@@ -121,7 +127,7 @@ class Controller:
                 print "And attach it to the email. "
                 print("Please send this report to %s" % email)
 
-                self.MainMenu()
+                return
 
             if cmd == 'get':
                 update_handler = Updater()
@@ -129,7 +135,7 @@ class Controller:
                     update_handler.get_malware(self.currentmodule)
                 except:
                     print globals.bcolors.RED + '[-] ' + globals.bcolors.WHITE + 'Error getting malware.'
-                self.MainMenu()
+                return
             # If used the 'use' command
             if re.match('^use', cmd):
                 try:
@@ -138,7 +144,7 @@ class Controller:
                     cmd = ''
                 except:
                     print 'The use method needs an argument.'
-                self.MainMenu()
+                return
 
             if cmd == 'list all':
                 print "\nAvailable Payloads:"
@@ -154,7 +160,7 @@ class Controller:
                         '{0: <12}'.format(array[i][globals.vars.column_for_type]))
                     print answer
                     i = i + 1
-                self.MainMenu()
+                return
 
             if cmd == 'quit':
                 print ":("
