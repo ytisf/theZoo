@@ -5,17 +5,18 @@ try:
     import readline
 except ImportError:
     from imports import winreadline as readline
-	
+
 import globals
 from imports import manysearches
 from imports.update_handler import Updater
 from imports import db_handler
 
+
 class Controller:
 
     def __init__(self):
         self.modules = None
-        self.currentmodule = ''
+        self.currentmodule = None
         self.db = db_handler.DBHandler()
         self.commands = [("search", "Search for malwares according to a filter,\n\t\t\te.g 'search cpp worm'."),
                          ("list all", "Lists all available modules"),
@@ -26,7 +27,8 @@ class Controller:
                          ("help", "Displays this help..."),
                          ("exit", "Exits...")]
 
-        self.commandsWithoutDescription = {'search':'', 'list all':'', 'use':'', 'get':'', 'report-mal':'', 'update-db':'', 'help':'', 'exit':''}
+        self.commandsWithoutDescription = {'search': '', 'list all': '', 'use': '',
+                                           'get': '', 'report-mal': '', 'update-db': '', 'help': '', 'exit': ''}
 
         self.searchmeth = [("arch", "which architecture etc; x86, x64, arm7 so on..."),
                            ("plat",
@@ -43,20 +45,24 @@ class Controller:
     def GetPayloads(self):
         return self.db.get_full_details()
 
-
     def MainMenu(self):
         # This will give you the nice prompt you like so much
-        while (True): # Dont hate
-            if len(self.currentmodule) > 0:
-                g = int(self.currentmodule) - 1
-                just_print = self.modules[
-                    int(g)][int(globals.vars.column_for_name)]
-                cmd = raw_input(
-                    globals.bcolors.GREEN + 'mdb ' + globals.bcolors.RED + str(
-                        just_print) + globals.bcolors.GREEN + '#> ' + globals.bcolors.WHITE).strip()
-            else:
-                cmd = raw_input(
-                    globals.bcolors.GREEN + 'mdb ' + globals.bcolors.GREEN + '#> ' + globals.bcolors.WHITE).strip()
+        while (True):  # Dont hate, affiliate
+            try:
+                if self.currentmodule is not None:
+                    g = self.currentmodule - 1
+                    just_print = self.modules[g][int(globals.vars.column_for_name)]
+                    cmd = raw_input(
+                        globals.bcolors.GREEN + 'mdb ' + globals.bcolors.RED + str(
+                            just_print) + globals.bcolors.GREEN + '#> ' + globals.bcolors.WHITE).strip()
+                else:
+                    cmd = raw_input(
+                        globals.bcolors.GREEN + 'mdb ' + globals.bcolors.GREEN + '#> ' + globals.bcolors.WHITE).strip()
+            except KeyboardInterrupt:
+                print globals.bcolors.BLUE + "\n\n[*]" + globals.bcolors.WHITE \
+                    + " Hope you enjoyed your visit at" + globals.bcolors.RED + " theZoo!" + globals.bcolors.WHITE
+                exit()
+
             self.actOnCommand(cmd)
 
     def actOnCommand(self, cmd):
@@ -79,7 +85,7 @@ class Controller:
                     args = cmd.rsplit(' ')[1:]
                     manySearch.sort(args)
                 except:
-                    print 'Uh oh, Invalid query.'
+                    print globals.bcolors.RED + '[!]' + globals.bcolors.WHITE + 'Uh oh, Invalid query.'
                 return
 
             if cmd == 'exit':
@@ -140,8 +146,10 @@ class Controller:
             if re.match('^use', cmd):
                 try:
                     cmd = re.split('\s+', cmd)
-                    self.currentmodule = cmd[1]
+                    self.currentmodule = int(cmd[1])
                     cmd = ''
+                except TypeError:
+                    print 'Please enter malware ID'
                 except:
                     print 'The use method needs an argument.'
                 return

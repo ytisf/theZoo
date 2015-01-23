@@ -1,13 +1,14 @@
 from imports import globals
 from imports import db_handler
-from sys import exit
 from imports.prettytable import PrettyTable
+
 
 class MuchSearch(object):
 
     def __init__(self):
         self.db = db_handler.DBHandler()
         self.names = [x.lower() for x in self.db.get_mal_names()]
+        self.tags = [x.lower() for x in self.db.get_mal_tags()]
 
     #:todo: make this more efficient
     def sort(self, args):
@@ -15,6 +16,7 @@ class MuchSearch(object):
         self.query = None
         self.param = None
         self.prequery = "SELECT ID, TYPE, LANGUAGE, ARCHITECTURE, PLATFORM, NAME FROM MALWARES WHERE "
+        self.postquery = " COLLATE NOCASE"
         self.ar = []
         args = [x.lower() for x in args]
 
@@ -23,6 +25,10 @@ class MuchSearch(object):
                 for value in values:
                     if arg in value:
                         self.hits.update({optname: value})
+        # Search by Tag
+        for arg in args:
+            if arg in self.tags:
+                self.hits.update({'tags': arg})
         # Malware name checking has its own iterations to avoid false matches
         if not self.hits:
             for arg in args:
@@ -33,18 +39,17 @@ class MuchSearch(object):
 
         if len(self.hits) > 0:
             self.query = self.build_query(self.hits)
-            self.ar = self.db.query(self.prequery + self.query)
+            self.ar = self.db.query(self.prequery + self.query + self.postquery)
             self.print_payloads(self.ar)
         elif self.param is not None:
             self.ar = self.db.query(self.prequery + self.query, [self.param])
             self.print_payloads(self.ar)
         else:
-            print "Error: filter did not match any malware :("
-            exit()
+            print globals.bcolors.RED + "[!] " + globals.bcolors.WHITE + "Filter did not match any malware :(\n"
 
         return self.hits
 
-    # Build the dynamic query
+    # Dynamicly build the query
     def build_query(self, dic):
         qlist = []
         for key, val in dic.items():
@@ -64,4 +69,4 @@ class MuchSearch(object):
             table.add_row(malware)
         print table
         print "\n"
-
+        print globals.bcolors.GREEN + "[+]" + globals.bcolors.WHITE + " Total records found: %s" % len(m)

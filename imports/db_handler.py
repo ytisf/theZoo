@@ -23,9 +23,11 @@ class DBHandler:
 
         # Sqlite3 returns a tuple even if a single value is returned
         # We use x[0] for x to unpack the tuples
-
         return [val[0] for val in self.cur.execute("SELECT NAME FROM Malwares").fetchall()]
 
+    def get_mal_tags(self):
+        return [val[0] for val in self.cur.execute("SELECT DISTINCT TAGS From Malwares WHERE TAGS IS NOT NULL").fetchall()]
+		
     def query(self, query, param=''):
         if globals.vars.DEBUG_LEVEL is 2:
             print locals()

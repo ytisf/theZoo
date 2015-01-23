@@ -19,7 +19,6 @@ import sys
 import os
 import random
 
-
 class init:
 
     def init(self):
@@ -115,7 +114,7 @@ class vars:
     opts = [
         ("type", ("virus", "worm", "ransomware", "botnet", "apt", "rootkit", "trojan", "exploitkit", "dropper")),
         ("architecture", ("x86", "x64", "arm", "web")),
-        ("platform", ("win32", "win64", "android", "ios", "mac", "*nix32", "*nix64")),
+        ("platform", ("win32", "win64", "android", "ios", "mac", "*nix32", "*nix64", "symbian")),
         ("language", ("c", "cpp", "asm", "bin", "java", "apk", "vb", "php"))]
 
     conf_folder = 'conf'
