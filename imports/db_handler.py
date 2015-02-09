@@ -27,7 +27,10 @@ class DBHandler:
 
     def get_mal_tags(self):
         return [val[0] for val in self.cur.execute("SELECT DISTINCT TAGS From Malwares WHERE TAGS IS NOT NULL").fetchall()]
-		
+
+    def get_mal_info(self, mid):
+        return self.cur.execute("SELECT TYPE, NAME, VERSION, AUTHOR, LANGUAGE, DATE, ARCHITECTURE, PLATFORM, TAGS From Malwares WHERE ID =" + str(mid)).fetchall()
+
     def query(self, query, param=''):
         if globals.vars.DEBUG_LEVEL is 2:
             print locals()

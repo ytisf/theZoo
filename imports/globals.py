@@ -60,21 +60,6 @@ class Completer:
             return None
 ################################################################
 
-class bcolors:
-    PURPLE = ''
-    BLUE = ''
-    GREEN = ''
-    YELLOW = ''
-    RED = ''
-    WHITE = ''
-    if os.name is not 'nt':
-        PURPLE = '\033[95m'
-        BLUE = '\033[94m'
-        GREEN = '\033[92m'
-        YELLOW = '\033[93m'
-        RED = '\033[91m'
-        WHITE = '\033[0m'
-
 
 class vars:
     version = "0.6.0 'Moat'"

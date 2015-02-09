@@ -10,6 +10,7 @@ import globals
 from imports import manysearches
 from imports.update_handler import Updater
 from imports import db_handler
+from imports.colors import *
 
 
 class Controller:
@@ -21,6 +22,7 @@ class Controller:
         self.commands = [("search", "Search for malwares according to a filter,\n\t\t\te.g 'search cpp worm'."),
                          ("list all", "Lists all available modules"),
                          ("use", "Selects a malware by ID"),
+                         ("info", "Retreives information about malware"),
                          ("get", "Downloads selected malware"),
                          ("report-mal", "Report a malware you found"),
                          ("update-db", "Updates the databse"),
@@ -53,14 +55,12 @@ class Controller:
                     g = self.currentmodule - 1
                     just_print = self.modules[g][int(globals.vars.column_for_name)]
                     cmd = raw_input(
-                        globals.bcolors.GREEN + 'mdb ' + globals.bcolors.RED + str(
-                            just_print) + globals.bcolors.GREEN + '#> ' + globals.bcolors.WHITE).strip()
+                        bold(green('mdb ')) + bold(blue(just_print)) + green('#> ')).strip()
                 else:
                     cmd = raw_input(
-                        globals.bcolors.GREEN + 'mdb ' + globals.bcolors.GREEN + '#> ' + globals.bcolors.WHITE).strip()
+                        bold(green('mdb ')) + green('#> ')).strip()
             except KeyboardInterrupt:
-                print globals.bcolors.BLUE + "\n\n[*]" + globals.bcolors.WHITE \
-                    + " Hope you enjoyed your visit at" + globals.bcolors.RED + " theZoo!" + globals.bcolors.WHITE
+                print bold(blue("\n\n[*]")) + " Hope you enjoyed your visit at" + bold(red(" theZoo")) + "!"
                 exit()
 
             self.actOnCommand(cmd)
@@ -85,7 +85,7 @@ class Controller:
                     args = cmd.rsplit(' ')[1:]
                     manySearch.sort(args)
                 except:
-                    print globals.bcolors.RED + '[!]' + globals.bcolors.WHITE + 'Uh oh, Invalid query.'
+                    print red('[!]') + 'Uh oh, Invalid query.'
                 return
 
             if cmd == 'exit':
@@ -140,7 +140,7 @@ class Controller:
                 try:
                     update_handler.get_malware(self.currentmodule)
                 except:
-                    print globals.bcolors.RED + '[-] ' + globals.bcolors.WHITE + 'Error getting malware.'
+                    print red('[-] ') + 'Error getting malware.'
                 return
             # If used the 'use' command
             if re.match('^use', cmd):
@@ -168,6 +168,15 @@ class Controller:
                         '{0: <12}'.format(array[i][globals.vars.column_for_type]))
                     print answer
                     i = i + 1
+                return
+
+            if cmd == 'info':
+                if self.currentmodule is None:
+                    print red("[!] ") + "First select a malware using the \'use\' command"
+                    return
+                m = self.db.get_mal_info(self.currentmodule)
+                manySearch = manysearches.MuchSearch()
+                manySearch.print_payloads(m, ["%", "Name", "Ver.", "Author", "Lang", "Date", "Arch.", "Plat.", "Tags"])
                 return
 
             if cmd == 'quit':

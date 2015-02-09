@@ -21,7 +21,7 @@ from os import remove, rename
 import urllib2
 from imports import globals
 from imports import db_handler
-
+from imports.colors import *
 
 class Updater:
 
@@ -51,11 +51,11 @@ class Updater:
             globals.vars.giturl_dl + globals.vars.maldb_ver_file)
         new_maldb_ver = response.read()
         if new_maldb_ver == curr_db_version:
-            print globals.bcolors.GREEN + '[+]' + globals.bcolors.WHITE + " theZoo is up to date :)\n" + globals.bcolors.GREEN + '[+]' + globals.bcolors.WHITE + " You are at " + new_maldb_ver + " which is the latest version."
+            print green('[+]') + " theZoo is up to date.\n" + green('[+]') + " You are at " + new_maldb_ver + " which is the latest version."
             return
 
-        print globals.bcolors.RED + '[+]' + globals.bcolors.WHITE + " A newer version is available: " + new_maldb_ver + "!"
-        print globals.bcolors.RED + '[+]' + globals.bcolors.WHITE + " Updating..."
+        print red('[+]') + " A newer version is available: " + new_maldb_ver + "!"
+        print red('[+]') + " Updating..."
 
         # Get the new DB and update it
 
@@ -84,7 +84,8 @@ class Updater:
         self.download_from_repo(loc, '.pass')
         self.download_from_repo(loc, '.md5')
         self.download_from_repo(loc, '.sha256')
-
+        print bold(green("[+]")) + " Successfully downloaded a new friend.\n"
+		
     def download_from_repo(self, filepath, suffix=''):
         if globals.vars.DEBUG_LEVEL is 1:
             print locals()

@@ -1,7 +1,7 @@
 from imports import globals
 from imports import db_handler
 from imports.prettytable import PrettyTable
-
+from imports.colors import *
 
 class MuchSearch(object):
 
@@ -45,7 +45,7 @@ class MuchSearch(object):
             self.ar = self.db.query(self.prequery + self.query, [self.param])
             self.print_payloads(self.ar)
         else:
-            print globals.bcolors.RED + "[!] " + globals.bcolors.WHITE + "Filter did not match any malware :(\n"
+            print red("[!]") + " Filter did not match any malware :(\n"
 
         return self.hits
 
@@ -60,13 +60,11 @@ class MuchSearch(object):
             qlist.append(' ' + tmp + ' ')
         return "and".join(qlist)
 
-    def print_payloads(self, m, fields=["ID", "Type", "Language", "Architecture", "Platform", "Name"]):
+    def print_payloads(self, m, fields=["#", "Type", "Language", "Architecture", "Platform", "Name"]):
 
         table = PrettyTable(fields)
-        table.align["ID"] = "l"
-        table.align["Name"] = "l"
+        table.align = "l"
         for malware in m:
             table.add_row(malware)
         print table
-        print "\n"
-        print globals.bcolors.GREEN + "[+]" + globals.bcolors.WHITE + " Total records found: %s" % len(m)
+        print bold(green("[+]")) + " Total records found: %s" % len(m) + "\n"

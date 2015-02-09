@@ -19,7 +19,7 @@
 import sys
 import os
 from imports import globals
-
+from imports.colors import *
 
 class EULA:
 
@@ -38,20 +38,19 @@ class EULA:
     def prompt_eula(self):
         globals.init()
         os.system('cls' if os.name == 'nt' else 'clear')
-        print globals.bcolors.RED
-        print '_____________________________________________________________________________'
-        print '|                 ATTENTION!!! ATTENTION!!! ATTENTION!!!                    |'
-        print '|                       ' + globals.vars.appname + ' v' + globals.vars.version + '                            |'
-        print '|___________________________________________________________________________|'
-        print '|This program contains live and dangerous malware files                     |'
-        print '|This program is intended to be used only for malware analysis and research |'
-        print '|and by agreeing the EULA you agree to only use it for legal purposes and   |'
-        print '|studying malware.                                                          |'
-        print '|You understand that these file are dangerous and should only be run on VMs |'
-        print '|you can control and know how to handle. Running them on a live system will |'
-        print '|infect you machines will live and dangerous malwares!.                     |'
-        print '|___________________________________________________________________________|'
-        print globals.bcolors.WHITE
+        notice = '_____________________________________________________________________________\n'
+        notice += '|                 ATTENTION!!! ATTENTION!!! ATTENTION!!!                    |\n'
+        notice += '|                       ' + globals.vars.appname + ' v' + globals.vars.version + '                            |\n'
+        notice += '|___________________________________________________________________________|\n'
+        notice += '|This program contains live and dangerous malware files                     |\n'
+        notice += '|This program is intended to be used only for malware analysis and research |\n'
+        notice += '|and by agreeing the EULA you agree to only use it for legal purposes and   |\n'
+        notice += '|studying malware.                                                          |\n'
+        notice += '|You understand that these file are dangerous and should only be run on VMs |\n'
+        notice += '|you can control and know how to handle. Running them on a live system will |\n'
+        notice += '|infect you machines will live and dangerous malwares!.                     |\n'
+        notice += '|___________________________________________________________________________|\n'
+        print red(notice)
         eula_answer = raw_input(
             'Type YES in captial letters to accept this EULA.\n > ')
         if eula_answer == 'YES':
