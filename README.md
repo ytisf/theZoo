@@ -15,7 +15,7 @@ We recommend running them in a VM which has no internet connection (or an intern
 GPL 3
 ======
 theZoo - the most awesome free malware database on the air 
-Copyright (C) 2014, Yuval Nativ, Lahad Ludar, 5fingers
+Copyright (C) 2015, Yuval Nativ, Lahad Ludar, 5fingers
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -76,6 +76,8 @@ The structure is as follows:
 - Date	-	See 'Author' section.
 - Architecture -    The arch the platform was build for. Can be x86, x64, arm7....
 - Platform -    Win32, Win64, *nix32, *nix64, iOS, android and so on.
+- Comments - Any comments there may be about the item.
+- Tags - Tags matching the item.
 
 An example line will look as follow:
 
