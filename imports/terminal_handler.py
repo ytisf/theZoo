@@ -29,7 +29,7 @@ class Controller:
                          ("help", "Displays this help..."),
                          ("exit", "Exits...")]
 
-        self.commandsWithoutDescription = {'search': '', 'list all': '', 'use': '',
+        self.commandsWithoutDescription = {'search': '', 'list all': '', 'use': '', 'info': '',
                                            'get': '', 'report-mal': '', 'update-db': '', 'help': '', 'exit': ''}
 
         self.searchmeth = [("arch", "which architecture etc; x86, x64, arm7 so on..."),
@@ -52,8 +52,7 @@ class Controller:
         while (True):  # Dont hate, affiliate
             try:
                 if self.currentmodule is not None:
-                    g = self.currentmodule - 1
-                    just_print = self.modules[g][int(globals.vars.column_for_name)]
+                    just_print = self.db.query("SELECT NAME FROM Malwares WHERE ID=?", self.currentmodule)[0][0]
                     cmd = raw_input(
                         bold(green('mdb ')) + bold(blue(just_print)) + green('#> ')).strip()
                 else:
@@ -156,18 +155,8 @@ class Controller:
 
             if cmd == 'list all':
                 print "\nAvailable Payloads:"
-                array = self.modules
-                i = 0
-                print "ID\tName\tType"
-                print '-----------------'
-                for element in array:
-                    answer = str(array[i][globals.vars.column_for_uid])
-                    answer += '\t%s' % (
-                        '{0: <12}'.format(array[i][globals.vars.column_for_name]))
-                    answer += '\t%s' % (
-                        '{0: <12}'.format(array[i][globals.vars.column_for_type]))
-                    print answer
-                    i = i + 1
+                manySearch = manysearches.MuchSearch()
+                manySearch.print_payloads(self.db.get_mal_list(), ["%", "Name", "Type"])
                 return
 
             if cmd == 'info':

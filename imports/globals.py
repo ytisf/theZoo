@@ -85,17 +85,6 @@ class vars:
 
     # :todo: add filter usage
 
-    column_for_pl = 6
-    column_for_type = 2
-    column_for_location = 1
-    colomn_for_time = 7
-    column_for_version = 4
-    column_for_name = 3
-    column_for_uid = 0
-    column_for_arch = 8
-    column_for_plat = 9
-    column_for_vip = 10
-
     opts = [
         ("type", ("virus", "worm", "ransomware", "botnet", "apt", "rootkit", "trojan", "exploitkit", "dropper")),
         ("architecture", ("x86", "x64", "arm", "web")),

@@ -19,6 +19,9 @@ class DBHandler:
     def get_partial_details(self):
         return self.cur.execute("SELECT ID, TYPE, LANGUAGE, ARCHITECTURE, PLATFORM, NAME FROM Malwares").fetchall()
 
+    def get_mal_list(self):
+        return self.cur.execute("SELECT ID, NAME, TYPE From Malwares").fetchall()
+		
     def get_mal_names(self):
 
         # Sqlite3 returns a tuple even if a single value is returned

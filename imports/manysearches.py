@@ -61,7 +61,6 @@ class MuchSearch(object):
         return "and".join(qlist)
 
     def print_payloads(self, m, fields=["#", "Type", "Language", "Architecture", "Platform", "Name"]):
-
         table = PrettyTable(fields)
         table.align = "l"
         for malware in m:

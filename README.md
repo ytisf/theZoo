@@ -3,6 +3,7 @@ About
 theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a way which will allow analysis we have decided to gather all of them for you in an available and safe way.
 theZoo was born by Yuval tisf Nativ and is now maintained by Shahak Shalev. 
 
+**theZoo is open and welcoming visitors!**
 Disclaimer
 ==========
 theZoo's purpose is to allow the study of malware and enable people who are interested in malware analysis or maybe even as a part of their job to have access to live malware, analyse the  ways they operate and maybe even enable advanced and savvy  people to block specific malwares within their own environment.
@@ -35,20 +36,20 @@ Documentation and Notes
 ========================
 
 ## Background:
-The idea behind theZoo is to allow it to be modular and let you add malware of your own. Each malware should have a directory of it's own. 
+theZoo's objective is to offer a fast and easy way of retrieving malware samples and source code in an organized fashion in hopes of promoting malware research.
 
 ## Root Files:
-Since version 0.42 theZoo have been going dramatic changes. It now runs in both CLI and ARGVS mode. You can call the program with the same command line arguments as before.
-The current default state of theZoo runtime is the CLI which is inspired by MSF. The following files and directories are responsible for the application's behaviour.
+Since version 0.42 theZoo have been going dramatic changes. It now runs both CLI and ARGVS modes. You can call the program with the same command line arguments as before.
+The current default state of theZoo runtime is the CLI. The following files and directories are responsible for the application's behaviour.
 
 ### /conf
 The conf folder holds files relevant to the particular running of the program but are not part of the application. You can find the EULA file in the conf and more.
 ### /imports
 Contains .py and .pyc import files used by the rest of the application
-### /malwares
-The actual malwares - be careful!
-### /mdbv0.2
-Since mdbv0.2 is stable for the command line arguments (where as of 0.42 we are not yet completely sure) and since the size is relativly small we have left out the beta version for those who are interested in it or got used to it. In next version we will confirm arguments as should be.
+### /malwares/Binaries
+The actual malwares samples - be careful!
+### /malware/Source
+Malware source code :)
 
 
 ## Directory Structure:
@@ -64,7 +65,7 @@ Each directory is composed of 4 files:
 maldb.db is the DB which theZoo is acting upon to find malwares indexed on your drive.
 The structure is as follows:
 
-	uid,location,type,name,version,author,language,date
+	uid,location,type,name,version,author,language,date,architecture,platform,comments,tags
 
 - UID 	-	Determined based on the indexing process.
 - Location 	The location on the drive of the malware you have searched for.
@@ -81,8 +82,7 @@ The structure is as follows:
 
 An example line will look as follow:
 
-    4,Source/Original/rBot0.3.3_May2004/rBot0.3.3_May2004,botnet,rBot,0.3.3,unknown,cpp,00/05/2004,x86,win32
-
+    104,Source/Original/Dexter,trojan,Dexter,2,unknown,c,00/05/2013,x86,win32,NULL,Source
 
 Bugs and Reports
 ================
@@ -123,8 +123,8 @@ The repository holding all files is currently
 
 ## Predicted Change Log for v1.0
 - [X] Fix auto-complete for malware frameworks. (thanks to 5fingers)
-- [ ] Better UI features.
 - [X] Consider changing DB to XML or SQLite3. (Sheksa - done :))
-
+- [ ] Move malwares to another repo.
+- [ ] Better UI features.
 
 If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuval[]morirt [dot]com  so we can add it for every one's enjoyment.
