@@ -1,16 +1,16 @@
 About
 ======
-theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a way which will allow analysis we have decided to gather all of them for you in an available and safe way.
+theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a way which will allow analysis, we have decided to gather all of them for you in an accessible and safe way.
 theZoo was born by Yuval tisf Nativ and is now maintained by Shahak Shalev. 
 
 **theZoo is open and welcoming visitors!**
 Disclaimer
 ==========
-theZoo's purpose is to allow the study of malware and enable people who are interested in malware analysis or maybe even as a part of their job to have access to live malware, analyse the  ways they operate and maybe even enable advanced and savvy  people to block specific malwares within their own environment.
+theZoo's purpose is to allow the study of malware and enable people who are interested in malware analysis (or maybe even as a part of their job) to have access to live malware, analyse the ways they operate, and maybe even enable advanced and savvy  people to block specific malware within their own environment.
 
 **Please remember that these are live and dangerous malware! They come encrypted and locked for a reason!  Do NOT run them unless you are absolutely sure of what you are doing! They are to be used only for educational purposes (and we mean that!) !!!**
 
-We recommend running them in a VM which has no internet connection (or an internal virtual network if you must) and without guest additions or any equivalents. Some of them are worms and will automatically try to spread out. Running them unconstrained meaning the you **will infect yourself or others with vicious and dangerous malwares!!!**
+We recommend running them in a VM which has no internet connection (or an internal virtual network if you must) and without guest additions or any equivalents. Some of them are worms and will automatically try to spread out. Running them unconstrained means that you **will infect yourself or others with vicious and dangerous malware!!!**
 
 
 GPL 3
@@ -39,7 +39,7 @@ Documentation and Notes
 theZoo's objective is to offer a fast and easy way of retrieving malware samples and source code in an organized fashion in hopes of promoting malware research.
 
 ## Root Files:
-Since version 0.42 theZoo have been going dramatic changes. It now runs both CLI and ARGVS modes. You can call the program with the same command line arguments as before.
+Since version 0.42 theZoo has been undergoing dramatic changes. It now runs in both CLI and ARGVS modes. You can call the program with the same command line arguments as before.
 The current default state of theZoo runtime is the CLI. The following files and directories are responsible for the application's behaviour.
 
 ### /conf
@@ -62,18 +62,18 @@ Each directory is composed of 4 files:
 
 
 ## Structure of maldb.db
-maldb.db is the DB which theZoo is acting upon to find malwares indexed on your drive.
+maldb.db is the DB which theZoo is acting upon to find malware indexed on your drive.
 The structure is as follows:
 
 	uid,location,type,name,version,author,language,date,architecture,platform,comments,tags
 
 - UID 	-	Determined based on the indexing process.
-- Location 	The location on the drive of the malware you have searched for.
-- Type	-	Sorts the different types of malware there are. So far we sort by:	Virus, Trojans, Botnets, Ransomeware, Spyware
+- Location -	The location on the drive of the malware you have searched for.
+- Type	-	Sorts the different types of malware there are. So far we sort by:	Virus, Trojans, Botnets, Ransomware, Spyware
 - Name	-	Just the name of the malware.
 - Version	-	Nothing to say here as well.
 - Author	-	... I'm not that into documentation...
-- Programming Language - The state of the malware as for source, bin or which type of source. c/cpp/bin...
+- Programming Language - The state of the malware in regard to source, bin, or which type of source. c/cpp/bin...
 - Date	-	See 'Author' section.
 - Architecture -    The arch the platform was build for. Can be x86, x64, arm7....
 - Platform -    Win32, Win64, *nix32, *nix64, iOS, android and so on.
@@ -127,4 +127,4 @@ The repository holding all files is currently
 - [ ] Move malwares to another repo.
 - [ ] Better UI features.
 
-If you have any suggestions or malware that you have indexed as in the documentations please send it to us to yuval[]morirt [dot]com  so we can add it for every one's enjoyment.
+If you have any suggestions or malware that you have indexed (in the manner laid out in the documentation) please send it to us to - yuval[]morirt [dot]com - so we can add it for everyones enjoyment.
