@@ -45,7 +45,7 @@ class MuchSearch(object):
             self.ar = self.db.query(self.prequery + self.query, [self.param])
             self.print_payloads(self.ar)
         else:
-            print red("[!]") + " Filter did not match any malware :(\n"
+            print(red("[!]") + " Filter did not match any malware :(\n")
 
         return self.hits
 
@@ -65,5 +65,5 @@ class MuchSearch(object):
         table.align = "l"
         for malware in m:
             table.add_row(malware)
-        print table
-        print bold(green("[+]")) + " Total records found: %s" % len(m) + "\n"
+        print(table)
+        print(bold(green("[+]")) + " Total records found: %s" % len(m) + "\n")
