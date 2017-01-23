@@ -50,12 +50,12 @@ class EULA:
         notice += '|you can control and know how to handle. Running them on a live system will |\n'
         notice += '|infect you machines will live and dangerous malwares!.                     |\n'
         notice += '|___________________________________________________________________________|\n'
-        print red(notice)
+        print(red(notice))
         eula_answer = raw_input(
             'Type YES in captial letters to accept this EULA.\n > ')
         if eula_answer == 'YES':
             new = open(globals.vars.eula_file, 'a')
             new.write(eula_answer)
         else:
-            print 'You need to accept the EULA.\nExiting the program.'
+            print('You need to accept the EULA.\nExiting the program.')
             sys.exit(0)

@@ -1,16 +1,24 @@
-import sys
 import re
+import sys
 import rlcompleter
 try:
     import readline
 except ImportError:
     from imports import winreadline as readline
 
-import globals
+from imports import globals
 from imports import manysearches
 from imports.update_handler import Updater
 from imports import db_handler
 from imports.colors import *
+
+# Compatilibility to Python3
+if sys.version_info.major == 3:
+    raw_input = input
+elif sys.version_info.major == 2:
+    pass
+else:
+    sys.stderr.write("What kind of sorcery is this?!\n")
 
 
 class Controller:
@@ -59,7 +67,7 @@ class Controller:
                     cmd = raw_input(
                         bold(green('mdb ')) + green('#> ')).strip()
             except KeyboardInterrupt:
-                print bold(blue("\n\n[*]")) + " Hope you enjoyed your visit at" + bold(red(" theZoo")) + "!"
+                print(bold(blue("\n\n[*]")) + " Hope you enjoyed your visit at" + bold(red(" theZoo")) + "!")
                 exit()
 
             self.actOnCommand(cmd)
@@ -67,14 +75,13 @@ class Controller:
     def actOnCommand(self, cmd):
         try:
             while cmd == "":
-                # print 'no cmd'
                 return
 
             if cmd == 'help':
-                print " Available commands:\n"
+                print(" Available commands:\n")
                 for (cmd, desc) in self.commands:
-                    print "\t%s\t%s" % ('{0: <12}'.format(cmd), desc)
-                print ''
+                    print("\t%s\t%s" % ('{0: <12}'.format(cmd), desc))
+                print('')
                 return
 
             # Checks if normal or freestyle search
@@ -84,7 +91,7 @@ class Controller:
                     args = cmd.rsplit(' ')[1:]
                     manySearch.sort(args)
                 except:
-                    print red('[!]') + 'Uh oh, Invalid query.'
+                    print(red('[!]') + 'Uh oh, Invalid query.')
                 return
 
             if cmd == 'exit':
@@ -121,15 +128,15 @@ class Controller:
                 email = "info"
                 email += "\x40"
                 email += "morirt\x2ecom"
-                print "-------------- Begin of theZoo Report --------------"
-                print report
-                print "-------------- Ending of theZoo Report --------------"
-                print "To avoid compromising your privacy we have chose this method of reporting."
-                print "If you have not stated your name we will not write a thanks in our README."
-                print "Your email will remain private in scenario and will not be published."
-                print ""
-                print "Please create an archive file with the structure described in the README file"
-                print "And attach it to the email. "
+                print("-------------- Begin of theZoo Report --------------")
+                print(report)
+                print("-------------- Ending of theZoo Report --------------")
+                print("To avoid compromising your privacy we have chose this method of reporting.")
+                print("If you have not stated your name we will not write a thanks in our README.")
+                print("Your email will remain private in scenario and will not be published.")
+                print("")
+                print("Please create an archive file with the structure described in the README file")
+                print("And attach it to the email. ")
                 print("Please send this report to %s" % email)
 
                 return
@@ -139,7 +146,7 @@ class Controller:
                 try:
                     update_handler.get_malware(self.currentmodule)
                 except:
-                    print red('[-] ') + 'Error getting malware.'
+                    print(red('[-] ') + 'Error getting malware.')
                 return
             # If used the 'use' command
             if re.match('^use', cmd):
@@ -148,20 +155,20 @@ class Controller:
                     self.currentmodule = int(cmd[1])
                     cmd = ''
                 except TypeError:
-                    print 'Please enter malware ID'
+                    print('Please enter malware ID')
                 except:
-                    print 'The use method needs an argument.'
+                    print('The use method needs an argument.')
                 return
 
             if cmd == 'list all':
-                print "\nAvailable Payloads:"
+                print("\nAvailable Payloads:")
                 manySearch = manysearches.MuchSearch()
                 manySearch.print_payloads(self.db.get_mal_list(), ["%", "Name", "Type"])
                 return
 
             if cmd == 'info':
                 if self.currentmodule is None:
-                    print red("[!] ") + "First select a malware using the \'use\' command"
+                    print(red("[!] ") + "First select a malware using the \'use\' command")
                     return
                 m = self.db.get_mal_info(self.currentmodule)
                 manySearch = manysearches.MuchSearch()
@@ -169,9 +176,9 @@ class Controller:
                 return
 
             if cmd == 'quit':
-                print ":("
+                print(":(")
                 sys.exit(1)
 
         except KeyboardInterrupt:
-            print ("\n\nI'll just go now...")
+            print("\n\nI'll just go now...")
             sys.exit()
