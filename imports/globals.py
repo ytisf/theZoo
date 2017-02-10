@@ -27,8 +27,10 @@ class init:
         appname = "theZoo"
         codename = "Moat"
         authors = "Yuval Nativ, Lahad Ludar, 5fingers"
+        maintainers = [ "Shahak Shalev", "Yuval Nativ" ]
+        github_add = "https://www.github.com/ytisf/theZoo"
         licensev = "GPL v3.0"
-        fulllicense = appname + " Copyright (C) 2014 " + authors + "\n"
+        fulllicense = appname + " Copyright (C) 2016 " + authors + "\n"
         fulllicense += "This program comes with ABSOLUTELY NO WARRANTY; for details type '" + \
             sys.argv[0] + " -w'.\n"
         fulllicense += "This is free software, and you are welcome to redistribute it."
@@ -65,6 +67,8 @@ class vars:
     version = "0.6.0 'Moat'"
     appname = "Malware DB"
     authors = "Yuval Nativ, Lahad Ludar, 5fingers"
+    maintainers = [ "Shahak Shalev", "Yuval Nativ" ]
+    github_add = "https://www.github.com/ytisf/theZoo"
     licensev = "GPL v3.0"
 
     ############ DEBUGGING ###############
@@ -75,7 +79,7 @@ class vars:
         # DEBUG_LEVEL 2 = DEBUG SQL QUERIES
     DEBUG_LEVEL = 0
 
-    fulllicense = appname + " Copyright (C) 2014 " + authors + "\n"
+    fulllicense = appname + " Copyright (C) 2016 " + authors + "\n"
     fulllicense += "This program comes with ABSOLUTELY NO WARRANTY; for details type '" + \
         sys.argv[0] + " -w'.\n"
     fulllicense += "This is free software, and you are welcome to redistribute it."
@@ -98,7 +102,7 @@ class vars:
     giturl_dl = 'https://github.com/ytisf/theZoo/raw/master/'
     giturl = 'https://github.com/ytisf/theZoo'
 
-    with file(maldb_ver_file) as f:
+    with open(maldb_ver_file, 'r') as f:
         db_ver = f.read()
 
     # ASCII Art is a must...
@@ -118,7 +122,9 @@ class vars:
         maldb_banner += "  NMM-  sMMy``````````````sMMy  .MMM\n"
         maldb_banner += "  ooo.  :ooooooo+    +ooooooo/  `ooo\n"
         maldb_banner += "           /MMMMN    mMMMM+         \n"
-        maldb_banner += "                                 Authors: " + authors + "\n"
+        maldb_banner += "                                 authors: " + authors + "\n"
+        maldb_banner += "                                 maintained by: " + ', '.join(maintainers) + "\n"
+        maldb_banner += "                                 github: " + giturl + "\n\n"
 
     elif screen is 2:
         maldb_banner = "           ____.----. \n"
@@ -149,4 +155,6 @@ class vars:
         maldb_banner += "       /_/  /_/\__,_/_/ |__/|__/\__,_/_/   \___/     /_____/_____/\n\n"
         maldb_banner += "                                version: " + version + "\n"
         maldb_banner += "                                db_version: " + db_ver + "\n"
-        maldb_banner += "                                built by: " + authors + "\n\n"
+        maldb_banner += "                                built by: " + authors + "\n"
+        maldb_banner += "                                maintained by: " + ', '.join(maintainers) + "\n"
+        maldb_banner += "                                github: " + giturl + "\n\n"

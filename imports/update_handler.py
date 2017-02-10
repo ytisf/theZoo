@@ -18,7 +18,16 @@
 
 import sys
 from os import remove, rename
-import urllib2
+
+# Compatilibility to Python3
+if sys.version_info.major == 3:
+    from urllib.request import urlopen
+elif sys.version_info.major == 2:
+    from urllib2 import urlopen
+    import urllib2
+else:
+    sys.stderr.write("What kind of sorcery is this?!\n")
+
 from imports import globals
 from imports import db_handler
 from imports.colors import *
@@ -46,16 +55,16 @@ class Updater:
         :return:
         '''
         if globals.vars.DEBUG_LEVEL is 1:
-            print locals()
-        response = urllib2.urlopen(
+            print(locals())
+        response = urlopen(
             globals.vars.giturl_dl + globals.vars.maldb_ver_file)
         new_maldb_ver = response.read()
         if new_maldb_ver == curr_db_version:
-            print green('[+]') + " theZoo is up to date.\n" + green('[+]') + " You are at " + new_maldb_ver + " which is the latest version."
+            print(green('[+]') + " theZoo is up to date.\n" + green('[+]') + " You are at " + new_maldb_ver + " which is the latest version.")
             return
 
-        print red('[+]') + " A newer version is available: " + new_maldb_ver + "!"
-        print red('[+]') + " Updating..."
+        print(red('[+]') + " A newer version is available: " + new_maldb_ver + "!")
+        print(red('[+]') + " Updating...")
 
         # Get the new DB and update it
 
@@ -84,11 +93,11 @@ class Updater:
         self.download_from_repo(loc, '.pass')
         self.download_from_repo(loc, '.md5')
         self.download_from_repo(loc, '.sha256')
-        print bold(green("[+]")) + " Successfully downloaded a new friend.\n"
-		
+        print(bold(green("[+]")) + " Successfully downloaded a new friend.\n")
+
     def download_from_repo(self, filepath, suffix=''):
         if globals.vars.DEBUG_LEVEL is 1:
-            print locals()
+            print(locals())
         file_name = filepath.rsplit('/')[-1] + suffix
 
         # Dirty way to check if we're downloading a malware
@@ -97,11 +106,11 @@ class Updater:
             url = globals.vars.giturl_dl + filepath + '/' + file_name
         else:
             url = globals.vars.giturl_dl + filepath
-        u = urllib2.urlopen(url)
+        u = urlopen(url)
         f = open(file_name, 'wb')
         meta = u.info()
         file_size = int(meta.getheaders("Content-Length")[0])
-        print "Downloading: %s Bytes: %s" % (file_name, file_size)
+        print("Downloading: %s Bytes: %s" % (file_name, file_size))
         file_size_dl = 0
         block_sz = 8192
         while True:
@@ -115,4 +124,4 @@ class Updater:
             status = status + chr(8) * (len(status) + 1)
             sys.stdout.write('\r' + status)
         f.close()
-        print "\n"
+        print("\n")

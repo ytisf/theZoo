@@ -82,7 +82,7 @@ def main():
 
     # Check if version flag is on
     if arguments.ver_bol == 1:
-        print vars.maldb_banner
+        print(vars.maldb_banner)
         sys.exit(1)
 
     # Check if license flag is on
@@ -92,13 +92,13 @@ def main():
 
     if len(arguments.mal_filter) > 0:
         manySearch = manysearches.MuchSearch()
-        print vars.maldb_banner
+        print(vars.maldb_banner)
         manySearch.sort(arguments.mal_filter)
         sys.exit(1)
 
     # Initiate normal run. No arguments given.
     os.system('cls' if os.name == 'nt' else 'clear')
-    print vars.maldb_banner
+    print(vars.maldb_banner)
     while 1:
         terminalHandler.MainMenu()
     sys.exit(1)

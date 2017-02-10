@@ -10,7 +10,7 @@ class DBHandler:
             self.con = lite.connect(globals.vars.db_path)
             self.cur = self.con.cursor()
         except lite.Error as e:
-            print "An error occurred:", e.args[0]
+            print("An error occurred:", e.args[0])
             sys.exit()
 
     def get_full_details(self):
@@ -21,7 +21,7 @@ class DBHandler:
 
     def get_mal_list(self):
         return self.cur.execute("SELECT ID, NAME, TYPE From Malwares").fetchall()
-		
+
     def get_mal_names(self):
 
         # Sqlite3 returns a tuple even if a single value is returned
@@ -36,14 +36,14 @@ class DBHandler:
 
     def query(self, query, param=''):
         if globals.vars.DEBUG_LEVEL is 2:
-            print locals()
+            print(locals())
         try:
             if param is not '':
                 return self.cur.execute(query, param if type(param) is list else [param]).fetchall()
             else:
                 return self.cur.execute(query).fetchall()
         except lite.Error as e:
-            print "An error occurred:", e.args[0]
+            print("An error occurred:", e.args[0])
             sys.exit()
 
     def close_connection(self):
@@ -52,7 +52,7 @@ class DBHandler:
             self.con.close()
             return
         except lite.Error as e:
-            print "An error occurred:", e.args[0]
+            print("An error occurred:", e.args[0])
             sys.exit()
 
     def renew_connection(self):
@@ -60,5 +60,5 @@ class DBHandler:
             self.con = lite.connect(globals.vars.db_path)
             self.cur = self.con.cursor()
         except lite.Error as e:
-            print "An error occurred:", e.args[0]
+            print("An error occurred:", e.args[0])
             sys.exit()
