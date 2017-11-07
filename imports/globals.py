@@ -77,9 +77,10 @@ class vars:
         # DEBUG_LEVEL 0 = NO DEBUGGING
         # DEBUG_LEVEL 1 = DEBUG DOWNLOADS
         # DEBUG_LEVEL 2 = DEBUG SQL QUERIES
+
     DEBUG_LEVEL = 0
 
-    fulllicense = appname + " Copyright (C) 2016 " + authors + "\n"
+    fulllicense = appname + " Copyright (C) 2017 " + authors + "\n"
     fulllicense += "This program comes with ABSOLUTELY NO WARRANTY; for details type '" + \
         sys.argv[0] + " -w'.\n"
     fulllicense += "This is free software, and you are welcome to redistribute it."
@@ -106,7 +107,7 @@ class vars:
         db_ver = f.read()
 
     # ASCII Art is a must...
-    screen = random.randrange(1, 4)
+    screen = random.randrange(1, 6)
 
     if screen is 1:
         maldb_banner = "\n"
@@ -158,3 +159,86 @@ class vars:
         maldb_banner += "                                built by: " + authors + "\n"
         maldb_banner += "                                maintained by: " + ', '.join(maintainers) + "\n"
         maldb_banner += "                                github: " + giturl + "\n\n"
+
+    elif screen is 4:
+        maldb_banner = "\n"
+        maldb_banner += ".       ..       .\n"
+        maldb_banner += "|\      ||      /|\n"
+        maldb_banner += "| \     ||     / |\n"
+        maldb_banner += "|  \    ||    /  |\n"
+        maldb_banner += "|  :\___JL___/   |\n"
+        maldb_banner += "|  :|##XLJ: :|   |\n"
+        maldb_banner += "'\ :|###||: X|  /'\n"
+        maldb_banner += "  \:|###||:X#| /\n"
+        maldb_banner += "   |==========|\n"
+        maldb_banner += "    |###XXX;;|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##Xn:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##Xn:: :|\n"
+        maldb_banner += "    |##XX:: n|\n"
+        maldb_banner += "    |##XX:: U|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##Xn:: :|\n"
+        maldb_banner += "    |##XU:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: n|\n"
+        maldb_banner += "    |##XX:: U|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##XX:: :|\n"
+        maldb_banner += "    |##Xn:: :|\n"
+        maldb_banner += "    |##XU:: :|\n"
+        maldb_banner += "    |##Xn:: :|\ttheZoo " + version + "\n"
+        maldb_banner += "    |##XU:: :|\t  " + giturl + "\n"
+        maldb_banner += "    |##XX:: :|\tauthors: " + authors + "\n"
+        maldb_banner += "    |##XX:: :|\tmaintained by: " + ', '.join(maintainers) + "\n"
+        maldb_banner += "    |##XX:: :|\tgithub: " + giturl + "\n"
+        maldb_banner += "    |##,_,: :|\n"
+        maldb_banner += "    |./ T \.:|\n"
+        maldb_banner += "    || o|o |:|\n"
+        maldb_banner += "    ||  |  |:|\n"
+        maldb_banner += "  .============.\n"
+        maldb_banner += " .==============.\n"
+        maldb_banner += ".================.\n\n"
+
+    elif screen is 5:
+        maldb_banner = "\n"
+        maldb_banner += "_______________________________________\n"
+        maldb_banner += "|\ ___________________________________ /|\n"
+        maldb_banner += "| | _                               _ | |\n"
+        maldb_banner += "| |(+)        _           _        (+)| |\n"
+        maldb_banner += "| | ~      _--/           \--_      ~ | |\n"
+        maldb_banner += "| |       /  /             \  \       | |\n"
+        maldb_banner += "| |      /  |               |  \      | |\n"
+        maldb_banner += "| |     /   |               |   \     | |\n"
+        maldb_banner += "| |     |   |    _______    |   |     | |\n"
+        maldb_banner += "| |     |   |    \     /    |   |     | |\n"
+        maldb_banner += "| |     \    \_   |   |   _/    /     | |\n"
+        maldb_banner += "| |      \     -__|   |__-     /      | |\n"
+        maldb_banner += "| |       \_                 _/       | |\n"
+        maldb_banner += "| |         --__         __--         | |\n"
+        maldb_banner += "| |             --|   |--             | |\n"
+        maldb_banner += "| |               |   |               | |\n"
+        maldb_banner += "| |                | |                | |\n"
+        maldb_banner += "| |                 |                 | |\n"
+        maldb_banner += "| |                                   | |\n"
+        maldb_banner += "| |            T H E  Z O O           | |\n"
+        maldb_banner += "| |   I S   G O O D   F O R   Y O U   | |\n"
+        maldb_banner += "| | _             %s                _ | |\n" % version
+        maldb_banner += "| |(+)                             (+)| |\n"
+        maldb_banner += "| | ~                               ~ | |\n"
+        maldb_banner += "|/ ----------------------------------- \|\n"
+        maldb_banner += "---------------------------------------\n"
+        maldb_banner += "\tmaintained by: %s\n" % ', '.join(maintainers)
+        maldb_banner += "\tgiturl: %s\n" % giturl
+        maldb_banner += "\tauthors: %s\n" % authors
