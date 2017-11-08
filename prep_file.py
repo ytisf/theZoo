@@ -54,7 +54,7 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         _help()
         sys.exit(1)
-    _Do("README.md")
+    _Do(sys.argv[1])
     print("Please don't forget to add details to 'conf/maldb.db'.")
     print("Thanks for helping us get this accessible to everyone.")
     print("")
