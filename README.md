@@ -127,7 +127,7 @@ Get the file you want to submit and just run `python prep_file.py file_tosubmit.
 ## Predicted Change Log for v1.0
 - [X] Fix auto-complete for malware frameworks. (thanks to 5fingers)
 - [X] Consider changing DB to XML or SQLite3. (Sheksa - done :))
-- [ ] Move malwares to another repo.
-- [ ] Better UI features.
+- [X] Better UI features.
+- [ ] Fix and make 'light' version without malwares with _MalwareFetch function. 
 
 If you have any suggestions or malware that you have indexed (in the manner laid out in the documentation) please send it to us to - yuval[]morirt [dot]com - so we can add it for everyones enjoyment.
