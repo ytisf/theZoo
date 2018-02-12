@@ -12,6 +12,7 @@ Thumbs.db
 $RECYCLE.BIN/
 Desktop.ini
 conf/eula_run.conf
+.git/
 
 # Egg
 logo/
