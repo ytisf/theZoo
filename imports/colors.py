@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import os 
+import os
 
 BOLD = ''
 NORM = ''
@@ -23,6 +23,17 @@ if os.name is not 'nt':
 	MAGENTA = '\033[35m'
 	BOLD = '\033[01m'
 	UNDERLINE = '\033[04m'
+
+else:
+	PURPLE = ''
+	BLUE = ''
+	GREEN = ''
+	YELLOW = ''
+	RED = ''
+	WHITE = ''
+	MAGENTA = ''
+	BOLD = ''
+	UNDERLINE = ''
 
 
 def bold(str):
