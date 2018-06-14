@@ -77,7 +77,8 @@ def main():
     # Check if update flag is on
     if arguments.update_bol == 1:
         a = Updater()
-        a.update_db()
+        with open('conf/db.ver', 'r') as f:
+            a.update_db(f.readline())
         sys.exit(1)
 
     # Check if version flag is on

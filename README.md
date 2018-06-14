@@ -1,7 +1,7 @@
 About
 ======
 theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a way which will allow analysis, we have decided to gather all of them for you in an accessible and safe way.
-theZoo was born by Yuval tisf Nativ and is now maintained by Shahak Shalev. 
+theZoo was born by Yuval tisf Nativ and is now maintained by Shahak Shalev.
 
 **theZoo is open and welcoming visitors!**
 Disclaimer
@@ -15,7 +15,7 @@ We recommend running them in a VM which has no internet connection (or an intern
 
 GPL 3
 ======
-theZoo - the most awesome free malware database on the air 
+theZoo - the most awesome free malware database on the air
 Copyright (C) 2015, Yuval Nativ, Lahad Ludar, 5fingers
 
 This program is free software: you can redistribute it and/or modify
@@ -54,10 +54,10 @@ Malware source code :)
 
 ## Directory Structure:
 Each directory is composed of 4 files:
-- Malware files in an encrypted ZIP archive. 
-- SHA256 sum of the 1st file. 
+- Malware files in an encrypted ZIP archive.
+- SHA256 sum of the 1st file.
 - MD5 sum of the 1st file.
-- Password file for the archive. 
+- Password file for the archive.
 
 
 
@@ -86,8 +86,11 @@ An example line will look as follow:
 
 Bugs and Reports
 ================
-The repository holding all files is currently 
+The repository holding all files is currently
 	https://github.com/ytisf/theZoo
+
+## Submit Malware
+Get the file you want to submit and just run `python prep_file.py file_tosubmit.exe`. It will create a directory for you. Then just submit that along with the changes to the `conf/maldb.db` so that we know which malware it is.
 
 ## Change Log for v0.60:
 - [x] Moved DB to SQLite3.
@@ -96,9 +99,9 @@ The repository holding all files is currently
 - [x] More & more malwares.
 
 ## Change Log for v0.50:
-- [x] Better and easier UI. 
-- [x] Aligned printing of malwares. 
-- [x] Command line arguments are now working. 
+- [x] Better and easier UI.
+- [x] Aligned printing of malwares.
+- [x] Command line arguments are now working.
 - [x] Added 10 more malwares (cool ones) to the DB.
 
 ## Change Log for v0.42:
@@ -124,7 +127,7 @@ The repository holding all files is currently
 ## Predicted Change Log for v1.0
 - [X] Fix auto-complete for malware frameworks. (thanks to 5fingers)
 - [X] Consider changing DB to XML or SQLite3. (Sheksa - done :))
-- [ ] Move malwares to another repo.
-- [ ] Better UI features.
+- [X] Better UI features.
+- [ ] Fix and make 'light' version without malwares with _MalwareFetch function. 
 
 If you have any suggestions or malware that you have indexed (in the manner laid out in the documentation) please send it to us to - yuval[]morirt [dot]com - so we can add it for everyones enjoyment.
