@@ -12,7 +12,6 @@ Thumbs.db
 $RECYCLE.BIN/
 Desktop.ini
 conf/eula_run.conf
-.git/
 
 # Egg
 logo/
@@ -33,6 +32,3 @@ develop-eggs/
 
 # Installer logs
 pip-log.txt
-
-imports/*.pyd
-imports/*.pyc
