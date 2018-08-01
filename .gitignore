@@ -16,6 +16,7 @@ conf/eula_run.conf
 
 # Egg
 logo/
+venv/*
 
 
 *.py[co]
