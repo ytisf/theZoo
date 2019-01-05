@@ -77,7 +77,7 @@ The structure is as follows:
 - Date	-	See 'Author' section.
 - Architecture -    The arch the platform was build for. Can be x86, x64, arm7....
 - Platform -    Win32, Win64, *nix32, *nix64, iOS, android and so on.
-- VIP - High Profile
+- VIP - High Profile Malware?
 - Comments - Any comments there may be about the item.
 - Tags - Tags matching the item.
 
