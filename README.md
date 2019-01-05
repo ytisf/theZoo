@@ -65,7 +65,7 @@ Each directory is composed of 4 files:
 maldb.db is the DB which theZoo is acting upon to find malware indexed on your drive.
 The structure is as follows:
 
-	uid,location,type,name,version,author,language,date,architecture,platform,comments,tags
+	uid,location,type,name,version,author,language,date,architecture,platform,vip,comments,tags
 
 - UID 	-	Determined based on the indexing process.
 - Location -	The location on the drive of the malware you have searched for.
@@ -77,12 +77,13 @@ The structure is as follows:
 - Date	-	See 'Author' section.
 - Architecture -    The arch the platform was build for. Can be x86, x64, arm7....
 - Platform -    Win32, Win64, *nix32, *nix64, iOS, android and so on.
+- VIP - High Profile
 - Comments - Any comments there may be about the item.
 - Tags - Tags matching the item.
 
 An example line will look as follow:
 
-    104,Source/Original/Dexter,trojan,Dexter,2,unknown,c,00/05/2013,x86,win32,NULL,Source
+    104,Source/Original/Dexter,trojan,Dexter,2,unknown,c,00/05/2013,x86,win32,0,NULL,Source
 
 Bugs and Reports
 ================
