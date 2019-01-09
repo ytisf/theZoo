@@ -1,0 +1,9 @@
+------------------------------------------------
+NAME: 		   Alliance1
+TYPE:              WORD MACRO
+DATE OF CREATION:  
+CREATOR:           Skam
+------------------------------------------------
+
+Payload : Changes File Summary info to - You have been infected by the Alliance.
+The payload can be easily modified by editing the AutoOpen Macro.

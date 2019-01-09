@@ -1,0 +1,385 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0076)http://securityresponse.symantec.com/avcenter/venc/data/w95.hybris.worm.html -->
+<HTML><HEAD><TITLE>Symantec Security Response - W95.Hybris.worm</TITLE><!-- Lotus-Domino (Release 5.0.9a - January 7, 2002 on Windows NT/Intel) --><!-- META CONTENT -->
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META 
+content="W95.Hybris.worm is a dropper file that the W95.Hybris.gen worm copies to a hard &#13;&#10;disk when an infected email attachment is opened. It can also be detected in &#13;&#10;the original attachment that is received from an infected computer.&#13;&#10;NOTE: Virus definitions dated prior to February 22, 2001, may detect" 
+name=Description>
+<META 
+content="SARC, macro, Trojan horse, virus, worm, Symantec, Internet security, Content security, Internet content, e-mail filtering, mobile code detection, Intrusion detection, Vulnerability assessment, AntiVirus, Anti-virus, Norton, vulnerability assessment, intrusion, intrusion detection, network, network protection, computer, computer safety, W95.Hybris.worm, W95.Hybris.gen.dr" 
+name=keywords>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR><!-- Begin style.html Template -->
+<STYLE type=text/css>BODY {
+	MARGIN: 0pt
+}
+</STYLE>
+<!-- End style.html Template --><LINK 
+href="Symantec Security Response - W95_Hybris_worm_files/service.css" 
+rel=styleSheet><LINK 
+href="Symantec Security Response - W95_Hybris_worm_files/new.sarc.style.css" 
+rel=styleSheet><LINK 
+href="Symantec Security Response - W95_Hybris_worm_files/style.css" 
+rel=styleSheet><!-- Begin avcenter-navbar.html Template --></HEAD>
+<BODY text=#000000 bgColor=#ffffff leftMargin=0 
+background="Symantec Security Response - W95_Hybris_worm_files/us.navbar.background.gif" 
+topMargin=0 marginwidth="0" marginheight="0">
+<TABLE height="100%" cellSpacing=0 cellPadding=0 width=769 border=0>
+  <TBODY>
+  <TR height=12>
+    <TD vAlign=top align=left width=9 bgColor=#ffffff height=12><IMG height=11 
+      src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.clear.gif" 
+      width=9></TD>
+    <TD vAlign=top align=left width=144 bgColor=#ffffff height=12><IMG 
+      height=11 
+      src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.clear.gif" 
+      width=1></TD>
+    <TD vAlign=top align=left width=616 bgColor=#ffffff height=12></TD></TR>
+  <TR vAlign=top align=left height=234>
+    <TD vAlign=top align=left width=9 height=234></TD>
+    <TD vAlign=top align=left width=144 height=234>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0 width=144 border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=left><A href="http://www.symantec.com/"><IMG 
+            height=85 alt="Symantec United States" 
+            src="Symantec Security Response - W95_Hybris_worm_files/us.logo.symantec.gif" 
+            width=144 border=0><BR></A><A 
+            href="http://www.symantec.com/globalsites.html"><IMG height=26 
+            alt="global sites" 
+            src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.globalsites.gif" 
+            width=144 border=0></A><BR><A 
+            href="http://www.symantec.com/product/"><IMG height=26 alt=products 
+            src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.products.gif" 
+            width=144 border=0></A><BR><A 
+            href="http://www.symantec.com/purchase/"><IMG height=26 alt=purchase 
+            src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.purchase.gif" 
+            width=144 border=0></A><BR><A 
+            href="http://www.symantec.com/techsupp/"><IMG height=26 
+            alt="service and support" 
+            src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.support.gif" 
+            width=144 border=0></A><BR><A 
+            href="http://securityresponse.symantec.com/"><IMG height=26 
+            alt="security response" 
+            src="Symantec Security Response - W95_Hybris_worm_files/navbar_secresponse.gif" 
+            width=144 border=0></A><BR><A 
+            href="http://www.symantec.com/downloads/"><IMG height=26 
+            alt=downloads 
+            src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.downloads.gif" 
+            width=144 border=0></A><BR><A 
+            href="http://www.symantec.com/corporate/"><IMG height=26 
+            alt="about symantec" 
+            src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.about.gif" 
+            width=144 border=0></A><BR><A 
+            href="http://www.symantec.com/search/"><IMG height=26 alt=search 
+            src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.search.gif" 
+            width=144 border=0></A><BR><A 
+            href="http://www.symantec.com/feedback/"><IMG height=26 alt=feedback 
+            src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.feedback.gif" 
+            width=144 border=0></A><BR><IMG height=1 
+            src="Symantec Security Response - W95_Hybris_worm_files/us.navbar.grey.gif" 
+            width=144><BR>
+            <P><FONT face=geneva,arial,helvetica,sans-serif size=1><BR>© 
+            1995-2002 Symantec Corporation.<BR>All rights reserved.<BR><A 
+            href="http://www.symantec.com/legal/legal_note.html">Legal 
+            Notices</A><BR><A 
+            href="http://www.symantec.com/legal/privacy.html">Privacy 
+            Policy</A><BR></FONT></P></TD></TR></TBODY></TABLE></TD>
+    <TD width=616 height=234><!-- End avcenter-navbar.html Template --><IMG 
+      height=63 alt="security response" 
+      src="Symantec Security Response - W95_Hybris_worm_files/masthead594_security_rc.gif" 
+      width=594> <!-- Content area Begins-->
+      <TABLE cellPadding=10 width=616 border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top align=left><!-- MAIN CONTENT AREA TABLE STARTS HERE-->
+            <TABLE cellSpacing=0 cellPadding=0 width=584 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top width=584>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><!-- VIRUS WRITE-UP - START --><!-- VID_XREF=10850 --><A 
+                        onmouseover="document.risk1.src='http://securityresponse.symantec.com/avcenter/graphics/ssrc/writeups/category_4_on.gif'" 
+                        onmouseout="document.risk1.src='http://securityresponse.symantec.com/avcenter/graphics/ssrc/writeups/category_4.gif'" 
+                        href="http://securityresponse.symantec.com/avcenter/threat.severity.html#category"><IMG 
+                        height=34 alt="Category 4" hspace=3 
+                        src="Symantec Security Response - W95_Hybris_worm_files/category_4.gif" 
+                        width=34 align=right border=0 name=risk1></A>
+                        <H1>W95.Hybris.worm</H1><!-- DATES -->
+                        <TABLE>
+                          <TBODY>
+                          <TR>
+                            <TD><FONT face=Arial size=1><I>Discovered on: 
+                              September 25, 2000</I></FONT></FONT></TD></TR>
+                          <TR>
+                            <TD><FONT face=Arial size=1><I>Last Updated on: 
+                              April 15, 2002 at 04:39:29 PM 
+                            PDT</I></FONT></FONT></TD></TR></TBODY></TABLE><!-- Buttons (Printer Friendly, etc) -->
+                        <FORM name=tafform 
+                        action=http://www.symantec.com/avcenter/cgi-bin/taf.cgi 
+                        method=post target=_blank><INPUT type=hidden 
+                        value=W95.Hybris.worm name=title></FORM><!-- START PF / TAF / TUTORIAL -->
+                        <TABLE cellSpacing=0 cellPadding=0>
+                          <TBODY>
+                          <TR>
+                            <TD><A 
+                              onmouseover="document.wbPD.src='/avcenter/graphics/ssrc/writeups/print_yellow.gif'" 
+                              onmouseout="document.wbPD.src='/avcenter/graphics/ssrc/writeups/print.gif'" 
+                              href="http://securityresponse.symantec.com/avcenter/venc/data/pf/w95.hybris.worm.html" 
+                              target=_blank><IMG 
+                              src="Symantec Security Response - W95_Hybris_worm_files/print.gif" 
+                              border=0 name=wbPD></A> </TD>
+                            <TD><A 
+                              onmouseover="document.wbED.src='/avcenter/graphics/ssrc/writeups/email_yellow.gif'" 
+                              onclick="document.tafform.submit();return false;" 
+                              onmouseout="document.wbED.src='/avcenter/graphics/ssrc/writeups/email.gif'" 
+                              href="http://securityresponse.symantec.com/avcenter/venc/data/"><IMG 
+                              height=31 
+                              src="Symantec Security Response - W95_Hybris_worm_files/email.gif" 
+                              width=113 border=0 name=wbED></A> 
+                        </TD></TR></TBODY></TABLE><!-- END PF / TAF / TUTORIAL --><!-- INTERNAL NAVIGATION --><BR>
+                        <TABLE cellSpacing=0 cellPadding=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0>
+                                <TBODY>
+                                <TR>
+                                <TD><A 
+                                onmouseover="document.wbTA.src='/avcenter/graphics/ssrc/writeups/threat_assessment_yellow.gif'" 
+                                onmouseout="document.wbTA.src='/avcenter/graphics/ssrc/writeups/threat_assessment_grey.gif'" 
+                                href="http://securityresponse.symantec.com/avcenter/venc/data/w95.hybris.worm.html#threatassessment"><IMG 
+                                height=20 
+                                src="Symantec Security Response - W95_Hybris_worm_files/threat_assessment_grey.gif" 
+                                width=137 border=0 name=wbTA></A></TD>
+                                <TD><A 
+                                onmouseover="document.wbTD.src='/avcenter/graphics/ssrc/writeups/technical_details_yellow.gif'" 
+                                onmouseout="document.wbTD.src='/avcenter/graphics/ssrc/writeups/technical_details_grey.gif'" 
+                                href="http://securityresponse.symantec.com/avcenter/venc/data/w95.hybris.worm.html#technicaldetails"><IMG 
+                                height=20 
+                                src="Symantec Security Response - W95_Hybris_worm_files/technical_details_grey.gif" 
+                                width=129 border=0 name=wbTD></A></TD>
+                                <TD><A 
+                                onmouseover="document.wbRC.src='/avcenter/graphics/ssrc/writeups/recommendations_yellow.gif'" 
+                                onmouseout="document.wbRC.src='/avcenter/graphics/ssrc/writeups/recommendations_grey.gif'" 
+                                href="http://securityresponse.symantec.com/avcenter/venc/data/w95.hybris.worm.html#recommendations"><IMG 
+                                height=20 
+                                src="Symantec Security Response - W95_Hybris_worm_files/recommendations_grey.gif" 
+                                width=146 border=0 name=wbRC></A></TD>
+                                <TD><A 
+                                onmouseover="document.wbRI.src='/avcenter/graphics/ssrc/writeups/removal_instructions_yellow.gif'" 
+                                onmouseout="document.wbRI.src='/avcenter/graphics/ssrc/writeups/removal_instructions_grey.gif'" 
+                                href="http://securityresponse.symantec.com/avcenter/venc/data/w95.hybris.worm.html#removalinstructions"><IMG 
+                                height=20 
+                                src="Symantec Security Response - W95_Hybris_worm_files/removal_instructions_grey.gif" 
+                                width=165 border=0 
+                                name=wbRI></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- END INTERNAL NAVIGATION -->
+                        <P>W95.Hybris.worm is a dropper file that the 
+                        W95.Hybris.gen worm copies to a hard disk when an 
+                        infected email attachment is opened. It can also be 
+                        detected in the original attachment that is received 
+                        from an infected computer. 
+                        <P><B>NOTE:</B> Virus definitions dated prior to 
+                        February 22, 2001, may detect this as W95.Hybris.gen.dr. 
+                        <BR>
+                        <P><!-- a.k.a. --><B><A 
+                        href="http://securityresponse.symantec.com/avcenter/refa.html#aka">Also 
+                        Known As</A>:</B> W95.Hybris.gen.dr <!-- variants --><!-- type --><BR><B>Type: <A 
+                        href="http://securityresponse.symantec.com/avcenter/refa.html#worm">Worm</A></B> 
+<!-- infection length --><!-- systems affected --><!-- systems not affected --><!-- CVE References -->
+                        <P><!-- BEGIN PROTECTION BOX -->
+                        <TABLE cellSpacing=0 cellPadding=0 width="100%">
+                          <TBODY>
+                          <TR>
+                            <TD><IMG 
+                              src="Symantec Security Response - W95_Hybris_worm_files/tab_protection.gif"></TD></TR>
+                          <TR>
+                            <TD 
+                            style="BORDER-RIGHT: #666666 thin outset; BORDER-TOP: #666666 thin outset; BORDER-LEFT: #666666 thin outset; BORDER-BOTTOM: #666666 thin outset">
+                              <TABLE width="100%">
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top width="37%">
+                                <LI class=tiny><A 
+                                href="http://securityresponse.symantec.com/avcenter/refa.html#iudefs">Virus 
+                                Definitions (Intelligent Updater)</A>*</LI></TD>
+                                <TD>
+                                <P class=tiny>September 25, 2000</P></TD></TR>
+                                <TR>
+                                <TD colSpan=2><IMG height=1 
+                                src="Symantec Security Response - W95_Hybris_worm_files/black.gif" 
+                                width="100%"></TD></TR>
+                                <TR>
+                                <TD vAlign=top colSpan=2>
+                                <TABLE>
+                                <TBODY>
+                                <TR>
+                                <TD vAlign=top>
+                                <P class=tiny>*</P></TD>
+                                <TD>
+                                <P class=tiny>Intelligent Updater virus 
+                                definitions are released daily, but require 
+                                manual download and installation.<BR>Click <A 
+                                href="http://securityresponse.symantec.com/avcenter/defs.download.html">here</A> 
+                                to download manually.</P></TD></TR>
+                                <TR>
+                                <TD vAlign=top>
+                                <P class=tiny>**</P></TD>
+                                <TD>
+                                <P class=tiny>LiveUpdate virus definitions are 
+                                usually released every Wednesday.<BR>Click <A 
+                                href="http://service1.symantec.com/SUPPORT/sharedtech.nsf/docid/1999121613163206">here</A> 
+                                for instructions on using 
+                                LiveUpdate.</P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- END PROTECTION BOX -->
+                        <P><!-- threat assessment --><!-- wild - section (w/ chart) --><!-- threat assessment --><!-- SARCTHREATASSESSMENT --><A 
+                        name=threatassessment>
+                        <P><IMG height=25 alt="threat assessment" 
+                        src="Symantec Security Response - W95_Hybris_worm_files/section_title_threat.gif" 
+                        width=185></P>
+                        <TABLE width=584>
+                          <TBODY>
+                          <TR>
+                            <TD vAlign=top><!-- wild header and start list -->
+                              <P><B><A 
+                              href="http://securityresponse.symantec.com/avcenter/refa.html#Wild">Wild:</A></B> 
+
+                              <UL><!-- wild_infections -->
+                                <LI><A 
+                                href="http://securityresponse.symantec.com/avcenter/refa.html#infect">Number 
+                                of infections:</A> More than 1000 <!-- wild_sites -->
+                                <LI><A 
+                                href="http://securityresponse.symantec.com/avcenter/refa.html#sites">Number 
+                                of sites:</A> More than 10 <!-- wild_geographic_distribution -->
+                                <LI><A 
+                                href="http://securityresponse.symantec.com/avcenter/refa.html#geo_distribution">Geographical 
+                                distribution:</A> Medium <!-- wild_threat_containment-->
+                                <LI><A 
+                                href="http://securityresponse.symantec.com/avcenter/refa.html#containment">Threat 
+                                containment:</A> Moderate <!-- wild_removal -->
+                                <LI><A 
+                                href="http://securityresponse.symantec.com/avcenter/refa.html#removal">Removal:</A> 
+                                Moderate <!-- end list --></LI></UL></TD>
+                            <TD vAlign=top align=middle><!-- BEGIN THREAT METRICS BOX -->
+                              <TABLE 
+                              style="BORDER-RIGHT: #666666 thin outset; BORDER-TOP: #666666 thin outset; BORDER-LEFT: #666666 thin outset; BORDER-BOTTOM: #666666 thin outset" 
+                              cellSpacing=0 cellPadding=0>
+                                <TBODY>
+                                <TR>
+                                <TD align=middle bgColor=#444444 colSpan=9>
+                                <P 
+                                style="FONT-SIZE: 8pt; COLOR: white"><B>Threat 
+                                Metrics</B></P></TD></TR>
+                                <TR height=102>
+                                <TD align=right><IMG height=102 
+                                src="Symantec Security Response - W95_Hybris_worm_files/middle_grid_narrow.jpg" 
+                                width=24></TD>
+                                <TD align=middle><IMG height=102 alt=High 
+                                src="Symantec Security Response - W95_Hybris_worm_files/high_bar_red.jpg" 
+                                width=17></TD>
+                                <TD align=middle><IMG height=102 
+                                src="Symantec Security Response - W95_Hybris_worm_files/middle_grid_narrow.jpg" 
+                                width=24></TD>
+                                <TD align=middle><IMG height=102 
+                                src="Symantec Security Response - W95_Hybris_worm_files/middle_grid_narrow.jpg" 
+                                width=24></TD>
+                                <TD align=middle><IMG height=102 alt=Low 
+                                src="Symantec Security Response - W95_Hybris_worm_files/low_bar_red.jpg" 
+                                width=17></TD>
+                                <TD align=middle><IMG height=102 
+                                src="Symantec Security Response - W95_Hybris_worm_files/middle_grid_narrow.jpg" 
+                                width=24></TD>
+                                <TD align=middle><IMG height=102 
+                                src="Symantec Security Response - W95_Hybris_worm_files/middle_grid_narrow.jpg" 
+                                width=24></TD>
+                                <TD align=middle><IMG height=102 alt=High 
+                                src="Symantec Security Response - W95_Hybris_worm_files/high_bar_red.jpg" 
+                                width=17></TD>
+                                <TD align=left><IMG height=102 
+                                src="Symantec Security Response - W95_Hybris_worm_files/middle_grid_narrow.jpg" 
+                                width=24></TD></TR>
+                                <TR>
+                                <TD vAlign=top align=middle colSpan=3>
+                                <P style="FONT-SIZE: 8pt"><A 
+                                href="http://securityresponse.symantec.com/avcenter/refa.html#Wild">Wild</A>:<BR>High</P></TD>
+                                <TD vAlign=top align=middle colSpan=3>
+                                <P style="FONT-SIZE: 8pt"><A 
+                                href="http://securityresponse.symantec.com/avcenter/refa.html#Damage">Damage</A>:<BR>Low</P></TD>
+                                <TD vAlign=top align=middle colSpan=3>
+                                <P style="FONT-SIZE: 8pt"><A 
+                                href="http://securityresponse.symantec.com/avcenter/refa.html#Distribution">Distribution</A>:<BR>High</P></TD></TR></TBODY></TABLE><!-- END THREAT METRICS BOX --></TD></TR></TBODY></TABLE><BR><!-- damage - section --><!-- damage header and start list --><!-- damage_trigger --><!-- damage_payload --><!-- damage_payload_emailing --><!-- damage_payload_delete_files --><!-- damage_payload_modify_files --><!-- damage_payload_degrade --><!-- damage_payload_instability --><!-- damage_payload_confidential --><!-- damage_payload_security --><!-- end list --><!-- end list --><!-- distribution - section --><!-- distribution header and start list -->
+                        <P><B><A 
+                        href="http://securityresponse.symantec.com/avcenter/refa.html#Distribution">Distribution:</A></B> 
+
+                        <UL><!-- distribution_email_subject --><!-- distribution_attachment_name -->
+                          <LI><A 
+                          href="http://securityresponse.symantec.com/avcenter/refa.html#name">Name 
+                          of attachment:</A> Random with EXE or SCR file name 
+                          extension <!-- distribution_attachment_size --><!-- distribution_attachment_stamp --><!-- distribution_ports --><!-- distribution_shared_drive --><!-- distribution_target --><!-- end list --></LI></UL><!-- technical description -->
+                        <P><A name=technicaldetails><IMG height=25 
+                        alt="technical details" 
+                        src="Symantec Security Response - W95_Hybris_worm_files/section_title_technical.gif" 
+                        width=185><BR><BR>Please see the document <A 
+                        href="http://www.symantec.com/avcenter/venc/data/w95.hybris.gen.html"><FONT 
+                        color=#0000ff>W95.Hybris.gen</FONT></A><A 
+                        href="http://service1.symantec.com/sarc/sarc.nsf/html/W95.Hybris.gen.html"></A> 
+                        for technical information about this worm.<BR><!-- recommendations -->
+                        <P><A name=recommendations><IMG height=25 
+                        alt=recommendations 
+                        src="Symantec Security Response - W95_Hybris_worm_files/section_title_recommend.gif" 
+                        width=185><BR><!-- BEGIN GATEWAY BOX --><!-- END GATEWAY BOX --><!-- BEGIN SERVER BOX --><!-- END SERVER BOX --><!-- BEGIN CLIENT BOX --><!-- END CLIENT BOX --><BR>
+                        <P>Symantec Security Response encourages all users and 
+                        administrators to adhere to the following basic security 
+                        "best practices":</P>
+                        <UL>
+                          <LI>Turn off and remove unneeded services. By default, 
+                          many operating systems install auxiliary services that 
+                          are not critical, such as an FTP server, a telnet 
+                          server, and a Web server. These services are avenues 
+                          of attack. If they are removed, blended threats have 
+                          less avenues of attack and you have fewer services to 
+                          maintain through patch updates. 
+                          <LI>If a <A 
+                          href="http://securityresponse.symantec.com/avcenter/refa.html#blended_threat">blended 
+                          threat</A> exploits one or more network services, 
+                          disable, or block access to, those services until a 
+                          patch is applied. 
+                          <LI>Always keep your patch levels up-to-date, 
+                          especially on computers that host public services and 
+                          are accessible through the firewall, such as HTTP, 
+                          FTP, mail, and DNS services. 
+                          <LI>Enforce a password policy. Complex passwords make 
+                          it difficult to crack password files on compromised 
+                          computers. This helps to prevent or limit damage when 
+                          a computer is compromised. 
+                          <LI>Configure your email server to block or remove 
+                          email that contains file attachments that are commonly 
+                          used to spread viruses, such as .vbs, .bat, .exe, .pif 
+                          and .scr files. 
+                          <LI>Isolate infected computers quickly to prevent 
+                          further compromising your organization. Perform a 
+                          forensic analysis and restore the computers using 
+                          trusted media. 
+                          <LI>Train employees not to open attachments unless 
+                          they are expecting them. Also, do not execute software 
+                          that is downloaded from the Internet unless it has 
+                          been scanned for viruses. Simply visiting a 
+                          compromised Web site can cause infection if certain 
+                          browser vulnerabilities are not patched. </LI></UL><BR><!-- removal instructions --><A 
+                        name=removalinstructions><IMG height=25 
+                        alt="removal instructions" 
+                        src="Symantec Security Response - W95_Hybris_worm_files/section_title_removal.gif" 
+                        width=195><BR><BR><B>To remove this worm:</B>
+                        <UL>1. Run LiveUpdate to make sure that you have the 
+                          most recent virus definitions.<BR>2. Start Norton 
+                          AntiVirus (NAV), and run a full system scan, making 
+                          sure that NAV is set to scan all files.<BR>3. Delete 
+                          any files detected as W95.Hybris.worm.<BR>4. Follow 
+                          the instructions in the document <A 
+                          href="http://www.symantec.com/avcenter/venc/data/w95.hybris.gen.html">W95.Hybris.gen</A><A 
+                          href="http://service1.symantec.com/sarc/sarc.nsf/html/W95.Hybris.gen.html"></A> 
+                          to make sure that the worm has been removed.</UL><BR><!-- additional information --><!-- revision history -->
+                        <P><IMG height=1 
+                        src="Symantec Security Response - W95_Hybris_worm_files/black.gif" 
+                        width="100%"> <BR><!-- author / coauthor -->
+                        <P>Write-up by: Richard Cave <BR><!-- VIRUS WRITE-UP - END --><BR></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- Begin table-end.html Template --><!-- MAIN CONTENT AREA TABLE ENDS HERE --></TD></TR></TBODY></TABLE><!-- End table-end.html Template --></BODY></HTML>

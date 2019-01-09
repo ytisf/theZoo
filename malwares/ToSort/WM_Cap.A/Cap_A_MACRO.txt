@@ -1,0 +1,19 @@
+------------------------------------------------
+NAME: 		   CAP A
+TYPE:              WORD MACRO
+DATE OF CREATION:  
+CREATOR:           
+------------------------------------------------  
+ 
+Aliases: MW:CAP family, WordMacro/Cap.A:[var2], WM.Cap, WM/Cap, Winword.CAP, WM/CAP.A, WM.CAP.A, CAP, WM6.CAP, Macro.Word.Cap 
+Infection Length: N/A 
+Likelihood: common 
+Target Platform: Application macros 
+ 
+
+Description:
+This virus infects document files. This virus has been found "in the wild." This means that one or more end-users have encountered it. The WM.Cap.A virus propagates identical copies of itself. It does not hide itself using "stealthing" techniques. In most cases, files infected with the WM.Cap.A virus can be fully repaired.
+
+Additional Comments:
+This macro virus removes Macro & Customize item from Tools menu. It deletes all existing macros before infection. Saving into RTF file actually creates an infected Word Document w/ RTF extension.
+ 

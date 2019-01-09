@@ -1,0 +1,60 @@
+***************************************************************************
+FIX_NIMDA (version 1.00)
+Trend Micro, Inc.
+http://www.antivirus.com
+***************************************************************************
+
+
+I. File List
+
+	o  FIX_NIMDA.EXE	-  fix tool for PE_NIMDA.A
+	o  SLIDE.EXE		-  accompanying file to clean HTM/HTML/ASP files
+				   (You need NOT run this file, FIX_NIMDA.EXE will
+				   run this file automatically).
+	o  SLIDE.DAT		-  data file used by SLIDE.EXE
+
+
+II. How to Use
+
+	1.  Place the 3 files (listed above) in the same directory.
+	2.  Open a Command Prompt (MS-DOS Prompt) and proceed to the directory where
+		the tool resides.
+	3.  Run FIX_NIMDA.A.
+
+
+III. Description
+
+	This tool is designed to clean a system that was infected by
+PE_NIMDA.A.
+
+	This tool will clean the system without having to boot using the
+boot disk or emergency rescue disk.
+
+	When FIX_NIMDA.EXE is executed, it will perform the following steps:
+		o Terminate PE_NIMDA.A in memory.
+		o Remove traces of PE_NIMDA.A in SYSTEM.INI file.
+		o Scan all files on all fixed drives for infected executable and
+			EML files.
+		o Clean all infected files and delete all non-cleanable files.
+		o Scan/clean all HTM/HTML/ASP files for PE_NIMDA.A by executing
+			SLIDE.EXE.
+
+
+IV. Requirements
+
+	This tool is designed to run under Windows NT/2K and Windows 9X/ME.
+	For this tool to execute properly under Windows NT/2000 it needs the
+	following DLL files:
+		o PSAPI.DLL
+	Be sure that these two files are present in the "Winnt\system32" directory.
+
+
+V. Notes
+
+    1.  There are instances where the original mother file gets infected with
+	PE_NIMDA.A thereby detection would be PE_NIMDA.A.  The file gets cleaned
+	and another scan of the file reveals that it is the non-cleanable original
+	mother file which FIX_NIMDA.EXE will delete.
+
+
+

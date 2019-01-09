@@ -1,0 +1,151 @@
+NAME: Hybris 
+ALIAS: IWorm_Hybris, I-Worm.Hybris 
+ALIAS: Snow White, SnowWhite, SnoWhite 
+
+
+Hybris is an Internet worm that spreads itself as an attachment to email messages. The worm works under Win32 systems only. The worm contains components (plugins) in its code that are executed depending on what worm needs, and these components can be upgraded from an Internet Web site. The major worm versions are encrypted with semi-polymorphic encryption loop. 
+
+The worm contains the following encrypted text strings: 
+
+
+
+ HYBRIS
+ (c) Vecna
+
+The main worm's target on computes it tries to infect is the WSOCK32.DLL library. While infecting this DLL the worm: 
+
+- writes itself to the end of last file section - hooks "connect", "recv", "send" functions - modifies DLL entry routine address (a routine that is activated 
+
+
+  when DLL file is being loaded) and encrypts original entry
+  routine
+
+If the worm is not able to infect WSOCK32.DLL at its startup (in case it is in use and is locked for writing) the worm creates a copy of this library (a copy of WSOCK32.DLL with random name), infects it and writes "rename" instruction to WININIT.INI file. As a result WSOCK32.DLL will be replaced with an infected one on next Windows startup. 
+
+The worm also creates its copy with random name in Windows system directory and registers it in RunOnce registry key: 
+
+
+
+ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce
+  {Default} = %WinSystem%\WormName
+
+or 
+
+
+
+ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce
+  {Default} = %WinSystem%\WormName
+
+where %WinSystem% is Windows system directory, and "WormName" is random name, for example: 
+
+
+
+ CCMBOIFM.EXE
+ LPHBNGAE.EXE
+ LFPCMOIF.EXE
+
+There is only one possible reason to register additional worm copy in "RunOnce" registry key: in case WSOCK32.DLL was not infected on first worm run, and its infected copy was not created because of some reason, the "RunOnce" worm copy will complete the task on next Windows restart. 
+
+Being active the worm intercepts Windows function that establish a network connection, including Internet. The worm intercepts data that is sent and received, and scans it for email addresses. When address(es) is detected, the worm waits for some time and then sends an infected message to that address(es). 
+
+The worm functionality depends on the plugins that are stored in a worm body encrypted with RSA-like strong crypto algorithm with 128 bits key. There are up to 32 plugins can be found in different worm versions. These plugins perform different actions, they can be updates from a Web page located at VietMedia.com website. 
+
+The complete worm functionality depends only on its host that is able to upgrade plugins from the Web page. The plugins are encrypted with a RSA-like crypto too. 
+
+The worm also updates its plugins by using alt.comp.virus newsgroup. The worm being active on a machine connects to a news server (by using one of randomly selected servers - there are more than 70 addresses in the list), converts its plugins to newsgroup messages and post them there. Worm's messages have random Subject, for example: 
+
+
+
+ encr HVGT GTeLKzurGbGvqnuDqbivKfCHWbizyXiPOvKD
+ encr CMBK bKfOjafCjyfWnqLqzSTWTuDmfefyvurSLeXGHqR
+ text LNLM LmnajmnKDyfebuLuPaPmzaLyXGXKPSLSXWjKvWnyDWbGH
+ text RFRE rebibmTCDOzGbCjSZ
+
+where first four characters represent plugin "name" and following four characters represent the encoded plugin "version". As well as sending, the worm reads such messages from alt.comp.virus, gets plugin "name" and "version" and compares with plugins that are currently used by the worm. In case a newsgroup has a message with higher plugin version, the worm extracts it and replaces existing one. 
+
+The worm drops its plugins to disk as files in Windows sytem directory. They also have random name, but the worm is able to access them. The names may look as follows: 
+
+
+
+ BIBGAHNH.IBG
+ DACMAPKO.ACM
+ GAFIBPFM.AFI
+ IMALADOL.MAL
+ MALADOLI.ALA
+
+There are several different plugins known: 
+
+1. Infect all ZIP and RAR archives on all available drives from C: till Z:. While infecting the worm renames EXE files in archive with .EX$ extension and add its copy with .EXE extension to the archive (companion method of infection). 
+
+2. Send messages with encoded plugins to "alt.comp.virus" neewsgroup, and gets new plugins from there. 
+
+3. Spread virus to remote machines that have SubSeven backdoor trojan installed. The plugin detects such machines on the net, and by using SubSeven commands uploads worm copy to the machine and spawns it in there. 
+
+4. Encrypt worm copies with polymorphic encryption loop before sending the copy attached to email. 
+
+5. Affects DOS EXE and Windows PE EXE files. The worm affects them so that they become worm droppers. When run, they drop worm's EXE file to TEMP directory and execute it. 
+
+While affecting DOS EXE file the plugin adds dropper code and worm body to the end of a file. These files are can be cured. 
+
+While affecting Windows PE EXE file the plugin overwrites file code section (if is has enough size). The plugin doesn't touch file header (including entry point address), and does not increase file size. Moreover, it has a anti-CRC (chechsum) routine that fill special data in plugin code so that file CRC becomes the same for few common used CRC algorithms. That means, that some integrity checkers will not detect changes in affected files: the file length and file body CRC stay the same as on clean file. 
+
+6. Depending on system date and time (on September 16 and 24, and on 59 minute of each hour starting from 2001 - in known plugins) the "spirale" effect is run. 
+
+See jpeg picture file.
+
+
+7. Randomly select Subject, Message text and Attach name while sending worm copies with email messages: 
+
+Received: from SpoolDir by LS05 (Mercury 1.48); 27 Mar 01 21:07:26 +0100
+Return-path: <errormaster@port.ac.uk>
+Received: from alpha5.iso.port.ac.uk (148.197.254.14) by ls05.nwservers.iso.port.ac.uk (Mercury 1.48) with ESMTP;
+    27 Mar 01 21:07:23 +0100
+Received: from [195.92.193.20] (helo=mail5.svr.pol.co.uk)
+	by alpha5.iso.port.ac.uk with esmtp (Exim 3.14 #1)
+	id 14hzkM-0006YE-00
+	for dis90066@port.ac.uk; Tue, 27 Mar 2001 21:07:18 +0100
+Received: from modem-98.actinium.dialup.pol.co.uk ([62.136.64.98] helo=cray)
+	by mail5.svr.pol.co.uk with smtp (Exim 3.13 #0)
+	id 14hzkC-00027e-00
+	for dis90066@port.ac.uk; Tue, 27 Mar 2001 21:07:09 +0100
+From: Hahaha <hahaha@sexyfun.net>
+Subject: Snowhite and the Seven Dwarfs - The REAL story!
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="--VEMJ8HUNGXENO1I3S5QZ"
+Message-Id: <E14hzkC-00027e-00.2001-03-27-21-07-09@mail5.svr.pol.co.uk>
+Bcc:
+Date: Tue, 27 Mar 2001 21:07:09 +0100
+
+----VEMJ8HUNGXENO1I3S5QZ
+Content-Type: text/plain; charset="us-ascii"
+
+Today, Snowhite was turning 18. The 7 Dwarfs always where very educated and
+polite with Snowhite. When they go out work at mornign, they promissed a 
+*huge* surprise. Snowhite was anxious. Suddlently, the door open, and the Seven
+Dwarfs enter...
+
+
+
+
+The worm can also send itself with a random, 8-letter name, for example UKSJHHKW.EXE. 
+
+In some cases a worm can send itself attached to an empty message. We also have reports that it can use the recepient's mail server directly. 
+
+It is advised to excercise extreme caution when executable attachments arrive in your inbox, no matter where they come from and how 'trustworthy' a message looks. 
+
+Hybris can be successfully disinfected with a fresh version of FSAV and the latest updates for it. 
+
+http://www.europe.f-secure.com/download-purchase/ http://www.europe.f-secure.com/download-purchase/updates.shtml 
+
+Note that Hybris file(s) might be locked while Windows is active and older versions of FSAV for Windows might not be able to remove it. In this case you can exit to DOS and remove Hybris file(s) manually. 
+
+You can also use a free version of F-Prot for DOS to remove Hybris from an infected system. It is a requirement to perform disinfection from pure DOS. 
+
+ftp://ftp.europe.F-Secure.com/anti-virus/free/ ftp://ftp.europe.F-Secure.com/anti-virus/updates/f-prot/dos/ 
+
+Note: As Hybris has a plugin that infects EXE files, it is advised to disinfect all infected files first and then to remove all locked Hybris components manually. 
+
+[Eugene Kaspersky, KL; Alexey Podrezov, F-Secure Corp.; Nov 2000 - Jan 2001]  
+
+
+ 

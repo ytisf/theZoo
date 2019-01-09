@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0091)http://news.netcraft.com/archives/2004/01/30/wwwscocom_is_a_weapon_of_mass_destruction.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Netcraft: www.sco.com is a weapon of mass destruction</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+href="Netcraft www_sco_com is a weapon of mass destruction_files/styles-site.css" 
+type=text/css rel=stylesheet><LINK title=RSS href="index.rdf" 
+type=application/rss+xml rel=alternate><LINK href="/favicon.ico" 
+rel="shortcut icon"><LINK title=Home href="/" rel=start><LINK 
+title="Phishers expand into telephony" 
+href="http://news.netcraft.com/archives/2004/01/30/phishers_expand_into_telephony.html" 
+rel=prev><LINK title="February 2004 Web Server Survey" 
+href="http://news.netcraft.com/archives/2004/02/01/february_2004_web_server_survey.html" 
+rel=next><LINK href="/favicon.ico" rel="shortcut icon">
+<SCRIPT language=javascript type=text/javascript>
+<!--
+
+function OpenTrackback (c) {
+    window.open(c,
+                    'trackback',
+                    'width=480,height=480,scrollbars=yes,status=yes');
+}
+
+var HOST = 'news.netcraft.com';
+
+// Copyright (c) 1996-1997 Athenia Associates.
+// http://www.webreference.com/js/
+// License is granted if and only if this entire
+// copyright notice is included. By Tomer Shiran.
+
+function setCookie (name, value, expires, path, domain, secure) {
+    var curCookie = name + "=" + escape(value) + ((expires) ? "; expires=" + expires.toGMTString() : "") + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + ((secure) ? "; secure" : "");
+    document.cookie = curCookie;
+}
+
+function getCookie (name) {
+    var prefix = name + '=';
+    var c = document.cookie;
+    var nullstring = '';
+    var cookieStartIndex = c.indexOf(prefix);
+    if (cookieStartIndex == -1)
+        return nullstring;
+    var cookieEndIndex = c.indexOf(";", cookieStartIndex + prefix.length);
+    if (cookieEndIndex == -1)
+        cookieEndIndex = c.length;
+    return unescape(c.substring(cookieStartIndex + prefix.length, cookieEndIndex));
+}
+
+function deleteCookie (name, path, domain) {
+    if (getCookie(name))
+        document.cookie = name + "=" + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+}
+
+function fixDate (date) {
+    var base = new Date(0);
+    var skew = base.getTime();
+    if (skew > 0)
+        date.setTime(date.getTime() - skew);
+}
+
+function rememberMe (f) {
+    var now = new Date();
+    fixDate(now);
+    now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000);
+    setCookie('mtcmtauth', f.author.value, now, '', HOST, '');
+    setCookie('mtcmtmail', f.email.value, now, '', HOST, '');
+    setCookie('mtcmthome', f.url.value, now, '', HOST, '');
+}
+
+function forgetMe (f) {
+    deleteCookie('mtcmtmail', '', HOST);
+    deleteCookie('mtcmthome', '', HOST);
+    deleteCookie('mtcmtauth', '', HOST);
+    f.email.value = '';
+    f.author.value = '';
+    f.url.value = '';
+}
+
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2800.1276" name=GENERATOR></HEAD>
+<BODY>
+<TABLE border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=3>
+      <DIV id=banner>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD align=left>
+            <H1><A accessKey=1 href="http://news.netcraft.com/" target=_top><IMG 
+            height=57 alt=Netcraft 
+            src="Netcraft www_sco_com is a weapon of mass destruction_files/n2s.gif" 
+            width=200 border=0> </A></H1><SPAN class=description></SPAN></TD>
+          <TD align=middle>
+            <DIV id=letterbox>
+            <SCRIPT language=JavaScript type=text/javascript>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://banners.netcraft.com/banneradmin/adjs.php?n=a98ae9f3");
+   document.write ("&amp;what=zone:1&amp;source=newsletterbox&amp;target=_blank&amp;withText=0");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   document.write ("'><" + "/script>");
+//-->
+</SCRIPT>
+            <NOSCRIPT><A 
+            href="http://banners.netcraft.com/banneradmin/adclick.php?n=a98ae9f3" 
+            target=_blank><IMG alt="" 
+            src="Netcraft www_sco_com is a weapon of mass destruction_files/spdirectory.gif" 
+            border=0></A></NOSCRIPT> </DIV></TD>
+          <TD vAlign=top align=right>
+            <DIV class=sitesearch>
+            <FORM action=/cgi-bin/search.cgi method=get target=_top><INPUT 
+            type=hidden value=1 name=IncludeBlogs> <LABEL accessKey=4 
+            for=search>Site Search</LABEL><BR><INPUT id=search 
+            name=search><BR></FORM></DIV></TD></TR></TBODY></TABLE></DIV></TD></TR>
+  <TR vAlign=top>
+    <TD width="20%">
+      <DIV id=links>
+      <DIV class=sidetitle>Webserver Search</DIV>
+      <DIV class=side>
+      <FORM name=f action=http://www.netcraft.com/ 
+      method=get><SMALL><STRONG>What's that site running?...</STRONG></SMALL> 
+      <INPUT maxLength=80 size=23 name=host> <INPUT type=hidden value=limited 
+      name=position> <INPUT class=button onclick='f.lookup.value="Wait..";return true' type=submit value=Search name=lookup> 
+      </FORM><SMALL>Example:&nbsp;<A 
+      href="http://www.netcraft.com/?restriction=site+ends+with&amp;host=.microsoft.com">.microsoft.com</A></SMALL><BR><SMALL>Example:&nbsp;<A 
+      href="http://uptime.netcraft.com/up/graph?site=www.netcraft.com&amp;mode_w=on" 
+      target=_top>http://uptime.netcraft.com/up/graph?site=www.netcraft.com&amp;mode_w=on</A></SMALL> 
+      </DIV>
+      <DIV class=syndicate><A href="http://news.netcraft.com/index.rdf" 
+      target=_top>RSS feed</A></DIV>
+      <DIV class=subscription>
+      <P align=center>
+      <FORM action=http://www.netcraft.com/cgi-bin/Survey/subscription><INPUT class=button type=submit value="Subscribe to Netcraft News"> 
+      </FORM></P></DIV>
+      <DIV class=sidetitle>Netcraft Services</DIV>
+      <DIV class=sidelinks>
+      <DIV class=linktitle>Internet Exploration</DIV><A 
+      href="http://www.netcraft.com/whats" target=_top>Whats that site 
+      running?</A><BR><A href="http://www.netcraft.com/?host" target=_top>Search 
+      Web by Domain</A><BR><A href="http://uptime.netcraft.com/netmove/today" 
+      target=_top>Sites on the Move</A><BR><BR>
+      <DIV class=linktitle>Internet Data Mining</DIV><A 
+      href="http://news.netcraft.com/archives/2003/06/18/hosting_provider_switching_analysis_available.html" 
+      target=_top>Hosting Provider Switching Analysis</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/04/14/netcraft_hosting_provider_server_count_available.html" 
+      target=_top>Hosting Provider Server Count</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/05/10/site_operator_survey.html" 
+      target=_top>Hosting Reseller Survey</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/04/09/netcraft_ssl_survey.html" 
+      target=_top>SSL Survey</A><BR><A 
+      href="http://www.netcraft.com/survey/archive.html">Web Server Survey 
+      Archive</A><BR><BR>
+      <DIV class=linktitle>Performance</DIV><A 
+      href="http://news.netcraft.com/archives/2003/08/26/hosting_prospect_monitoring_and_outage_alerting.html" 
+      target=_top>Hosting Prospects Performance Alerts</A><BR><A 
+      href="http://uptime.netcraft.com/perf/reports/Hosters" target=_top>Hosting 
+      Providers Network Performance</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/01/01/dedicated_server_monitoring.html" 
+      target=_top>Dedicated Server Monitoring</A><BR><BR>
+      <DIV class=linktitle>Security</DIV><A 
+      href="http://news.netcraft.com/archives/2004/01/02/phishing_identity_theft_and_banking_fraud_detection.html" 
+      target=_top>Bank Fraud Detection</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/01/01/automated_security_testing.html" 
+      target=_top>Automated Security Testing</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/01/01/dedicated_server_monitoring.html" 
+      target=_top>Dedicated Server Monitoring</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/01/01/ecommerce_security_testing.html" 
+      target=_top>Web Application Testing &amp; Site Audits</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/01/01/security_service_faq.html" 
+      target=_top>Security Services FAQ</A><BR><BR>
+      <DIV class=linktitle>Advertising</DIV><A 
+      href="http://news.netcraft.com/archives/banner_advertising.html" 
+      target=_top>Banner Advertising on Netcraft</A><BR><BR>
+      <DIV class=linktitle>About Netcraft</DIV><A 
+      href="http://news.netcraft.com/archives/2003/01/01/about_netcraft.html" 
+      target=_top>About Netcraft</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/01/01/fair_use_copyright.html" 
+      target=_top>Fair Use, Copyright</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/01/01/privacy_statement.html" 
+      target=_top>Site Privacy Statement</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/01/01/visiting_netcraft.html" 
+      target=_top>Visiting Netcraft</A><BR><BR>
+      <DIV class=linktitle>Contact Us</DIV><A 
+      href="mailto:webmaster@netcraft.com">Webmaster</A><BR></DIV>
+      <DIV class=sidetitle>Categories</DIV>
+      <DIV class=side><A 
+      href="http://news.netcraft.com/archives/about_netcraft.html" 
+      target=_top>About Netcraft</A><BR><A 
+      href="http://news.netcraft.com/archives/around_the_net.html" 
+      target=_top>Around the Net</A><BR><A 
+      href="http://news.netcraft.com/archives/banner_advertising.html" 
+      target=_top>Banner Advertising</A><BR><A 
+      href="http://news.netcraft.com/archives/dogfood.html" 
+      target=_top>Dogfood</A><BR><A 
+      href="http://news.netcraft.com/archives/hosting.html" 
+      target=_top>Hosting</A><BR><A 
+      href="http://news.netcraft.com/archives/netcraft_services.html" 
+      target=_top>Netcraft Services</A><BR><A 
+      href="http://news.netcraft.com/archives/performance.html" 
+      target=_top>Performance</A><BR><A 
+      href="http://news.netcraft.com/archives/security.html" 
+      target=_top>Security</A><BR><A 
+      href="http://news.netcraft.com/archives/web_server_survey.html" 
+      target=_top>Web Server Survey</A><BR><A 
+      href="http://news.netcraft.com/fullindex.html" target=_top>Full 
+      Index</A><BR></DIV>
+      <DIV class=sidetitle>Dates</DIV>
+      <DIV class=side><A 
+      href="http://news.netcraft.com/archives/2004/02/index.html" 
+      target=_top>February 2004</A><BR><A 
+      href="http://news.netcraft.com/archives/2004/01/index.html" 
+      target=_top>January 2004</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/12/index.html" 
+      target=_top>December 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/11/index.html" 
+      target=_top>November 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/10/index.html" 
+      target=_top>October 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/09/index.html" 
+      target=_top>September 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/08/index.html" 
+      target=_top>August 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/07/index.html" 
+      target=_top>July 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/06/index.html" 
+      target=_top>June 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/05/index.html" 
+      target=_top>May 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/04/index.html" 
+      target=_top>April 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/03/index.html" 
+      target=_top>March 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/02/index.html" 
+      target=_top>February 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2003/01/index.html" 
+      target=_top>January 2003</A><BR><A 
+      href="http://news.netcraft.com/archives/2002/09/index.html" 
+      target=_top>September 2002</A><BR><A 
+      href="http://news.netcraft.com/archives/2002/03/index.html" 
+      target=_top>March 2002</A><BR></DIV></DIV></TD>
+    <TD>
+      <DIV id=content>
+      <DIV class=navmenu>« <A 
+      href="http://news.netcraft.com/archives/2004/01/30/phishers_expand_into_telephony.html" 
+      target=_top>Previous</A> | <A href="http://news.netcraft.com/" 
+      target=_top>Up</A> | <A 
+      href="http://news.netcraft.com/archives/2004/02/01/february_2004_web_server_survey.html" 
+      target=_top>Next</A> » </DIV>
+      <DIV class=blog>
+      <DIV class=blogtitle>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD align=left>www.sco.com is a weapon of mass destruction</TD>
+          <TD align=right><A 
+            href="http://news.netcraft.com/archives/dogfood.html" 
+            target=_top>Dogfood</A></TD></TR></TBODY></TABLE></DIV>
+      <DIV class=blogbody>Much of the commentary on the SCO distributed denial 
+      of service scenario, including our own, has been based on the premise that 
+      SCO badly wants to keep their web site running. This may not be the case: 
+      unlike Microsoft, which has a real business to run and a real need to keep 
+      its web site operational, SCO Executives may not strongly care about the 
+      <A 
+      href="http://uptime.netcraft.com/perf/graph?site=www.sco.com">availability 
+      of www.sco.com</A>. After all, Michael Doyle’s half a billion dollar 
+      patent win against Microsoft scarcely hinged on the response times of the 
+      Eolas web site. 
+      <P>In fact, the author of the MyDoom virus has delegated control of the 
+      most enormous volume of http traffic that the Internet has yet seen to 
+      hostmaster@sco.com. On a whim, SCO can direct that Tsunami at an object of 
+      their choosing, simply by changing an A record in named.conf in time for 
+      the change to propagate by Sunday. </P>
+      <P>In this context, SCO Executives may have latitude to consider 
+      alternative defenses which do not involve having to parlay with <A 
+      href="http://news.netcraft.com/archives/2004/01/29/sco_legal_case_poses_a_conundrum_on_how_it_should_defend_a_ddos.html">low-down-no-good-Linux-loving-CDN-providers</A>.</P><A 
+      name=more></A>
+      <P><B>Solution 1:</B> Move the SCO site to somewhere that has the clue and 
+      the clout to cope. </P>
+      <P><B>Consequences: </B>SCO Executives buy a small business shared hosting 
+      account at Yahoo, noting that it <A 
+      href="http://uptime.netcraft.com/up/graph/?host=webhosting.yahoo.com">runs 
+      on FreeBSD</A>, not Linux, point www.sco.com at the new account, and hope 
+      for the best. </P>
+      <P>webhosting.yahoo.com not only stays up, but serves all the http 
+      requests from the infected machines at the same speed that the 
+      www.yahoo.com front page normally loads. Virus author kicks the cat in 
+      frustration. SCO’s entire corporate cash resources exhausted by Yahoo’s 
+      bandwidth surcharges in the first eight minutes. Yahoo pre-announces 
+      record quarter for hosting division.</P>
+      <P><B>Solution 2: </B>Take www.sco.com out of the DNS. </P>
+      <P><B>Consequences: </B>Everyone has a quiet weekend. SCO Execs drink 
+      Budweiser and watch the Superbowl. Global media considers that the virus 
+      author “has won”. Anti-virus company Execs do not return journalists' 
+      calls on “What was all that fuss?”</P>
+      <P><B>Solution 3: </B>Point www.sco.com at someone you don’t like.</P>
+      <P><B>Consequences: </B>SCO Executives take a poll on which web site 
+      annoys them the most. Slashdot wins. hostmaster@sco.com CNames www.sco.com 
+      to slashdot.org. SCO Execs cackle demonically at the prospect of 
+      slashdotting Slashdot. </P>
+      <P>Linux community notices DNS change propagating within five minutes. 
+      Eric Raymond calls for “restraint in the face of SCO’s continual 
+      provocation”. Undeterred, Linux community launches internet-wide round the 
+      clock hackathon, and finds six “trivially insecure” US military 
+      installations shortly after the US military go home on Friday afternoon. 
+      Spend Saturday soaking up the totally awesome graphics on the Stealth 
+      bomber flight simulators, and then obliterate most of Utah, sco.com name 
+      servers and all, on Sunday morning hours before the DDoS is due to hit 
+      Slashdot. SCO Execs still laughing themselves helpless about the /. Effect 
+      when the bomb hits. </P>
+      <P>New, previously unknown Linux Thought Leader declares that “we have met 
+      the enemy, and they are gone”. Traffic to Slashdot triples, Hemos weeps 
+      about the size of OSDN’s unsold banner inventory. Follow up posts enthuse 
+      about the quality of the stealth bomber user interface, then propose that 
+      they should sort out “the problem in Redmond” before they give the US 
+      Military their network back in time for Monday morning. New Linux Thought 
+      Leader concurs, adding that there’s a carding site in Moscow that really 
+      ticks him off, too. Armageddon.</P>
+      <P><B>Solution 4: </B>Get to the Windows machines before they go off. </P>
+      <P><B>Consequences: </B>SCO executives persuade Slashdot readers that 
+      Windows machines are their common enemy and that the enemy of my enemy is 
+      my friend. Someone in the Linux community notices Colin Percival’s <A 
+      href="http://www.daemonology.net/depenguinator/">Depenguinator</A> 
+      program, and considers that with some minor modifications, it can be 
+      distributed by the MyDoom virus, and as its payload, download and install 
+      Debian 3.0r2, KDE, Open Office and Evolution. Changes name of program to 
+      “De Penguinator”. </P>
+      <P>Entire set of infected Windows machines is reached and either comes up 
+      running Debian or crashes stone dead trying. No denial of service attack 
+      occurs. SCO sends licence fee demands to owners of all the previously 
+      infected windows machines. They happily pay up and SCO splits the proceeds 
+      with Slashdot readers. </P>
+      <P><B>Solution 5: </B>SCO Execs point www.sco.com at the loopback address 
+      127.0.0.1, end lawsuits, dismiss lawyers, and invest remaining corporate 
+      cash reserves in call options in Dell &amp; Microsoft stock.</P>
+      <P><B>Consequences: </B>No denial of service traffic whatsoever seen on 
+      the Internet. Millions of Windows users notice that their computer is 
+      running extremely slowly. Many buy new machines, which fixes the problem. 
+      Dell &amp; Microsoft stock rises. Everyone lives happily ever after. </P>
+      <DIV class=posted>Posted by mhp at January 30, 2004 12:33 PM | <A 
+      href="http://www.netcraft.com/cgi-bin/Survey/subscription" 
+      target=_top>Subscribe</A> <BR></DIV></DIV></DIV>
+      <DIV class=navmenu>« <A 
+      href="http://news.netcraft.com/archives/2004/01/30/phishers_expand_into_telephony.html" 
+      target=_top>Previous</A> | <A href="http://news.netcraft.com/" 
+      target=_top>Up</A> | <A 
+      href="http://news.netcraft.com/archives/2004/02/01/february_2004_web_server_survey.html" 
+      target=_top>Next</A> » </DIV></DIV></TD>
+    <TD>
+      <DIV id=skyscraper>
+      <SCRIPT language=JavaScript type=text/javascript>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://banners.netcraft.com/banneradmin/adjs.php?n=a7a0d565");
+   document.write ("&amp;what=zone:2&amp;source=newsskyscraper&amp;target=_blank&amp;withText=0");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   document.write ("'><" + "/script>");
+//-->
+</SCRIPT>
+      <NOSCRIPT><A 
+      href="http://banners.netcraft.com/banneradmin/adclick.php?n=a7a0d565" 
+      target=_blank><IMG alt="" 
+      src="Netcraft www_sco_com is a weapon of mass destruction_files/netcraft_hunger.gif" 
+      border=0></A></NOSCRIPT> </DIV></TD></TR>
+  <TR>
+    <TD colSpan=3>
+      <DIV class=copyright>Copyright © Netcraft Ltd 
+2004<BR></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

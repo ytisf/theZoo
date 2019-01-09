@@ -1,0 +1,145 @@
+NAME: LoveLetter 
+ALIAS: Lovebug, I-Worm.LoveLetter, ILOVEYOU 
+
+VBS/LoveLetter is a VBScript worm. It spreads through e-mail as a chain letter. 
+
+You can protect yourself against VBScript worms by uninstalling the Windows Script Host. For further information, please look at http://www.F-Secure.com/virus-info/u-vbs/ 
+
+VARIANT: LoveLetter.A 
+
+
+The worm uses the Outlook e-mail application to spread. LoveLetter is also an overwriting VBS virus and it spreads using a mIRC client as well. 
+
+When it is executed, it first copies itself to the Windows System directory as: 
+
+
+
+    - MSKernel32.vbs
+    - LOVE-LETTER-FOR-YOU.TXT.vbs
+
+and to the Windows directory as: 
+
+
+
+    - Win32DLL.vbs
+
+Then it adds itself to the registry, so that it will be executed when the system is restarted. It adds the following registry keys: 
+
+
+
+    HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\MSKernel32
+    HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices\Win32DLL
+
+After that the worm replaces the Internet Explorer home page with a link that points to an executable program, "WIN-BUGSFIX.exe". If the file is downloaded, the worm adds this to the registry as well, which causes the program to be executed when the system is restarted. 
+
+The executable part the LoveLetter worm downloads from the web is a password stealing trojan. On the system startup the trojan tries to find a hidden window named 'BAROK...'. If it is present, the trojan exits immediately, in other case the main routine takes control. The trojan checks for the WinFAT32 subkey in the following Registry key: 
+
+
+
+ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+
+If the WinFAT32 subkey key is not found, the trojan creates it, copies itself to the \Windows\System\ directory as WINFAT32.EXE and then it runs the file from that location. The above registry key modification causes the trojan to become active every time Windows starts. 
+
+Then the trojan sets the Internet Explorer startup page to 'about:blank'. After that the trojan tries to find and delete the following keys: 
+
+
+
+ Software\Microsoft\Windows\CurrentVersion\Policies\Network\HideSharePwds
+ Software\Microsoft\Windows\CurrentVersion\Policies\Network\DisablePwdCaching
+ .DEFAULT\Software\Microsoft\Windows\CurrentVersion\Policies\Network\HideSharePwds
+ .DEFAULT\Software\Microsoft\Windows\CurrentVersion\Policies\Network\DisablePwdCaching
+
+Then the trojan registers a new window class and creates a hidden window titled 'BAROK...' and remains resident in the Windows memory as a hidden application. 
+
+Immediately after startup and when timer counters reach certain values, the trojan loads the MPR.DLL library, calls the WNetEnumCashedPasswords function and sends stolen RAS passwords and all cached Windows passwords to e-mail address 'mailme@super.net.ph' that most likely belongs to the trojan's author. The trojan uses mail server 'smtp.super.net.ph' to send e-mails. The e-mail's subject is 'Barok... email.passwords.sender.trojan'. 
+
+There is the author's copyright message inside the trojan's body: 
+
+
+
+ barok ...i hate go to school suck ->by:spyder @Copyright (c) 2000 GRAMMERSoft Group >Manila,Phils.
+
+There are also some encrypted text messages in the trojan's body for its own use. 
+
+After that the worm creates an HTML file called "LOVE-LETTER-FOR-YOU.HTM" to the Windows System directory. This file contains the worm and it will be sent using mIRC whenever another person joins an IRC channel where the infected user currently is. To accomplish this the worm replaces the "script.ini" file from the mIRC installation directory. 
+
+ 
+
+Then the worm uses Outlook to mass mail itself to everyone in each address book. The message that it sends looks like this: 
+
+
+
+    Subject:    ILOVEYOU
+    Body:       kindly check the attached LOVELETTER coming from me.
+    Attachment: LOVE-LETTER-FOR-YOU.TXT.vbs
+
+ 
+
+LoveLetter sends the mail once to each recipient. After a mail has been sent, it adds a marker to the registry and does not mass mail itself anymore. 
+
+Then the virus searches for certain file types from all folders in all local and remote drives and overwrites them with its own code. The files that are overwritten have either a "vbs" or a "vbe" extension. 
+
+The virus creates a new file with the same name for files with the following extensions: ".js", ".jse", ".css", ".wsh", ".sct" and ".hta". The only difference is that the extension of the new file is ".vbs". The original file will be deleted. 
+
+After this has been done, the the virus locates files with ".jpg" and ".jpeg" extensions, adds a new file next to it and deletes the original file. Then the virus locates ".mp3" and ".mp2" files, creates a new file and hides the original file. In both cases the new files created will have the original name with the additional extension ".vbs". For example, a picture named "pic.jpg" will cause a new file called "pic.jpg.vbs" to be created. 
+
+LoveLetter was found globally in-the-wild on May 4th, 2000. It seems to originate from the Philippines. The virus contains the following text at the beginning of the code: 
+
+
+
+ barok -loveletter(vbe) <i hate go to school>
+            by: spyder  /  ispyder@mail.com  /  @GRAMMERSoft Group  /  Manila,Philippines
+
+F-Secure Anti-Virus detects LoveLetter worm with the latest updates. 
+
+The manual removing of LoveLetter worm can be done by deleting the following files from the infected machine: 
+
+
+
+    - all "*.VBS" files from all drives and all subdirectories.
+    - the file LOVE-LETTER-FOR-YOU.HTM from the Windows System directory.
+    - WIN-BUGSFIX.EXE and WINFAT32.EXE from the Internet Explorer
+      download directory.
+    - If you are using mIRC, delete the "script.ini" file from the
+      mIRC installation directory.
+
+
+
+
+
+Further information about different variants of VBS/LoveLetter is available at: 
+
+VBS/LoveLetter.B: http://www.Europe.F-Secure.com/v-descs/love_b.shtml 
+VBS/LoveLetter.C: http://www.Europe.F-Secure.com/v-descs/love_c.shtml 
+VBS/LoveLetter.D: http://www.Europe.F-Secure.com/v-descs/love_d.shtml 
+VBS/LoveLetter.E: http://www.Europe.F-Secure.com/v-descs/love_e.shtml 
+VBS/LoveLetter.F: http://www.Europe.F-Secure.com/v-descs/love_f.shtml 
+VBS/LoveLetter.G: http://www.Europe.F-Secure.com/v-descs/love_g.shtml 
+VBS/LoveLetter.H: http://www.Europe.F-Secure.com/v-descs/love_h.shtml 
+VBS/LoveLetter.I: http://www.Europe.F-Secure.com/v-descs/love_i.shtml 
+VBS/LoveLetter.J: http://www.Europe.F-Secure.com/v-descs/love_j.shtml 
+VBS/LoveLetter.K: http://www.Europe.F-Secure.com/v-descs/love_k.shtml 
+VBS/LoveLetter.L: http://www.Europe.F-Secure.com/v-descs/love_l.shtml 
+VBS/LoveLetter.M: http://www.Europe.F-Secure.com/v-descs/love_m.shtml 
+VBS/LoveLetter.N: http://www.Europe.F-Secure.com/v-descs/love_n.shtml 
+VBS/LoveLetter.O: http://www.Europe.F-Secure.com/v-descs/love_o.shtml 
+VBS/LoveLetter.P: http://www.Europe.F-Secure.com/v-descs/love_p.shtml 
+VBS/LoveLetter.Q: http://www.Europe.F-Secure.com/v-descs/love_q.shtml 
+VBS/LoveLetter.R: http://www.Europe.F-Secure.com/v-descs/love_r.shtml 
+VBS/LoveLetter.S: http://www.Europe.F-Secure.com/v-descs/love_s.shtml 
+VBS/LoveLetter.T: http://www.Europe.F-Secure.com/v-descs/love_t.shtml 
+VBS/LoveLetter.U: http://www.Europe.F-Secure.com/v-descs/love_u.shtml 
+VBS/LoveLetter.V: http://www.Europe.F-Secure.com/v-descs/love_v.shtml 
+VBS/LoveLetter.W: http://www.Europe.F-Secure.com/v-descs/love_w.shtml 
+VBS/LoveLetter.X: http://www.Europe.F-Secure.com/v-descs/love_x.shtml 
+VBS/LoveLetter.AJ: http://www.Europe.F-Secure.com/v-descs/love_aj.shtml 
+VBS/LoveLetter.AS: http://www.Europe.F-Secure.com/v-descs/love_as.shtml 
+VBS/LoveLetter.BD: http://www.Europe.F-Secure.com/v-descs/love_bd.shtml 
+VBS/LoveLetter.BG: http://www.Europe.F-Secure.com/v-descs/love_bg.shtml 
+VBS/LoveLetter.BL: http://www.Europe.F-Secure.com/v-descs/love_bl.shtml 
+VBS/LoveLetter.BJ: http://www.Europe.F-Secure.com/v-descs/love_bj.shtml 
+
+Unix.LoveLetter: http://www.Europe.F-Secure.com/v-descs/unixlove.shtml 
+
+[Analysis: Katrin Tocheva, Mikko Hypponen, Alexey Podrezov and Sami Rautiainen, F-Secure]   
+

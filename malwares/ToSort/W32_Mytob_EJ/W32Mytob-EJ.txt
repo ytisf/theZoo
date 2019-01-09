@@ -1,0 +1,61 @@
+W32/Mytob-EJ is a mass-mailing worm and backdoor Trojan for the Windows platform. 
+W32/Mytob-EJ is capable of spreading through email. Email sent by W32/Mytob-EJ has the following properties: 
+Subject line chosen from: 
+Your Account is Suspended
+*DETECTED* Online User Violation
+Your Account is Suspended For Security Reasons
+Warning Message: Your services near to be closed.
+Important Notification
+Members Support
+Security measures
+Email Account Suspension
+Notice of account limitation 
+Message text chosen from: 
+Dear user <domain>,
+You have successfully updated the password of your <domain> account.
+If you did not authorize this change or if you need assistance with your account, please contact <domain> customer service at: <domain>
+Thank you for using <domain>!
+The <domain> Support Team
++++ Attachment: No Virus (Clean)
++++ <domain> Antivirus - www.<domain>.com 
+Dear user <domain>,
+It has come to our attention that your <domain> User Profile ( x ) records are out of date. For further details see the attached document.
+Thank you for using <domain>!
+The <domain> Support Team
++++ Attachment: No Virus (Clean)
++++ <domain> Antivirus - www.<domain>.com 
+Dear <domain> Member,
+We have temporarily suspended your email account <domain>.
+This might be due to either of the following reasons:
+1. A recent change in your personal information (i.e. change of address).
+2. Submiting invalid information during the initial sign up process.
+3. An innability to accurately verify your selected option of subscription due to an internal error within our processors.
+See the details to reactivate your <domain> account.
+Sincerely,The <domain> Support Team
++++ Attachment: No Virus (Clean)
++++ <domain> Antivirus - www.<domain>.com 
+Dear <domain> Member,
+Your e-mail account was used to send a huge amount of unsolicited spam messages during the recent week. If you could please take 5-10 minutes out of your online experience and confirm the attached document so you will not run into any future problems with the online service.
+If you choose to ignore our request, you leave us no choice but to cancel your membership.
+Virtually yours,
+The <domain> Support Team
++++ Attachment: No Virus found
++++ <domain> Antivirus - www.<domain>.com 
+In the above possible email body text samples, domain is replaced with text from the email address used for sending emails. 
+The attached file consists of a base name followed by the extension ZIP. The worm may optionally create double extensions where the first extension is DOC, TXT or HTM and the final extension is BAT, CMD, PIF, SCR, EXE or ZIP. The base filenames are randomly chosen from: 
+updated-password
+email-password
+new-password
+password
+approved-password
+account-password
+accepted-password
+important-details
+account-details
+email-details
+account-info
+document
+readme
+account-report
+<random characters> 
+W32/Mytob-EJ modifies the HOSTS file. 

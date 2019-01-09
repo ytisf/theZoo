@@ -1,0 +1,109 @@
+Descovered on my Birthday 18th September 2001
+
+
+>*** Virus Alert! ***
+>
+>Name: W32/Nimda-A
+>Aliases: W32.Nimda.A@mm, Code Rainbow, Minda
+>Type: W32 executable file virus
+>Date: 18 September 2001
+>
+>A virus identity file (IDE) which provides protection is
+>available now from our website and will be incorporated
+>into the November 2001 (3.51) release of Sophos Anti-Virus.
+>
+>Sophos has received many reports of this virus from the wild.
+>
+>Please note: The IDE has been updated on 18 September at 19:45
+>BST to improve detection of this virus.
+>
+>Description:
+>
+>W32/Nimda-A is a Windows 32 virus which spreads via email,
+>network shares and websites.
+>
+>Affected emails have an attached file called README.EXE. The
+>virus attempts to exploit a MIME Vulnerability in some versions
+>of Microsoft Outlook, Microsoft Outlook Express, and Internet
+>Explorer to allow the executable file to run automatically
+>without the user double-clicking on the attachment.
+>
+>The virus copies itself into the Windows directory with the
+>filenames load.exe and riched20.dll (both have their file
+>attributes set to "hidden"), and attempts to spread itself to
+>other users via network shares.
+>
+>The virus alters the System.ini file to include the line
+>
+>   shell=explorer.exe load.exe -dontrunold
+>
+>so that it executes on Windows startup.
+>
+>The virus forwards itself to other email addresses found on the
+>computer. Furthermore, the virus looks for IIS web servers
+>suffering from the Unicode Directory Traversal vulnerability. It
+>attempts to alter the contents of pages on such servers, hunting
+>for the following filenames:
+>
+>   index.html
+>   index.htm
+>   index.asp
+>   readme.html
+>   readme.htm
+>   readme.asp
+>   main.html
+>   main.htm
+>   main.asp
+>   default.html
+>   default.htm
+>   default.asp
+>
+>If it finds one of the above files on the web server the virus
+>attempts to alter the contents of the file, adding a section of
+>malicious Javascript code to the end of the file.
+>
+>If the website is then browsed by a user with an insecure
+>version of Internet Explorer, the malicious code automatically
+>downloads a file called readme.eml onto the user's computer -
+>which is then executed, forwarding the virus once more.
+>
+>The virus contains the following text: "Copyright 2001
+>R.P.China".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+X-From_: newsletter@freeserve.com Fri Sep 21 17:06:13 2001 +0000
+Envelope-to: user@rostrevormansions.fsnet.co.uk
+From: "newsletter@freeserve.com" <newsletter@freeserve.com>
+To: <user@rostrevormansions.fsnet.co.uk>
+Subject: Freeserve Virus Warning
+Date: Fri, 21 Sep 2001 17:04:35 -0000
+
+
+This mail is from an unattended mailbox, please do not press rely to sender 
+
+
+Dear Freeserve Member,
+
+You may or may not be aware that an Internet virus, known as W32.Nimda, is currently in circulation. All Internet users are potentially at risk from this virus.
+A PC may become infected through a variety of means, ranging from simply viewing an infected webpage via a browser with no enabled security, to opening a malicious email attachment.
+As part of Freeserve's commitment to responsible network management, we advise members to visit the following site; <http://www.nipc.gov/warnings/advisories/2001/01-022.htm> <<http://www.nipc.gov/warnings/advisories/2001/01-022.htm>>, where further information about the worm can be found. From here, there are links to sites which provide information about freely available anti-virus software. Alternatively, <http://housecall.antivirus.com/housecall/start_corp.asp> offers an online virus checker.
+It is important that Internet users take safeguards against viruses of this nature. Your PC may otherwise become infected without your knowledge. If this happens, you may easily infect other peoples' PCs with which you have contact.
+If you have not already installed anti-virus software we highly recommend that you do so. At the very least, Freeserve recommends that members take advantage of the online resources above.
+
+Regards
+
+Freeserve
+

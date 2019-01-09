@@ -1,0 +1,155 @@
+W32.ElKern.4926   
+Discovered on: April 17, 2002  
+Last Updated on: July 25, 2003 09:05:44 AM 
+
+  
+  
+
+    
+ 
+
+
+This is a new variant of the W32.ElKern.3326 virus. This variant is dropped by W32.Klez.H@mm.
+
+Symantec offers a tool to remove infections of all known variants of W32.Klez and W32.ElKern. Click here to obtain the tool. This is the easiest way to remove these threats and should be tried first. 
+
+NOTE: Virus definitions and the W32.Klez Removal Tool (which also removes ElKern infections) dated from September 10, 2002, have an innoculation feature. If infected files are repaired by Symantec AntiVirus products or by the W32.Klez Removal Tool, those files will not be reinfected by W32.ElKern.4926.
+
+Differences in this variant include: 
+
+A recognition algorithm to guard against infecting self-extracting .rar and .zip archives (first seen in W32.ElKern.3587) 
+An improved encryption algorithm in an attempt by the virus author to make detection more difficult 
+Removal of the destructive payload
+
+
+Also Known As:  Win32.Elkern.c [AVP], W32/Elkern.C [Sophos], Win32/WQK.C [CA], PE_ELKERN.D [Trend], W32/Elkern.cav.c [McAfee] 
+Variants:  W32.ElKern.3587, W32.ElKern.3326 
+Type:  Virus 
+Infection Length:  4,926 bytes 
+  
+  
+  
+Systems Affected:  Windows 95, Windows 98, Windows 2000, Windows XP, Windows Me 
+Systems Not Affected:  Windows NT, Macintosh, UNIX, Linux 
+  
+  
+  
+
+
+ 
+Virus Definitions (Intelligent Updater) *
+ April 17, 2002 
+ 
+ 
+Virus Definitions (LiveUpdate™) **
+ April 17, 2002 
+ 
+ 
+*
+ Intelligent Updater definitions are released daily, but require manual download and installation.
+Click here to download manually.
+ 
+**
+ LiveUpdate virus definitions are usually released every Wednesday.
+Click here for instructions on using LiveUpdate.
+ 
+ 
+ 
+
+
+
+
+Wild: 
+
+Number of infections: 50 - 999 
+Number of sites: More than 10 
+Geographical distribution: High 
+Threat containment: Easy 
+Removal: Moderate 
+ Threat Metrics
+ 
+         
+Wild:
+Medium
+ Damage:
+Low
+ Distribution:
+High
+ 
+ 
+
+
+
+W32.ElKern.4926 is associated with W32.Klez.H@mm worm. The worm creates a pure viral body of the virus, using a random file name, in the C:\Program Files folder and activates it. Then the virus runs on its own. 
+
+Like W32.ElKern.3326 and W32.ElKern.3587, W32.ElKern.4926 is also a cavity infector that infects randomly chosen Portable Executable (PE) files in folders and subfolders. It begins searching for files to infect in the current folder. It then searches through drive letters, beginning with a random letter and continuing until Z is reached. It can also infect files in open shares on the local network. Some infected files do not change in size. 
+
+The file search skips folders whose names contain "rary Inter" or "tem32\dllcac". Additionally, files are skipped if they begin with any of the following: _avp, aler, amon, anti, nod3, npss, nres, nsch, n32s, avwi, scan, f-st, f-pr, avp, or nav.
+
+W32.ElKern.4926 considers a file to be infectable if it is a PE GUI or console application that is not a .dll, does not contain the text "irus", is not protected by the System File Checker that is present in Windows 98/Me/2000/XP, and is neither a WinZip nor a RAR self-extractor.
+
+W32.ElKern.4926 contains a bug that causes files to be infected repeatedly. This can result in infected files that cannot be repaired.
+
+Also, this variant of the virus attempts to insert its code into all running processes. This can result in files being reinfected after a full system scan has found no viruses. 
+
+Unlike variants W32.ElKern.3326 and W32.ElKern.3587 which drop Wqk.dll or Wqk.exe and add a value that refers to them in the registry key
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrrentVersion\Run 
+
+W32.ElKern.4926 does not drop Wqk.dll or Wqk.exe, and it does not modify any registry keys. 
+
+W32.ElKern.dam is a detection for a W32.ElKern.4926 infection in which the file has either been corrupted by the virus W32.Elkern.4926, or the virus body is contained within the file, but the viral code never gains control from the host program.
+
+
+
+
+
+
+Symantec Security Response encourages all users and administrators to adhere to the following basic security "best practices":
+
+Turn off and remove unneeded services. By default, many operating systems install auxiliary services that are not critical, such as an FTP server, telnet, and a Web server. These services are avenues of attack. If they are removed, blended threats have less avenues of attack and you have fewer services to maintain through patch updates. 
+If a blended threat exploits one or more network services, disable, or block access to, those services until a patch is applied. 
+Always keep your patch levels up-to-date, especially on computers that host public services and are accessible through the firewall, such as HTTP, FTP, mail, and DNS services. 
+Enforce a password policy. Complex passwords make it difficult to crack password files on compromised computers. This helps to prevent or limit damage when a computer is compromised. 
+Configure your email server to block or remove email that contains file attachments that are commonly used to spread viruses, such as .vbs, .bat, .exe, .pif and .scr files. 
+Isolate infected computers quickly to prevent further compromising your organization. Perform a forensic analysis and restore the computers using trusted media. 
+Train employees not to open attachments unless they are expecting them. Also, do not execute software that is downloaded from the Internet unless it has been scanned for viruses. Simply visiting a compromised Web site can cause infection if certain browser vulnerabilities are not patched. 
+
+
+
+Removal using the removal tool
+Symantec offers a removal tool to remove infections of all known variants of W32.Klez and W32.ElKern. This is the recommended method. Click here to obtain the tool.
+
+Note on W32.Klez.gen@mm detections: W32.Klez.gen@mm is a generic detection for variants of W32.Klez. Computers that are infected with W32.Klez.gen@mm most likely have been exposed to either W32.Klez.E@mm or W32.Klez.H@mm. If your computer is detected as infected with W32.Klez.gen@mm, download and run the tool. In most case, the tool will be able to remove the infection.
+
+Manual removal
+
+NOTE: This procedure will work if the computer is infected only by W32.ElKern.4926. It will not work if the computer is also infected by by W32.Klez.H@mm.
+
+
+Run LiveUpdate to make sure that you have the most recent virus definitions. 
+Shut down the computer, turn off the power, and wait for 30 seconds. 
+Restart the computer in Safe mode. All the Windows 32-bit operating systems, except Windows NT, can be restarted in Safe mode. For instructions on how to do this, read the document, "How to start the computer in Safe Mode." 
+Start Norton AntiVirus (NAV), and make sure that NAV is configured to scan all files. 
+For Norton AntiVirus consumer products: Read the document, "How to configure Norton AntiVirus to scan all files." 
+For Symantec AntiVirus Enterprise products: Read the document, "How to verify that a Symantec Corporate antivirus product is set to scan All Files." 
+If any file is identified as being infected with W32.ElKern.4926, click Repair. 
+Restart the computer. 
+Repeat steps 3-5 until no infected files are reported.
+
+
+ 
+
+
+Additional information: 
+
+Note on W32.Klez.gen@mm detections: W32.Klez.gen@mm is a generic detection for variants of W32.Klez. Computers that are infected with W32.Klez.gen@mm most likely have been exposed to either W32.Klez.E@mm or W32.Klez.H@mm. If your computer is detected as infected with W32.Klez.gen@mm, download and run the tool. In most case, the tool will be able to remove the infection.
+
+
+
+Revision History: 
+
+September 17, 2002: 
+
+Added information that W32.ElKern.4926 does not drop Wqk.dll or Wqk.exe, and it does not modify any registry keys. 
+Added information on W32.ElKern.dam.

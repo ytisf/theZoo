@@ -1,0 +1,21 @@
+X97M/Sugar.Poppy
+
+Excel 97 Class Object Virus
+   *First Of It's Kind*
+
+*Does not use any Auto Macros
+*Does not show up in any macro list (full stealth)
+*Infects all open "class objects" (Sheets and ThisWorkbook)
+*Fast infection
+*AddFromString infection routine (no export or macro copy)
+*Different events hooked in different classes
+
+The Virus:
+
+1)Hooks an event macro
+2)When activated - the virus finds it's own code
+and reads it into memory
+3)Checks all open "class objects"
+4)installs to any and all not infected objects
+5)Returns control
+

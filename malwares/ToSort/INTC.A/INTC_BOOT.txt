@@ -1,0 +1,18 @@
+------------------------------------------------
+NAME: 		   INTC 
+TYPE:              OS Boot MBR Boot Resident
+DATE OF CREATION:  
+CREATOR:             
+------------------------------------------------
+
+ALIAS: Int40, IntC1 
+
+The INTC virus is a simple diskette and Master Boot Record infector. It is only able to infect a hard disk when you try to boot the machine from an infected diskette. At this time INTC infects the Main Boot Record, and after that it will go resident to memory during every boot-up from the hard disk. 
+Once INTC gets resident to memory, it will infect practicly all non-writeprotected diskettes used in the machine. INTC installs to interrupt vector table, so it does not decrease the amount of available memory, but can cause compatibility problems. 
+
+INTC was reported to be in the wild in USA in December 1996 and in Finland in January 1997. 
+
+INTC does nothing except replicates. 
+
+[Analysis: Mikko Hypponen, Data Fellows] 
+

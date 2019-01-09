@@ -1,0 +1,171 @@
+W32.Klez.E@mm   
+Discovered on: January 17, 2002  
+Last Updated on: January 22, 2003 06:42:43 PM 
+
+  
+  
+
+    
+ 
+
+
+Due to a decreased rate of submissions, Symantec Security Response has downgraded the threat level for W32.Klez.E@mm from Category 3 to Category 2 as of July 23, 2002.
+
+W32.Klez.E@mm is similar to W32.Klez.A@mm. It is a mass-mailing email worm that also attempts to copy itself to network shares. The worm uses random subject lines, message bodies, and attachment file names.
+
+The worm exploits a vulnerability in Microsoft Outlook and Outlook Express in an attempt to execute itself when you open or even preview the message in which it is contained. Information and a patch for the vulnerability are available at http://www.microsoft.com/technet/security/bulletin/MS01-020.asp.
+
+The worm overwrites files and creates hidden copies of the originals. In addition, the worm drops the virus W32.Elkern.3587, which is similar to W32.ElKern.3326.
+
+The worm attempts to disable some common antivirus products and has a payload which fills files with all zeroes.
+
+Removal tool
+Symantec has provided a tool to remove infections of all known variants of W32.Klez and W32.ElKern. Click here to obtain the tool. 
+This is the easiest way to remove these threats and should be tried first.
+
+
+Note on W32.Klez.gen@mm detections:
+W32.Klez.gen@mm is a generic detection that detects variants of W32.Klez. Computers that are infected with W32.Klez.gen@mm have most likely been exposed to either W32.Klez.E@mm or W32.Klez.H@mm. If your computer is detected as infected with W32.Klez.gen@mm, download and run the tool. In most cases, the tool will be able to remove the infection.
+
+
+
+Also Known As:  W32/Klez.e@MM [McAfee], WORM_KLEZ.E [Trend], Klez.E [F-Secure], W32/Klez-E [Sophos], Win32.Klez.E [CA], I-Worm.Klez.E [AVP] 
+Variants:  W32.Klez.H@mm 
+Type:  Virus, Worm 
+  
+  
+  
+  
+Systems Affected:  Windows 95, Windows 98, Windows NT, Windows 2000, Windows XP, Windows Me 
+Systems Not Affected:  Macintosh, UNIX, Linux 
+CVE References:  CVE-2001-0154 
+  
+  
+
+
+ 
+Virus Definitions (Intelligent Updater) *
+ January 17, 2002 
+ 
+ 
+Virus Definitions (LiveUpdate™) **
+ January 23, 2002 
+ 
+ 
+*
+ Intelligent Updater definitions are released daily, but require manual download and installation.
+Click here to download manually.
+ 
+**
+ LiveUpdate virus definitions are usually released every Wednesday.
+Click here for instructions on using LiveUpdate.
+ 
+ 
+ 
+
+
+
+
+Wild: 
+
+Number of infections: More than 1000 
+Number of sites: More than 10 
+Geographical distribution: Medium 
+Threat containment: Moderate 
+Removal: Moderate 
+ Threat Metrics
+ 
+         
+Wild:
+Medium
+ Damage:
+Medium
+ Distribution:
+High
+ 
+ 
+
+Damage 
+
+Payload Trigger: The 6th of every odd numbered month (January, March, May, July, September, November) 
+Payload: Disables common antivirus products 
+Large scale e-mailing: Mails email adddresses found in local files, and Outlook and ICQ address books 
+Modifies files: Overwrites files with zeros 
+Distribution 
+
+Subject of email: Random subject 
+Name of attachment: Randomly named file with .bat, .exe, .pif or .scr extension 
+
+
+When the worm is executed, it copies itself to %System%\Wink[random characters].exe.
+
+NOTE: %System% is a variable. The worm locates the Windows System folder (by default this is C:\Windows\System or C:\Winnt\System32) and copies itself to that location.
+
+It adds the value
+
+Wink[random characters] %System%\Wink[random characters].exe
+
+to the registry key
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+
+or it creates the registry key
+
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Wink[random characters]
+
+and inserts a value in that subkey so that the worm is executed when you start Windows.
+
+The worm attempts to disable on-access virus scanners and some previously distributed worms (such as W32.Nimda and CodeRed) by stopping any active processes. The worm removes the startup registry keys used by antivirus products and deletes checksum database files including:
+
+ANTI-VIR.DAT
+CHKLIST.DAT
+CHKLIST.MS
+CHKLIST.CPS
+CHKLIST.TAV
+IVB.NTZ
+SMARTCHK.MS
+SMARTCHK.CPS
+AVGQT.DAT
+AGUARD.DAT
+
+The worm copies itself to local, mapped, and network drives as: 
+
+A random file name with a double extension. For example, filename.txt.exe. 
+A .rar archive with a double extension. For example, filename.txt.rar.
+
+In addition, the worm searches the Windows address book, the ICQ database, and local files (such as .html and text files) for email addresses. The worm sends an email message to these addresses with itself as an attachment. The worm contains its own SMTP engine and attempts to guess at available SMTP servers.
+
+The subject line, message bodies, and attachment file names are random. The from address is randomly chosen from email addresses that the worm finds on the infected computer.
+
+NOTES: 
+Because this worm does use a randomly chosen address that it finds on an infected computer as the "From:" address, numerous cases have been reported in which users of uninfected computers receive complaints that they have sent an infected message to someone else.
+
+For example, Linda Anderson is using a computer that is infected with W32.Klez.E@mm; Linda is not using a antivirus program or does not have current virus definitions. When W32.Klez.E@mm performs its emailing routine, it finds the email address of Harold Logan. It inserts Harold's email address into the "From:" line of an infected email that it then sends to Janet Bishop. Janet then contacts Harold and complains that he sent her infected email, but when Harold scans his computer, Norton AntiVirus does not find anything--as would be expected--because his computer is not infected.
+
+If you are using a current version of Norton AntiVirus, have the most recent virus definitions, and a full system scan with Norton AntiVirus set to scan all files does not find anything, you can be confident that your computer is not infected with this worm.
+
+There have been several reports that, in some cases, if you receive a message that the virus has sent using its own SMTP engine, the message appears to be a "postmaster bounce message" from your own domain. For example, if your email address is jsmith@anyplace.com, you could receive a message that appears to be from postmaster@anyplace.com, indicating that you attempted to send email and the attempt failed. If this is the false message that is sent by the virus, the attachment includes the virus itself. Of course, such attachments should not be opened.
+
+If the message is opened in an unpatched version of Microsoft Outlook or Outlook Express, the attachment may be automatically executed. Information about this vulnerability and a patch are available at
+
+http://www.microsoft.com/technet/security/bulletin/MS01-020.asp
+
+The worm also infects executables by creating a hidden copy of the original host file and then overwriting the original file with itself. The hidden copy is encrypted, but contains no viral data. The name of the hidden file is the same as the original file, but with a random extension.
+
+The worm also drops the virus W32.Elkern.3587 as the file %System%\wqk.exe and executes it.
+
+Finally, the worm has a payload. On the 6th of every odd numbered month (except January or July), the worm attempts to overwrite with zeroes files that have the extensions .txt, .htm, .html, .wab, .doc, .xls, .jpg, .cpp, .c, .pas, .mpg, .mpeg, .bak, or .mp3. If the month is January or July, this payload attempts to overwrite all files with zeroes, not just those with the aforementioned extensions.
+
+
+
+
+
+Symantec Security Response encourages all users and administrators to adhere to the following basic security "best practices":
+
+Turn off and remove unneeded services. By default, many operating systems install auxiliary services that are not critical, such as an FTP server, telnet, and a Web server. These services are avenues of attack. If they are removed, blended threats have less avenues of attack and you have fewer services to maintain through patch updates. 
+If a blended threat exploits one or more network services, disable, or block access to, those services until a patch is applied. 
+Always keep your patch levels up-to-date, especially on computers that host public services and are accessible through the firewall, such as HTTP, FTP, mail, and DNS services. 
+Enforce a password policy. Complex passwords make it difficult to crack password files on compromised computers. This helps to prevent or limit damage when a computer is compromised. 
+Configure your email server to block or remove email that contains file attachments that are commonly used to spread viruses, such as .vbs, .bat, .exe, .pif and .scr files. 
+Isolate infected computers quickly to prevent further compromising your organization. Perform a forensic analysis and restore the computers using trusted media. 
+Train employees not to open attachments unless they are expecting them. Also, do not execute software that is downloaded from the Internet unless it has been scanned for viruses. Simply visiting a compromised Web site can cause infection if certain browser vulnerabilities are not patched. 

@@ -1,0 +1,32 @@
+------------------------------------------------
+NAME: 		   Concept_A_MACRO
+TYPE:              WORD MACRO
+DATE OF CREATION:  
+CREATOR:           
+------------------------------------------------
+WordMacro/Concept - also known as Word Prank or WW6Macro - is a real macro virus which has been written with the Microsoft Word v6.X macro language. It has been reported in several countries, and seems to have no trouble propagating in the wild.
+
+WordMacro/Concept consists of several macros. Since Word macros are carried with Word documents themselves, the virus is able to spread through documents files. This is a quite ominous  development - so far, people have only had to worry about infections in their program files. The situation is made worse by the fact that WordMacro/Concept is also able to function with Microsoft Word for Windows 6.X and 7.X, Word for Macintosh 6.X, as well as in Windows 95 and NT environments, It is truly, the first functional multi-environment virus, although it can be argued that the effective operating system of this virus is Microsoft Word, not Windows or MacOS.
+
+The virus gets executed every time an infected document is opened. It tries to infect Word’s global document template, NORMAL.DOT (which is also capable of holding macros). If it finds either the macro "PayLoad" or "FileSaveAs" in NORMAL.DOT, it starts to copy the virtual macros to the template and displays a small dialogue box on the screen, The box contains the number "1" and an "OK" button, and in its title bar identifies it as a Word dialog box. This effect seems to have been meant to act as a generation counter. But it does not work as intended. This dialog box is only shown during the initial infection of NORMAL.DOT.
+
+After the virus has managed to infect the global template. It infects all documents that are created with the "Save As". It is then able to spread to other systems on these documents - when a user opens an infected document on a clean system, the virus will infect the global document template.
+
+The virus contains the following macros:
+AAAZAQ   
+AAAZFS   
+AutoOpen 
+FileSaveAs  
+PayLoad
+
+Note that "AutoOpen" and "FileSaveAs" are legitimate macro names, and some users may already have atached these macros to their documents and templates. In this context, "PayLoad" sounds very ominous. It contains the text:
+
+	Sub MAIN
+		REM That’s enough to prove my point
+	End Sub
+
+However, the "PayLoad" macro is not executed at any time.
+
+You can detect the prosence of the WordMacro/Concept macro in your system by simply by selectingh the command Macro from Word’s Tools menu. If the macro list contains a macro named "AAAZFS", your system is infected.
+
+You could prevent the virus from infecting your system by creating a macro named "PayLoad" that doesn’t have to do anything. The virus will then consider your system already infected, and will not try to infect the global template NORMAL.DOT. this is only a temporary solution.

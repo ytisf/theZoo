@@ -1,0 +1,25 @@
+------------------------------------------------
+NAME: 		   AntiEXE 
+TYPE:              BOOT Virus
+DATE OF CREATION:  
+CREATOR:             
+------------------------------------------------
+
+Aliases:  CMOS4, D3, NewBug, New Bug  
+Infection length:  512 bytes  
+Area of infection:  Floppy boot sectors, master boot records  
+Likelihood:  Common  
+Region reported:  Unknown  
+Characteristics:  Wild, memory resident, stealthing, triggered event  
+Target platform:  DOS  
+Trigger date:  None  
+ 
+Description: 
+AntiEXE is a virus that infects simple master boot record (MBRs) and DOS boot sectors (DBSs) AntiEXE spreads only when there is an attempt to boot the system from an infected floppy disk. 
+
+During the boot process, AntiEXE loads the MBR into memory and checks for infection. If it determines the MBR is not infected, AntiEXE stores the non-infected MBR at cylinder O, side O, sector 13 on the hard disk. AntiEXE then places its virus code into the MBR and writes the infected MBR back to the hard drive at cylinder O, side O, sector 1. 
+
+Once the boot process is complete and AntiEXE is active in memory, AntiEXE displays its stealthing capabilities by redirecting any disk reads of the infected MBR or DBS to their clean counterpart. (On floppy disks, the original DBS is stored in the last sector of the root directory.) Along with stealthing the reads of the MBR or DBS during all disk read operations, AntiEXE searches for a specific *.EXE file, whose identity remains unknown, and corrupts the file if found. 
+
+
+ 

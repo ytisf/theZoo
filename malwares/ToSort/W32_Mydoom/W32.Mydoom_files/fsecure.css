@@ -1,0 +1,81 @@
+.bold {
+	FONT-WEIGHT: bold; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+.nav {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, Verdana
+}
+.navactive {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #933; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+.subnav {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; FONT-FAMILY: Verdana
+}
+BODY {
+	BACKGROUND-COLOR: white
+}
+TD {
+	FONT-SIZE: 10pt; COLOR: #000040; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+P {
+	FONT-SIZE: 10pt; COLOR: #000040; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+H1 {
+	FONT-SIZE: 14pt; COLOR: #000040; FONT-FAMILY: Arial
+}
+H2 {
+	FONT-SIZE: 12pt; COLOR: #000040; FONT-FAMILY: Arial
+}
+H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #000040; FONT-FAMILY: Arial
+}
+UL {
+	FONT-SIZE: 10pt; COLOR: #000040; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+H4 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000040; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+PRE {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #000080; FONT-FAMILY: Helvetica; TEXT-DECORATION: none
+}
+PRE {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #000080; FONT-FAMILY: Helvetica; TEXT-DECORATION: none
+}
+H5 {
+	FONT-SIZE: 8pt; COLOR: #000040; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+H6 {
+	FONT-SIZE: 18pt; COLOR: #000040; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+BIG {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Courier
+}
+BR {
+	FONT-SIZE: 10pt; COLOR: #000040; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+B {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+DIV {
+	FONT-SIZE: 10pt; COLOR: #000040; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+SMALL {
+	FONT-SIZE: 8pt; COLOR: #000040; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+A {
+	COLOR: #737bb5; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular
+}
+A:hover {
+	COLOR: red; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; TEXT-DECORATION: none
+}
+.menuskin {
+	BORDER-RIGHT: blue 1px solid; BORDER-TOP: blue 1px solid; Z-INDEX: 100; VISIBILITY: hidden; FONT: 12px/18px Verdana; BORDER-LEFT: blue 1px solid; WIDTH: 165px; BORDER-BOTTOM: blue 1px solid; POSITION: absolute; BACKGROUND-COLOR: menu
+}
+.menuskin A {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; COLOR: black; TEXT-DECORATION: none
+}
+#mouseoverstyle {
+	BACKGROUND-COLOR: highlight
+}
+#mouseoverstyle A {
+	COLOR: white
+}

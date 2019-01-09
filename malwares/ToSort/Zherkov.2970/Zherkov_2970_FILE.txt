@@ -1,0 +1,14 @@
+Zherkov.2970
+VirusName: Zherkov.2970 
+Aliases: Zherkov-2970, Zherkov 2970, Zherkov.2970, Zherkov.b.2970, Zherkov-1958 
+Infection Length: 2970 
+Likelihood: rare 
+Target Platform: COM and EXE files 
+ 
+
+Description:
+This virus has never been encountered by our customers. This virus infects standard executable COM and EXE files. The Zherkov.2970 virus infects files which can be caught over the modem or any networks. The Zherkov.2970 virus is 2970 byte long. It appends itself to the end of host executable files. This virus is memory-resident. After the virus has been launched, it infects other programs as they are accessed. The Zherkov.2970 virus does not infect floppy or hard disk boot records. It virus does not use "stealth" techniques. The Zherkov.2970 virus is an encrypted virus. It contains a "trigger mechanism." The virus may activate and display a message or try to destroy data. Infected COM and EXE files can be repaired in most cases.
+
+Additional Comments:
+When the virus is active, sometimes the message "Aidstest topaywka" appears. The virus changes an infected program's date and time stamp.
+

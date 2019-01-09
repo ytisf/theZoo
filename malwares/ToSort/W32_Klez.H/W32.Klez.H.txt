@@ -1,0 +1,567 @@
+W32.Klez.H@mm   
+Discovered on: April 17, 2002  
+Last Updated on: July 16, 2003 08:48:43 AM 
+
+  
+  
+
+    
+ 
+
+Due to a decreased rate of submissions, Symantec Security Response has downgraded this threat from a Category 4 to a Category 3 as of July 16, 2003. 
+
+The W32.Klez.H@mm worm is a modified variant of the W32.Klez.E@mm. This variant can spread by email and network shares. This worm can also infect files.
+
+Removal tool
+Symantec has provided a tool to remove the infections of all the known variants of W32.Klez and W32.ElKern. Try this removal tool first, as it is the easiest way to remove the threats.
+
+Note on W32.Klez.gen@mm detections
+W32.Klez.gen@mm is a generic detection that detects variants of W32.Klez. Computers that are infected with W32.Klez.gen@mm have most likely been exposed to either W32.Klez.E@mm or W32.Klez.H@mm. If your computer is detected as infected with W32.Klez.gen@mm, download and run the tool. In most cases, the tool will be able to remove the infection.
+
+
+
+Also Known As:  W32/Klez.h@MM [McAfee], WORM_KLEZ.H [Trend], I-Worm.Klez.h [AVP], Klez.H, W32/Klez-H [Sophos], Win32.Klez.H [CA], WORM_KLEZ.I [Trend] 
+  
+Type:  Worm 
+  
+  
+  
+  
+Systems Affected:  Windows 95, Windows 98, Windows NT, Windows 2000, Windows XP, Windows Me 
+Systems Not Affected:  Macintosh, OS/2, UNIX, Linux 
+CVE References:  CVE-2001-0154 
+  
+  
+
+
+ 
+Virus Definitions (Intelligent Updater) *
+ April 17, 2002 
+ 
+ 
+Virus Definitions (LiveUpdate™) **
+ April 17, 2002 
+ 
+ 
+*
+ Intelligent Updater definitions are released daily, but require manual download and installation.
+Click here to download manually.
+ 
+**
+ LiveUpdate virus definitions are usually released every Wednesday.
+Click here for instructions on using LiveUpdate.
+ 
+ 
+ 
+
+
+
+
+Wild: 
+
+Number of infections: More than 1000 
+Number of sites: More than 10 
+Geographical distribution: High 
+Threat containment: Moderate 
+Removal: Difficult 
+ Threat Metrics
+ 
+         
+Wild:
+High
+ Damage:
+Medium
+ Distribution:
+High
+ 
+ 
+
+Damage 
+
+Payload: This worm infects executables, by creating a hidden copy of the original host file, and then by overwriting the original file with itself. The hidden copy is encrypted, but contains no viral data. The name of the hidden file is the same as the original file, but with a random extension. 
+Large scale e-mailing: This worm searches the Windows address book, the ICQ database, and local files for email addresses. The worm sends an email message to these addresses with itself as an attachment. 
+Releases confidential info: The worm randomly chooses a file from the machine to send with the worm to recipients. So, the files with the extensions: ".mp8," ".txt," ".htm," ".html," ".wab," ".asp," ".doc," ".rtf," ".xls," ".jpg," ".cpp," ".pas," ".mpg," ".mpeg," ".bak," ".mp3," or ".pdf" would be attached to the email messages with the viral attachment. 
+Distribution 
+
+Subject of email: Random 
+Name of attachment: Random 
+
+
+When this worm is executed, it does the following:
+
+
+Copies itself to \%System%\Wink<random characters>.exe.
+
+NOTE: %System% is a variable. The worm locates the Windows System folder (by default, this is C:\Windows\System or C:\Winnt\System32) and copies itself to that location.
+
+
+Adds the value:
+
+Wink<random characters> %System%\Wink<random characters>.exe
+
+to the registry key:
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+
+or, it creates the registry key:
+
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Wink[random characters]
+
+and inserts a value in this subkey, so that the worm executes when you start Windows.
+
+
+Attempts to disable on-access virus scanners and some previously distributed worms (such as W32.Nimda and CodeRed), by stopping any active processes. The worm removes the startup registry keys, which antivirus products use, and deletes the checksum database files, including:
+Anti-Vir.dat 
+Chklist.dat 
+Chklist.ms 
+Chklist.cps 
+Chklist.tav 
+Ivb.ntz 
+Smartchk.ms 
+Smartchk.cps 
+Avgqt.dat 
+Aguard.dat
+
+
+Copying local and network drives
+The worm copies itself to the local, mapped, and network drives as: 
+A random file name with a double extension; for example, Filename.txt.exe. 
+A .rar archive with a double extension; for example, Filename.txt.rar.
+
+Email
+This worm searches the Windows address book, the ICQ database, and local files for email addresses. It sends an email message to these addresses with itself as an attachment. The worm contains its own SMTP engine and attempts to guess at the available SMTP servers. 
+
+For example, if the worm encounters the address, user@abc123.com, it attempts to send email via the server, smtp.abc123.com.
+
+The subject line, message bodies, and attachment filenames are random. The From address is randomly chosen from email addresses that the worm finds on an infected computer.
+
+The worm will the search files with the following extensions for the email addresses: 
+mp8 
+.exe 
+.scr 
+.pif 
+.bat 
+.txt 
+.htm 
+.html 
+.wab 
+.asp 
+.doc 
+.rtf 
+.xls 
+.jpg 
+.cpp 
+.pas 
+.mpg 
+.mpeg 
+.bak 
+.mp3 
+.pdf
+
+
+In addition to the worm attachment, the worm may also attach a random file from the computer. The file will have one of the following extensions: 
+mp8 
+.txt 
+.htm 
+.html 
+.wab 
+.asp 
+.doc 
+.rtf 
+.xls 
+.jpg 
+.cpp 
+.pas 
+.mpg 
+.mpeg 
+.bak 
+.mp3 
+.pdf
+
+
+As a result, the email message would have two attachments, the first being the worm and the second being the randomly selected file.
+
+"Random" strings comprise the email message that this worms sends. The subject can be one of the following:
+
+Worm Klez.E immunity 
+Undeliverable mail--"[Random word]" 
+Returned mail--"[Random word]" 
+a [Random word] [Random word] game 
+a [Random word] [Random word] tool 
+a [Random word] [Random word] website 
+a [Random word] [Random word] patch 
+[Random word] removal tools 
+how are you 
+let's be friends 
+darling 
+so cool a flash,enjoy it 
+your password 
+honey 
+some questions 
+please try again 
+welcome to my hometown 
+the Garden of Eden 
+introduction on ADSL 
+meeting notice 
+questionnaire 
+congratulations 
+sos! 
+japanese girl VS playboy 
+look,my beautiful girl friend 
+eager to see you 
+spice girls' vocal concert 
+japanese lass' sexy pictures
+
+The random word is one of the following: 
+new 
+funny 
+nice 
+humour 
+excite 
+good 
+powful 
+WinXP 
+IE 6.0 
+W32.Elkern 
+W32.Klez.E 
+Symantec 
+Mcafee 
+F-Secure 
+Sophos 
+Trendmicro 
+Kaspersky
+
+The body of the email message is random.
+
+Email spoofing 
+This worm often uses a technique called "spoofing." When the worm performs its email routine, it can use a randomly chosen address it finds on an infected computer as the "From:" address. Numerous cases have been reported in which users of uninfected computers received complaints that they sent an infected message to someone else.
+
+For example, Linda Anderson is using a computer infected with W32.Klez.H@mm. Linda is not using an antivirus program or does not have the current virus definitions. When W32.Klez.H@mm performs its emailing routine, it finds the email address of Harold Logan. The worm inserts Harold's email address into the "From:" portion of an infected message, which the worm then sends to Janet Bishop. Then, Janet contacts Harold and complains that he sent her an infected message, but when Harold scans his computer, Norton AntiVirus (NAV) does not find anything because his computer is not infected.
+
+If you are using a current version of Norton AntiVirus, have the most recent virus definitions, and a full system scan with Norton AntiVirus, which is set to scan all the files, does not find anything, be assured that your computer is not infected with this worm.
+
+There have been several reports that, in some cases, if you receive a message that the virus has sent using its own SMTP engine, the message appears to be a "postmaster bounce message" from your own domain. For example, if your email address is jsmith@anyplace.com, you could receive a message that appears to be from postmaster@anyplace.com, indicating that you attempted to send an email and the attempt failed. If this is the false message sent by the virus, the attachment includes the virus itself. Of course, such attachments should not be opened.
+
+The message may be disguised as an immunity tool. One version of this false message is:
+
+Klez.E is the most common world-wide spreading worm. It's very dangerous by corrupting your files. Because of its very smart stealth and anti-anti-virus technic,most common AV software can't detect or clean it.We developed this free immunity tool to defeat the malicious virus. You only need to run this tool once,and then Klez will never come into your PC.
+
+NOTE: Because this tool acts as a fake Klez to fool the real worm,some AV monitor maybe cry when you run it. If so,Ignore the warning,and select 'continue'. If you have any question,please mail to me. 
+
+If the message is opened in an unpatched version of Microsoft Outlook or Outlook Express, the attachment may be automatically executed. Information about this vulnerability and a patch are available at:
+http://www.microsoft.com/technet/security/bulletin/MS01-020.asp
+
+
+Virus Insertion
+This worm inserts the W32.Elkern.4926 virus as a file, with a random name in the \%Program Files% folder, and then executes it.
+
+NOTE: %Program Files% is a variable. The worm locates the \Program Files folder (by default, this is C:\Program Files) and copies the virus to that location. 
+
+
+
+
+Symantec Security Response offers these suggestions on how to configure Symantec products in order to minimize your exposure to this threat.
+
+ 
+Norton AntiVirus for Gateways (SMTP)
+
+Block incoming attachments with .bat, .exe, .pif, and .scr extensions 
+ 
+ 
+
+
+
+Symantec Security Response encourages all users and administrators to adhere to the following basic security "best practices":
+
+Turn off and remove unneeded services. By default, many operating systems install auxiliary services that are not critical, such as an FTP server, telnet, and a Web server. These services are avenues of attack. If they are removed, blended threats have less avenues of attack and you have fewer services to maintain through patch updates. 
+If a blended threat exploits one or more network services, disable, or block access to, those services until a patch is applied. 
+Always keep your patch levels up-to-date, especially on computers that host public services and are accessible through the firewall, such as HTTP, FTP, mail, and DNS services. 
+Enforce a password policy. Complex passwords make it difficult to crack password files on compromised computers. This helps to prevent or limit damage when a computer is compromised. 
+Configure your email server to block or remove email that contains file attachments that are commonly used to spread viruses, such as .vbs, .bat, .exe, .pif and .scr files. 
+Isolate infected computers quickly to prevent further compromising your organization. Perform a forensic analysis and restore the computers using trusted media. 
+Train employees not to open attachments unless they are expecting them. Also, do not execute software that is downloaded from the Internet unless it has been scanned for viruses. Simply visiting a compromised Web site can cause infection if certain browser vulnerabilities are not patched. 
+
+
+
+Removal using the removal tool
+Removal tool
+Symantec has provided a tool to remove the infections of all the known variants of W32.Klez and W32.ElKern. Try this removal tool first, as it is the easiest way to remove the threats.
+
+Note on W32.Klez.gen@mm detections
+W32.Klez.gen@mm is a generic detection that detects variants of W32.Klez. Computers infected with W32.Klez.gen@mm have most likely been exposed to either W32.Klez.E@mm or W32.Klez.H@mm. If your computer is detected as infected with W32.Klez.gen@mm, download and run the tool. In most cases, the tool will be able to remove the infection.
+
+Manual removal procedure for Windows 95/98/Me
+
+If W32.Klez.H@mm has activated, in most cases you will not be able to start Norton AntiVirus. Once this worm has executed, it can be difficult and time consuming to remove. The procedure you are to use to manually remove the worm varies with the operating system. 
+
+Perform the following instructions for your operating system in the order shown below. Do not skip any steps. This procedure has been tested and will work in most cases.
+
+NOTE: Due to the damage that this worm can do, and depending on the number of times the worm executes, the process may not work in all the cases. If the process does not work, you may need to obtain the services of a computer consultant.
+
+1. Downloading virus definitions 
+
+Download the definitions using the Intelligent Updater. Save the file to the Windows desktop. This first step is required to make sure that you have the current definitions available later in the removal process. The Intelligent Updater virus definitions are available at:http://securityresponse.symantec.com/avcenter/defs.download.html.
+
+For detailed instructions on how to download and install the Intelligent Updater virus definitions from the Symantec Security Response Web site, read the document, "How to update virus definition files using the Intelligent Updater."
+
+2. Restarting the computer in Safe mode or VGA mode 
+For Windows 95, 98, Me, 2000, or XP users, restart the computer in Safe mode. For instructions on restarting in Safe mode, refer to the document, "How to start the computer in Safe Mode." 
+For Windows NT 4 users, restart the computer in VGA mode. 
+
+3. Editing the registry 
+You must edit the key HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Current Version\Run and remove the wink???.exe value, after you write down the exact name of the wink file.
+
+CAUTION: We strongly recommend that you back up the system registry before making any changes. Incorrect changes to the registry could result in permanent data loss or corrupted files. Make sure to modify the specified keys only. Refer to the document, "How to back up the Windows registry," before you proceed.
+Click Start, and then click Run. (The Run dialog box appears.) 
+Type regedit, and then click OK. (The Registry Editor opens.) 
+Navigate to the following key:
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+
+
+In the right pane, look for the following values:
+
+Wink[random characters] %System%\Wink[random characters].exe
+WQK %System%\Wqk.exe
+
+
+Write down the exact filename of the Wink[random characters].exe file. 
+Delete the Wink[random characters] value and the WQK value, if it exists. 
+Navigate to and expand the following key:
+
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services
+
+
+In the left pane, under the \Services key, look for the following subkey:
+
+\Wink[random characters] 
+
+and delete it, if it exists.
+
+
+NOTE: This probably will not exist on Windows 95/98/Me-based computers, but check for it anyway.
+
+
+Click Registry, and then click Exit.
+4. Configuring Windows to show all files 
+Start Windows Explorer. 
+Click the View menu (Windows 95/98) or the Tools menu (Windows Me), and then click Options or "Folder options." 
+Click the View tab. 
+Uncheck "Hide file extensions for known file types." 
+Do one of the following: 
+Windows 95: Click "Show all files." 
+Windows 98: In the Advanced settings box, under the "Hidden files" folder, click Show all files. 
+Windows Me: Uncheck "Hide protected operating system files," and under the "Hidden files" folder, click "Show hidden files and folders."
+
+
+Click Yes if you see a Warning dialog box. 
+Click Apply, and then click OK.
+5. Deleting the actual Wink[random characters] file 
+Using Windows Explorer, open the C:\Windows\System folder and locate the Wink[random characters].exe file. (Depending on your system settings, the .exe extension may not be displayed.)
+
+NOTE: If you have Windows installed to a location other than C:\Windows, make the appropriate substitution.
+
+6. Emptying the Recycle Bin 
+Right-click the Recycle Bin on the Windows desktop, and then click Empty Recycle Bin.
+
+7. Running the Intelligent Updater 
+Double-click the file that you downloaded in step 1. Click Yes or OK if prompted.
+
+8. Restarting the computer 
+Shut down the computer, and then turn off the power. Wait 30 seconds, and then restart it.
+
+CAUTION: This step is crucial, as re-infection will occur if you skip this step. 
+
+Allow the computer to normally start. If any files are detected as infected with W32.Klez.H@mm or W32.Klez.gen@mm, quarantine them. You may find some files, such as Luall.exe, Rescue32.exe, and Nmain.exe.
+
+9. Scanning with Norton AntiVirus (NAV) from a command line 
+Because the worm damaged some NAV files, scan from a command line.
+
+NOTE: These instructions are only for Consumer versions of NAV. The Navw32.exe file is not part of the Enterprise versions of NAV, such as NAVCE. The NAVCE command-line scanner, Vpscan.exe, will not remove the worm.
+
+Click Start, and then click Run. 
+Type, or copy and paste, the following:
+
+NAVW32.EXE /L /VISIBLE
+
+and then click OK.
+
+
+Allow the scan to run. Quarantine any additional files that are detected.
+
+10. Restarting the computer 
+Allow the computer to normally start.
+
+11. Re-installing NAV
+
+NOTE: If you are using NAV 2002 on Windows XP, re-installation may not be possible on all the systems. Though, you can try the following: 
+Open the Control Panel. 
+Double-click Administrative Tools. 
+Double-click Services. 
+In the list, select the Windows Installer. Click Action, and then click Start.
+
+To re-install NAV, follow the instructions in the document, "How to restore Norton AntiVirus after removing a virus."
+
+
+12. Restarting the computer and rescanning 
+Shut down the computer and turn off the power. Wait 30 seconds, and then restart it.
+
+CAUTION: This step is crucial, as re-infection will occur if you skip this step.
+
+Run LiveUpdate and download the most current virus definitions. 
+Start Norton AntiVirus (NAV) and make sure that NAV is configured to scan all the files. For instructions, read the document "How to configure Norton AntiVirus to scan all files." 
+Run a full system scan. Quarantine any files detected as infected with W32.Klez.H@mm or W32.Klez.gen@mm.
+
+
+Manual removal procedure for Windows 2000/XP
+
+1. Downloading virus definitions 
+Download the definitions using the Intelligent Updater. Save the file to the Windows desktop. This first step is required to make sure that you have the current definitions available later in the removal process. The Intelligent Updater virus definitions are available at: http://securityresponse.symantec.com/avcenter/defs.download.html.
+
+For detailed instructions on how to download and install the Intelligent Updater virus definitions from the Symantec Security Response Web site, read the document, "How to update virus definition files using the Intelligent Updater."
+
+2. Restarting the computer in Safe mode 
+Shut down the computer and turn off the power. Wait 30 seconds. Do not skip this step. 
+All the Windows 32-bit operating systems, except Windows NT, can be restarted in Safe mode. Read the document appropriate to your operating system: 
+"How to start Windows XP in Safe mode" 
+"How to start Windows 2000 in Safe mode"
+3. Editing the registry 
+You must edit the key, HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services, and remove the wink[random characters].exe subkey, after you write down the exact name of the wink file.
+
+CAUTION: We strongly recommend that you back up the system registry before making any changes. Incorrect changes to the registry could result in permanent data loss or corrupted files. Modify the specified keys only. Refer to the document, "How to back up the Windows registry," before you proceed.
+
+Click Start, and then click Run. (The Run dialog box appears.) 
+Type regedit, and then click OK. (The Registry Editor opens.) 
+Navigate to the following key:
+
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services
+
+
+In the left pane, under the \Services key, look for the following subkey:
+
+\Wink[random characters]
+
+
+Write down the exact filename of the Wink[random characters].exe file. 
+Delete the Wink[random characters] subkey. 
+Navigate to the following key:
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+
+
+In the right pane, look for the following values:
+
+Wink[random characters] %System%\Wink[random characters].exe
+WQK %System%\Wqk.exe
+
+
+and delete them if they exist.
+
+NOTE: They probably will not exist on Windows 2000/XP-based computers, but check for them anyway.
+
+
+Click Registry, and then click Exit.
+
+4. Configuring Windows to show all files 
+Do not skip these steps: 
+Start Windows Explorer. 
+Click the Tools menu, and then click "Folder options." 
+Click the View tab. 
+Uncheck "Hide file extensions for known file types." 
+Uncheck "Hide protected operating system files," and under the "Hidden files" folder, click "Show hidden files and folders." 
+Click Apply, and then click OK.
+
+5. Deleting the actual Wink[random characters] file 
+Using Windows Explorer, open the C:\Winnt\System folder and locate the Wink[random characters].exe file. (Depending on your system settings, the .exe extension may not be displayed.)
+
+NOTE: If you have Windows installed to a location other than C:\Windows, make the appropriate substitution.
+
+6. Emptying the Recycle Bin 
+Right-click the Recycle Bin on the Windows desktop and click Empty Recycle Bin.
+
+7. Running the Intelligent Updater 
+Double-click the file that you downloaded in step 1. Click Yes or OK if you are prompted.
+
+8. Restarting the computer 
+Shut down the computer and turn off the power. Wait 30 seconds, and then restart it.
+
+CAUTION: This step is crucial, as re-infection will occur if you skip this step. 
+
+Allow the computer to normally start. If any files are detected as infected with W32.Klez.H@mm or W32.Klez.gen@mm, quarantine them. You may find some files, such as Luall.exe, Rescue32.exe, and Nmain.exe.
+
+9. Scanning with Norton AntiVirus (NAV) from the command line 
+Because the worm damaged some NAV files, scan from the command line.
+
+NOTE: These instructions are only for Consumer versions of NAV. The Navw32.exe file is not part of the Enterprise versions of NAV, such as NAVCE. The NAVCE command-line scanner, Vpscan.exe, will not remove the worm.
+
+Click Start, and then click Run. 
+Type, or copy and paste, the following:
+
+NAVW32.EXE /L /VISIBLE
+
+and then click OK.
+
+
+Allow the scan to run. Quarantine any additional files that are detected.
+
+10. Re-installing NAV
+
+NOTE: If you are using NAV 2002 on Windows XP, re-installation may not be possible on all the systems. Though, you can try the following: 
+
+Open the Control Panel. 
+Double-click Administrative Tools. 
+Double-click Services. 
+In the list, select Windows Installer. Click Action, and then click Start.
+
+To re-install NAV, follow the instructions in the document, "How to restore Norton AntiVirus after removing a virus."
+
+
+11. Restarting the computer and rescanning 
+Shut down the computer and turn off the power. Wait 30 seconds, and then restart it.
+
+CAUTION: This step is crucial, as re-infection will occur if you skip this step.
+
+Run LiveUpdate and download the most current virus definitions. 
+Start Norton AntiVirus (NAV) and make sure that NAV is configured to scan all the files. For instructions, read the document, "How to configure Norton AntiVirus to scan all files." 
+Run a full system scan. Quarantine any files detected as infected with W32.Klez.H@mm or W32.Klez.gen@mm.
+
+
+
+ 
+
+
+Additional information: 
+
+Fake removal tool
+It has been reported that W32.Klez.H@mm may arrive in the following email message that claims to be a Symantec virus removal tool. This message is not from Symantec. Symantec neither sends unsolicited email nor distributes virus removal tools in this manner.
+
+Subject: W32.Klez removal tools
+
+Message:
+W32.Klez is a dangerous virus that spread through email.
+Symantec give you the W32.Klez removal tools
+
+For more information,please visit http:/ /www.Symantec.com 
+
+From: av_patch@norton.com
+
+Attachment: Install.exe
+
+
+Information for Novell users
+Novell servers are not directly vulnerable, but a Novell client running under Windows can access the Novell server and execute the file from there (by using a login script or by other means), thereby, further spreading the virus.
+
+Information for Macintosh users
+For information about how Klez affects Macintosh systems, refer to the document, "Are Macintoshes affected by the Klez virus?"
+
+
+
+Revision History: 
+
+
+July 16, 2003: Downgraded from a Category 4 to a Category 3 based on a decreased rate of submissions. 
+May 14, 2002: Added information for Macintosh users. 
+May 2, 2002: 
+Added further information for Novell users. 
+Added further alias information.
+
