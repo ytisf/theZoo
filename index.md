@@ -1,7 +1,8 @@
 About
 ======
 theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a way which will allow analysis we have decided to gather all of them for you in an available and safe way.
-theZoo was born by Yuval tisf Nativ and is now maintained by Shahak Shalev. 
+theZoo was born by Yuval tisf Nativ and is now maintained by Shahak Shalev.
+
 ![](https://github.com/ytisf/theZoo/raw/gh-pages/MalDB-Logo-Thumb.png)
 
 **theZoo is open and welcoming visitors!**
