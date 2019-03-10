@@ -3,6 +3,7 @@ description: A repository of LIVE malwares for your own joy and pleasure
 google_analytics: 
 show_downloads: true
 theme: jekyll-theme-minimal
+ga('create', 'UA-53267734-2', 'auto');
 
 gems:
   - jekyll-mentions
