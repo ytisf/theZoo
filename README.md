@@ -124,7 +124,7 @@ Get the file you want to submit and just run `python prep_file.py file_tosubmit.
 - [ ] Fix and make 'light' version without malwares with _MalwareFetch function. 
 
 ### Hopeful
-- [ ] A GUI interface. 
+- [ ] A GUI. 
 - [ ] Package releases. 
 
 If you have any suggestions or malware that you have indexed (in the manner laid out in the documentation) please send it to us to - thezoo-submissions [a-t] morirt [.d0t.] com - so we can add it for everyone's enjoyment.

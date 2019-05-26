@@ -2,29 +2,45 @@
 
 import os
 import sys
-import zipfile
 import hashlib
-import subprocess
+
+try:
+    import pyminizip
+except ImportError:
+    sys.stderr.write("Could not import 'pyminizip'. Did you install requirements?\n")
+    sys.stderr.write("You can always just get 'pyminizip' by 'pip install --user pyminizip'.\n")
+    sys.exit(1)
 
 
 OUTPUT_FOLDER = "OUTPUT"
 
 
 def _help():
+    """
+    hmmmm. nope.
+    :return:
+    """
     print("Please run with '%s filename'." % sys.argv[0])
     return
 
+
 def _Do(file_path):
+    """
+    Prep file from file path for submission. Take file name, encrypt in ZIP with password 'infected', create MD5
+    and SHA1 sums and store all of that in a directory of it's own.
+    :param file_path: str
+    :return: Bool
+    """
     if not os.path.isfile(file_path):
         _help()
-        print("Seems like '%s' is not a file." % file_path)
-        sys.exit(1)
+        sys.stderr.write("Seems like '%s' is not a file.\n" % file_path)
+        return False
 
     try:
         os.mkdir(OUTPUT_FOLDER)
     except OSError:
-        print("Folder exists. Please remove it before continuing.")
-        sys.exit(1)
+        sys.stderr.write("Folder exists. Please remove it before continuing.\n")
+        return False
 
     if "\\" in file_path:
         filename = file_path.split("\\")[:-1]
@@ -34,14 +50,16 @@ def _Do(file_path):
         filename = file_path
 
     # Create ZIP Archive:
+    # We used 7z because 'zipfile' did not support adding a password. Apparently 'pyminizip' works just as well.
     try:
-        rc = subprocess.call(['7z', 'a', '-pinfected', '-y', '%s/%s.zip' % (OUTPUT_FOLDER, filename)] + [file_path])
-    except:
-        print("Seems like you don't have 7z in your path. Please install or add with:\n\tbrew install 7zip #(OSX)\n\tsudo apt-get install p7zip-full #(Linux)")
-        sys.exit(1)
+        pyminizip.compress(file_path, OUTPUT_FOLDER, "%s.zip" % filename, "infected", 9)
+    except Exception as e:
+        sys.stderr.write("Unknown error occurred. Please report this to us so that we can fix this.\n")
+        sys.stderr.write(str(e))
+        return False
 
     compressed_path = '%s/%s.zip' % (OUTPUT_FOLDER, filename)
-    print("Created ZIP Archive.")
+    sys.stdout.write("[+]\tCreated ZIP Archive.\n")
     md5sum = hashlib.md5(open(compressed_path, 'rb').read()).hexdigest()
     sha1sum = hashlib.sha1(open(compressed_path, 'rb').read()).hexdigest()
     open("%s/%s.md5" % (OUTPUT_FOLDER, filename), 'w').write(md5sum)
@@ -54,7 +72,13 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         _help()
         sys.exit(1)
-    _Do(sys.argv[1])
-    print("Please don't forget to add details to 'conf/maldb.db'.")
-    print("Thanks for helping us get this accessible to everyone.")
-    print("")
+    stt = _Do(sys.argv[1])
+    if stt:
+        sys.stdout.write("Please don't forget to add details to 'conf/maldb.db' "
+                         "and placing the folder in the appropriate directory.\n")
+        sys.stdout.write("Thanks for helping us get this accessible to everyone.\n")
+        sys.stdout.write("\n")
+        sys.exit(0)
+    else:
+        sys.exit(1)
+    
