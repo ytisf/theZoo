@@ -1,10 +1,10 @@
 # theZoo - A Live Malware Repository
-theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a way which will allow analysis, we have decided to gather all of them for you in an accessible and safe way.
+theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a way in which will allow analysis, we have decided to gather all of them for you in an accessible and safe way.
 theZoo was born by Yuval tisf Nativ and is now maintained by Shahak Shalev.
 
 **theZoo is open and welcoming visitors!**
 
-If you are about to interact with our community please make sure to read our `CODE-OF-CONDUCT.md` prior to doing so. If you plan to contribute, first - thank you. However, do make sure to follow the standards on `CONTRIBUTING.md`.
+If you are about to interact with our community please make sure to read our `CODE-OF-CONDUCT.md` prior to doing so. If you plan to contributes, first - thank you. However, do make sure to follow the standards on `CONTRIBUTING.md`.
 
 ![](https://github.com/ytisf/theZoo/raw/gh-pages/MalDB-Logo-Thumb.png)
 
@@ -13,7 +13,7 @@ theZoo's purpose is to allow the study of malware and enable people who are inte
 
 **Please remember that these are live and dangerous malware! They come encrypted and locked for a reason!  Do NOT run them unless you are absolutely sure of what you are doing! They are to be used only for educational purposes (and we mean that!) !!!**
 
-We recommend running them in a VM which has no internet connection (or an internal virtual network if you must) and without guest additions or any equivalents. Some of them are worms and will automatically try to spread out. Running them unconstrained means that you **will infect yourself or others with vicious and dangerous malware!!!**
+We recommend running them in a VM which has no internet connection or network (or an internal virtual network if you must) and without guest additions or any equivalents. Some of them are worms and will automatically try to spread out. Running them unconstrained means that you **will infect yourself or others with vicious and dangerous malware!!!**
 
 ## Getting Started
 
