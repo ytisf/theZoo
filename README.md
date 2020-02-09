@@ -1,12 +1,18 @@
 # theZoo - A Live Malware Repository
+
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=round)](https://github.com/ytisf/theZoo/issues)
+[![HitCount](http://hits.dwyl.com/ytisf/theZoo.svg)](http://hits.dwyl.com/ytisf/theZoo)
+[![GitHub stars](https://img.shields.io/github/stars/ytisf/theZoo.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/ytisf/theZoo/stargazers/)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+
+![Logo](https://github.com/ytisf/theZoo/raw/gh-pages/MalDB-Logo-Thumb.png)
+
 theZoo is a project created to make the possibility of malware analysis open and available to the public. Since we have found out that almost all versions of malware are very hard to come by in a way which will allow analysis, we have decided to gather all of them for you in an accessible and safe way.
 theZoo was born by Yuval tisf Nativ and is now maintained by Shahak Shalev.
 
 **theZoo is open and welcoming visitors!**
 
 If you are about to interact with our community please make sure to read our `CODE-OF-CONDUCT.md` prior to doing so. If you plan to contribute, first - thank you. However, do make sure to follow the standards on `CONTRIBUTING.md`.
-
-![](https://github.com/ytisf/theZoo/raw/gh-pages/MalDB-Logo-Thumb.png)
 
 ## Disclaimer
 theZoo's purpose is to allow the study of malware and enable people who are interested in malware analysis (or maybe even as a part of their job) to have access to live malware, analyse the ways they operate, and maybe even enable advanced and savvy  people to block specific malware within their own environment.
@@ -23,7 +29,7 @@ Clone the repository with `git clone https://www.github.com/ytisf/theZoo`. Go to
 git clone https://www.github.com/ytisf/theZoo
 cd theZoo
 pip install --user -r requirements.txt
-``` 
+```
 
 Start by running the console:
 
@@ -63,7 +69,7 @@ The current default state of theZoo runtime is the CLI. The following files and 
 `/imports` - Contains .py import files used by the rest of the application
 
 `/malwares/Binaries` - The actual malwares samples - be careful! These are very live.
- 
+
 `/malware/Source` -  Malware source code.  
 
 Malware under the folder `Original` is supposed to be (NO PROMISES!) the original source of the malware that leaked. Malware under the folder `Reversed` is either reversed, decompiled or partially reconstructed.
@@ -121,10 +127,10 @@ Get the file you want to submit and just run `python prep_file.py file_tosubmit.
 - [X] Fix auto-complete for malware frameworks. (thanks to 5fingers)
 - [X] Consider changing DB to XML or SQLite3. (Sheksa - done :))
 - [X] Better UI features.
-- [ ] Fix and make 'light' version without malwares with _MalwareFetch function. 
+- [ ] Fix and make 'light' version without malwares with _MalwareFetch function.
 
 ### Hopeful
-- [ ] A GUI. 
-- [ ] Package releases. 
+- [ ] A GUI.
+- [ ] Package releases.
 
 If you have any suggestions or malware that you have indexed (in the manner laid out in the documentation) please send it to us to - thezoo-submissions [a-t] morirt [.d0t.] com - so we can add it for everyone's enjoyment.
