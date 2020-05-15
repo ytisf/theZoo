@@ -1,2 +1,2 @@
-urllib2
+urllib3
 pyminizip
