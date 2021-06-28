@@ -13,6 +13,7 @@ $RECYCLE.BIN/
 Desktop.ini
 conf/eula_run.conf
 .git/
+dev_zone/
 
 # Egg
 logo/
