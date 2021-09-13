@@ -55,6 +55,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 You can also find more information in `LICENSE.md`.
 
+**License section does not apply to any of malicious samples in theZoo's repository which includes samples and source code, reversed or otherwise.**
+
 ## Documentation and Notes
 
 ### Background
@@ -134,3 +136,7 @@ Get the file you want to submit and just run `python prep_file.py file_tosubmit.
 - [ ] Package releases.
 
 If you have any suggestions or malware that you have indexed (in the manner laid out in the documentation) please send it to us to - thezoo-submissions [a-t] morirt [.d0t.] com - so we can add it for everyone's enjoyment.
+
+## Shout outs
+
+- Thanks to @LogoiLab for the licensing change submission.
