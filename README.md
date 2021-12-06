@@ -38,7 +38,7 @@ Start by running the console:
 
 ## License
 theZoo - the most awesome free malware database on the air
-Copyright (C) 2015, Yuval Nativ, Lahad Ludar, 5fingers
+Copyright (C) 2015-2021, Yuval Nativ, Lahad Ludar, 5fingers
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
