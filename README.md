@@ -70,7 +70,7 @@ The current default state of theZoo runtime is the CLI. The following files and 
 
 `/imports` - Contains .py import files used by the rest of the application
 
-`/malwares/Binaries` - The actual malwares samples - be careful! These are very live.
+`/malware/Binaries` - The actual malwares samples - be careful! These are very live.
 
 `/malware/Source` -  Malware source code.  
 
