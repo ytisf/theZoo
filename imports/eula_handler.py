@@ -52,7 +52,7 @@ class EULA:
         notice += '|___________________________________________________________________________|\n'
         print(red(notice))
         eula_answer = raw_input(
-            'Type YES in captial letters to accept this EULA.\n > ')
+            'Type YES in capital letters to accept this EULA.\n > ')
         if eula_answer == 'YES':
             new = open(globals.vars.eula_file, 'a')
             new.write(eula_answer)
