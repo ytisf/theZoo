@@ -43,7 +43,7 @@ class Updater:
 		Get current malwareDB version and see if we need an update
 		'''
 		try:
-			with file(globals.vars.maldb_ver_file) as f:
+			with open(globals.vars.maldb_ver_file) as f:
 				return f.read()
 		except IOError:
 			print(
@@ -64,7 +64,7 @@ class Updater:
 			print(green('[+]') + " theZoo is up to date.\n" + green('[+]') + " You are at " + new_maldb_ver + " which is the latest version.")
 			return
 
-		print(red('[+]') + " A newer version is available: " + new_maldb_ver + "!")
+		print(red('[+]') + " A newer version is available: " + new_maldb_ver.decode() + "!")
 		print(red('[+]') + " Updating...")
 
 		# Get the new DB and update it
@@ -78,7 +78,7 @@ class Updater:
 		# Write the new DB version into the file
 
 		f = open(globals.vars.maldb_ver_file, 'w')
-		f.write(new_maldb_ver)
+		f.write(new_maldb_ver.decode())
 		f.close()
 		return
 
