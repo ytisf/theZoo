@@ -1,2 +1,3 @@
 urllib3
 pyminizip
+pyzipper

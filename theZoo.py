@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
     # Malware DB - the most awesome free malware database on the air
-    # Copyright (C) 2014, Yuval Nativ, Lahad Ludar, 5Fingers
+    # Copyright (C) 2014-2025, Yuval Nativ, Lahad Ludar, 5Fingers
 
     # This program is free software: you can redistribute it and/or modify
     # it under the terms of the GNU General Public License as published by
