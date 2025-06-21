@@ -1,4 +1,3 @@
-python
 import sqlite3 as lite
 from imports import globals
 import sys
