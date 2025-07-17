@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+import requests
+import sys
+import json
+
+if len(sys.argv) > 1:
+    file = sys.argv[1]
+else:
+    print("Usage: python3 malware_bazaar_submit.py <file>")
+    quit()
+
+data = {
+    'anonymous': 1,
+    'delivery_method': 'email_attachment',
+    'tags': ['exe', 'test'],
+    'references': json.dumps({
+        'any_run': [
+            'https://app.any.run/tasks/1',
+            'https://app.any.run/tasks/2'
+        ],
+        'joe_sandbox': [
+            'https://www.joesecurity.org/reports/1',
+            'https://www.joesecurity.org/reports/2'
+        ],
+        'malpedia': [
+            'https://malpedia.caad.fkie.fraunhofer.de/details/win.gozi'
+        ],
+        'twitter': [
+            'https://twitter.com/abuse_ch/status/1224269018506330112'
+        ],
+        'links': [
+            'https://urlhaus.abuse.ch/url/306613/'
+        ]
+    }),
+    'context': json.dumps({
+        'dropped_by_md5': [
+            '68b329da9893e34099c7d8ad5cb9c940'
+        ],
+        'dropped_by_sha256': [
+            '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b',
+            '4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865'
+        ],
+        'dropped_by_malware': [
+            'Gozi'
+        ],
+        'comment': 'This malware sample is very nasty!'
+    })
+}
+
+files = {
+    'file': (file, open(file, 'rb'))
+}
+
+response = requests.post(
+    'https://bazaar.abuse.ch/api/upload/',
+    data=data,
+    files=files
+)
+
+print(f"Status Code: {response.status_code}")
+print(f"Response: {response.text}")
