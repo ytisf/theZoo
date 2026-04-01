@@ -1,3 +1,4 @@
 urllib3
 pyminizip
 pyzipper
+streamlit
