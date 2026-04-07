@@ -43,7 +43,7 @@ class Updater:
 		Get current malwareDB version and see if we need an update
 		'''
 		try:
-			with file(globals.vars.maldb_ver_file) as f:
+			with open(globals.vars.maldb_ver_file) as f:
 				return f.read()
 		except IOError:
 			print(
@@ -59,7 +59,7 @@ class Updater:
 			print(locals())
 		response = urlopen(
 			globals.vars.giturl_dl + globals.vars.maldb_ver_file)
-		new_maldb_ver = response.read()
+		new_maldb_ver = response.read().decode()
 		if new_maldb_ver == curr_db_version:
 			print(green('[+]') + " theZoo is up to date.\n" + green('[+]') + " You are at " + new_maldb_ver + " which is the latest version.")
 			return
@@ -119,7 +119,7 @@ class Updater:
 		
 		f = open(file_name, 'wb')
 		meta = u.info()
-		file_size = int(meta.getheaders("Content-Length")[0])
+		file_size = int(meta.get("Content-Length")[0])
 		print("Downloading: %s Bytes: %s" % (file_name, file_size))
 		file_size_dl = 0
 		block_sz = 8192
