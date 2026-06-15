@@ -55,7 +55,6 @@ def prepare_file(file_path):
 
     # create ZIP Archive
     # we are using 7z because "zipfile" did not support adding a password
-    # Apparently "pyminizip" works just as well.
     print('Info: Creating encrypted ZIP archive')
     with pyzipper.AESZipFile(OUTPUT_FOLDER / f'{file_path.name}.zip', 'w', compression=pyzipper.ZIP_LZMA, encryption=pyzipper.WZ_AES) as zip_file:
         zip_file.setpassword(COMPRESSION_PASSWORD.encode())
