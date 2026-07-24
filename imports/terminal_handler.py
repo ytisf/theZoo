@@ -164,6 +164,8 @@ class Controller:
 				try:
 					update_handler.get_malware(self.currentmodule)
 				except:
+					import traceback
+					traceback.print_exc()
 					print(red('[-] ') + 'Error getting malware.')
 				return
 			# If used the 'use' command

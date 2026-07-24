@@ -43,7 +43,7 @@ class Updater:
 		Get current malwareDB version and see if we need an update
 		'''
 		try:
-			with file(globals.vars.maldb_ver_file) as f:
+			with open(globals.vars.maldb_ver_file) as f:
 				return f.read()
 		except IOError:
 			print(
@@ -55,11 +55,11 @@ class Updater:
 		Just update the database from GitHub
 		:return:
 		'''
-		if globals.vars.DEBUG_LEVEL is 1:
+		if globals.vars.DEBUG_LEVEL == 1:
 			print(locals())
 		response = urlopen(
 			globals.vars.giturl_dl + globals.vars.maldb_ver_file)
-		new_maldb_ver = response.read()
+		new_maldb_ver = response.read().decode("utf-8").strip()
 		if new_maldb_ver == curr_db_version:
 			print(green('[+]') + " theZoo is up to date.\n" + green('[+]') + " You are at " + new_maldb_ver + " which is the latest version.")
 			return
@@ -100,13 +100,14 @@ class Updater:
 		print(bold(green("[+]")) + " Successfully downloaded a new friend.\n")
 
 	def download_from_repo(self, filepath, suffix=''):
-		if globals.vars.DEBUG_LEVEL is 1:
+		if globals.vars.DEBUG_LEVEL == 1:
 			print(locals())
+		
 		file_name = filepath.rsplit('/')[-1] + suffix
 
 		# Dirty way to check if we're downloading a malware
 
-		if suffix is not '':
+		if suffix != '':
 			url = globals.vars.giturl_dl + filepath + '/' + file_name
 		else:
 			url = globals.vars.giturl_dl + filepath
@@ -119,7 +120,7 @@ class Updater:
 		
 		f = open(file_name, 'wb')
 		meta = u.info()
-		file_size = int(meta.getheaders("Content-Length")[0])
+		file_size = int(meta.get("Content-Length", 0))
 		print("Downloading: %s Bytes: %s" % (file_name, file_size))
 		file_size_dl = 0
 		block_sz = 8192
