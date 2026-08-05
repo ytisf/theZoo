@@ -140,3 +140,7 @@ If you have any suggestions or malware that you have indexed (in the manner laid
 ## Shout outs
 
 - Thanks to @LogoiLab for the licensing change submission.
+
+## yarex
+
+Yara Detection compatibility with very unique custom yara rules with https://github.com/resteex0/yarex for testing and calibration 
