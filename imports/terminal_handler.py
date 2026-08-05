@@ -42,10 +42,10 @@ class Controller:
 		self.commands = [("search", "Search for malwares according to a filter,\n\t\t\te.g 'search cpp worm'."),
 						 ("list all", "Lists all available modules"),
 						 ("use", "Selects a malware by ID"),
-						 ("info", "Retreives information about malware"),
+						 ("info", "Retrieves information about malware"),
 						 ("get", "Downloads selected malware"),
 						 ("report-mal", "Report a malware you found"),
-						 ("update-db", "Updates the databse"),
+						 ("update-db", "Updates the database"),
 						 ("help", "Displays this help..."),
 						 ("exit", "Exits...")]
 
@@ -149,7 +149,7 @@ class Controller:
 				print("-------------- Begin of theZoo Report --------------")
 				print(report)
 				print("-------------- Ending of theZoo Report --------------")
-				print("To avoid compromising your privacy we have chose this method of reporting.")
+				print("To avoid compromising your privacy we have chosen this method of reporting.")
 				print("If you have not stated your name we will not write a thanks in our README.")
 				print("Your email will remain private in scenario and will not be published.")
 				print("")
