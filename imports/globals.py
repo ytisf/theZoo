@@ -109,7 +109,7 @@ class vars:
     # ASCII Art is a must...
     screen = random.randrange(1, 6)
 
-    if screen is 1:
+    if screen == 1:
         maldb_banner = "\n"
         maldb_banner += "        sMMs              oMMy      \n"
         maldb_banner += "        :ooooo/        /ooooo:      \n"

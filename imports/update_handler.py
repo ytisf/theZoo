@@ -44,7 +44,7 @@ class Updater:
 		'''
 		try:
 			with open(globals.vars.maldb_ver_file) as f:
-				return f.read()
+				return f.read().strip()
 		except IOError:
 			print(
 				"No malware DB version file found.\nPlease try to git clone the repository again.\n")
@@ -60,6 +60,7 @@ class Updater:
 		response = urlopen(
 			globals.vars.giturl_dl + globals.vars.maldb_ver_file)
 		new_maldb_ver = response.read().decode("utf-8").strip()
+		curr_db_version = str(curr_db_version).strip()
 		if new_maldb_ver == curr_db_version:
 			print(green('[+]') + " theZoo is up to date.\n" + green('[+]') + " You are at " + new_maldb_ver + " which is the latest version.")
 			return
@@ -85,18 +86,25 @@ class Updater:
 	def get_malware(self, id):
 
 		# get mal location
+		result = self.db.query("SELECT LOCATION FROM Malwares WHERE ID=?", id)
+		if not result:
+			print(bold(red("[!]")) + " Malware ID %s not found in database." % id)
+			return False
+		loc = result[0][0]
 
-		loc = self.db.query("SELECT LOCATION FROM MALWARES WHERE ID=?", id)[0][0]
+		if not loc:
+			print(bold(red("[!]")) + " Malware ID %s has no LOCATION set in database." % id)
+			return False
 
 		# get from git
 		if self.download_from_repo(loc, '.zip') is False:
 			return False
 		if self.download_from_repo(loc, '.pass') is False:
 			return False
-		if self.download_from_repo(loc, '.md5') is False:
-			return False
-		if self.download_from_repo(loc, '.sha256') is False:
-			return False
+		# Hash files are optional — don't abort if missing
+		self.download_from_repo(loc, '.md5')
+		self.download_from_repo(loc, '.sha256')
+		self.download_from_repo(loc, '.shasum')
 		print(bold(green("[+]")) + " Successfully downloaded a new friend.\n")
 
 	def download_from_repo(self, filepath, suffix=''):
@@ -120,8 +128,11 @@ class Updater:
 		
 		f = open(file_name, 'wb')
 		meta = u.info()
-		file_size = int(meta.get("Content-Length", 0))
-		print("Downloading: %s Bytes: %s" % (file_name, file_size))
+		try:
+			file_size = int(meta.get("Content-Length", 0) or 0)
+		except (ValueError, TypeError):
+			file_size = 0
+		print("Downloading: %s Bytes: %s" % (file_name, file_size if file_size else "unknown"))
 		file_size_dl = 0
 		block_sz = 8192
 		while True:
@@ -130,8 +141,11 @@ class Updater:
 				break
 			file_size_dl += len(buffer)
 			f.write(buffer)
-			status = r"%10d  [%3.2f%%]" % (
-				file_size_dl, file_size_dl * 100. / file_size)
+			if file_size > 0:
+				status = r"%10d  [%3.2f%%]" % (
+					file_size_dl, file_size_dl * 100. / file_size)
+			else:
+				status = r"%10d  [--.--%]" % file_size_dl
 			status = status + chr(8) * (len(status) + 1)
 			sys.stdout.write('\r' + status)
 		f.close()
